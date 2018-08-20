@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 import * as ConuterActions from '../../actions/counter.actions';
 import * as CounterReducer from '../../reducers/counter.reducer';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.component.html'
+  selector: 'app-ui-library',
+  templateUrl: 'ui-library.component.html',
+  styleUrls: ['./ui-library.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class UiLibraryComponent implements OnInit {
   public count$: Observable<number>;
   constructor(private store: Store<CounterReducer.State>) {
     this.count$ = store.select((state: any) => state.counterStore.count);

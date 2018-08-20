@@ -1,0 +1,44 @@
+<app-page>
+  <section main-content class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <article>
+          <h2>Buttons</h2>
+          <button type="button" class="btn btn-primary mr-1">Primary</button>
+          <button type="button" class="btn btn-secondary mr-1">Secondary</button>
+          <button type="button" class="btn btn-success mr-1">Success</button>
+          <button type="button" class="btn btn-danger mr-1">Danger</button>
+          <button type="button" class="btn btn-warning mr-1">Warning</button>
+          <button type="button" class="btn btn-info mr-1">Info</button>
+          <button type="button" class="btn btn-light mr-1">Light</button>
+          <button type="button" class="btn btn-dark mr-1">Dark</button>
+
+          <button type="button" class="btn btn-link mr-1">Link</button>
+        </article>
+        <article>
+          <h2>Fonts</h2>
+          <h3>Text</h3>
+          <p>Ut sed est nec dui interdum congue sed quis nisi. Morbi ullamcorper vulputate mi, sed imperdiet metus. Donec
+            sagittis lacus nec dignissim viverra. Proin bibendum ante a sapien bibendum vehicula. Proin tincidunt velit nec
+            ante convallis, ut lobortis est sagittis.</p>
+        </article>
+        <article>
+          <h2>Icons</h2>
+          <fa-icon [icon]="['fas', 'angry']" size="lg" [mask]="['fas', 'square']"></fa-icon>
+        </article>
+      </div>
+      <div class="col">
+        <article>
+          <h2>Redux example</h2>
+          <button class="btn btn-danger mr-1" (click)="decrement()">Decrement</button>
+          <button class="btn btn-primary" (click)="increment()">Increment</button>
+          <p>count: {{count$ | async}}</p>
+        </article>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+      </div>
+    </div>
+  </section>
+</app-page>

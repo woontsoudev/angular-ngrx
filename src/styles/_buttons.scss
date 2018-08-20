@@ -1,6 +1,6 @@
 // .btn-outlined-theme_color
 @each $color, $value in $theme-colors {
-    .btn-outlined-#{$color} {
+    .btn-outlined-#{$color}-custom {
         background-color: transparent;
         border: 2px solid $value;
         color: $value;

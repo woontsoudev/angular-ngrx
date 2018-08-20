@@ -1,5 +1,8 @@
 // Imports
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_mixins.scss';
+@import '~bootstrap/scss/_variables.scss';
 
 // Font
 $font-family-base: 'Roboto';
@@ -11,4 +14,3 @@ $theme-dark-gray: #282560;
 $theme-light-gray: #E6E6E6;
 $theme-red: #DA1800;
 $theme-yellow: #FFB31F;
-

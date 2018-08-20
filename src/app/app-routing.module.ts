@@ -3,18 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: './views/home/home.module#HomeModule'
+    path: 'admin',
+    loadChildren: './views/admin/admin.module#AdminModule'
+  },
+  {
+    path: 'ui/library',
+    loadChildren: './views/ui-library/ui-library.module#UiLibraryModule'
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'admin',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
