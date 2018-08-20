@@ -1,0 +1,8 @@
+<app-layout>
+  <app-header layout-header *ngIf="showHeader"></app-header>
+  <ng-content
+    layout-main
+    select="[main-content]">
+  </ng-content>
+  <app-footer layout-footer *ngIf="showFooter"></app-footer>
+</app-layout>

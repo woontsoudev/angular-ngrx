@@ -1,0 +1,8 @@
+// .btn-outlined-theme_color
+@each $color, $value in $theme-colors {
+    .btn-outlined-#{$color} {
+        background-color: transparent;
+        border: 2px solid $value;
+        color: $value;
+    }
+}
