@@ -1,34 +1,33 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-1">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Renter<span class="font-weight-bold">Protect</span></a>
   <button class="navbar-toggler" type="button" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="isCollapsed = !isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div id="collapseExample" class="navbar-collapse collapse" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" routerLink="/dashboard" href="#">Dashboard</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" routerLink="/properties" href="#">Properties</a>
       </li>
-      <li class="nav-item dropdown">
-        <div ngbDropdown class="d-inline-block">
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle>Toggle dropdown</a>
-          <div ngbDropdownMenu>
-            <button class="dropdown-item">Action - 1</button>
-            <button class="dropdown-item">Another Action</button>
-            <button class="dropdown-item">Something else is here</button>
-          </div>
-        </div>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" routerLink="/residents" href="#">Residents</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" routerLink="/admin" href="#">Admin</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn my-2 my-sm-0" type="submit">
+          <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+      </button>
+      <button class="btn my-2 my-sm-0" type="submit">
+          <fa-icon [icon]="['fas', 'user']"></fa-icon>
+          <span class="badge badge-light">4</span>
+      </button>
     </form>
   </div>
 </nav>

@@ -7,6 +7,18 @@ const routes: Routes = [
     loadChildren: './views/admin/admin.module#AdminModule'
   },
   {
+    path: 'dashboard',
+    loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'properties',
+    loadChildren: './views/properties/properties.module#PropertiesModule'
+  },
+  {
+    path: 'residents',
+    loadChildren: './views/residents/residents.module#ResidentsModule'
+  },
+  {
     path: 'ui/library',
     loadChildren: './views/ui-library/ui-library.module#UiLibraryModule'
   },

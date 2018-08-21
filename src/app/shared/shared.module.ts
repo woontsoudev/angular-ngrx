@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { NgBootstrapModule } from './ng-bootstrap.module';
 import { IconsModule } from './icons.module';
@@ -16,7 +17,8 @@ import { MinHeightLayoutCalcDirective } from './directives/minHeightLayoutCalc.d
     ReactiveFormsModule,
     FormsModule,
     NgBootstrapModule,
-    IconsModule
+    IconsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
