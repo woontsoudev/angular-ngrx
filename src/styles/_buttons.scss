@@ -1,8 +1,111 @@
-// .btn-outlined-theme_color
+// .btn-theme-theme_color
 @each $color, $value in $theme-colors {
-    .btn-outlined-#{$color}-custom {
-        background-color: transparent;
-        border: 2px solid $value;
-        color: $value;
+  .btn-theme-#{$color} {
+    background-color: transparent;
+    border: 1px solid $value;
+    box-shadow: $box-shadow-sm;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    padding-right: $spacer;
+    padding-left: $spacer;
+    @if $color == light {
+      color: $dark;
+      @include hover-focus-active {
+        color: $dark;
+        background-color: darken($value, 2%);
+      }
+    } @else {
+      color: $value;
+      @include hover-focus-active {
+        color: $white;
+        background-color: darken($value, 2%);
+      }
     }
+  }
+
+  .btn-sm-theme-#{$color} {
+    background-color: transparent;
+    border: 1px solid $value;
+    box-shadow: $box-shadow-sm;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    padding-right: $spacer;
+    padding-left: $spacer;
+    @if $color == light {
+      color: $dark;
+      @include hover-focus-active {
+        color: $dark;
+        background-color: darken($value, 2%);
+      }
+    } @else {
+      color: $value;
+      @include hover-focus-active {
+        color: $white;
+        background-color: darken($value, 2%);
+      }
+    }
+  }
+
+  .btn-theme-icon-#{$color} {
+    background-color: transparent;
+    border: 1px solid $value;
+    box-shadow: $box-shadow-sm;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    padding-right: $spacer + 0.5;
+    padding-left: $spacer + 0.5;
+    @if $color == light {
+      color: $dark;
+      @include hover-focus-active {
+        color: $dark;
+        background-color: darken($value, 2%);
+      }
+    } @else {
+      color: $value;
+      @include hover-focus-active {
+        color: $white;
+        background-color: darken($value, 2%);
+      }
+    }
+  }
+
+  .btn-icon-#{$color} {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    background-color: $value;
+    border-radius: 50%;
+    box-shadow: $box-shadow-sm;
+    @if $color == light {
+      color: $dark;
+    } @else {
+      color: $white;
+    }
+    @include hover-focus-active {
+      background-color: darken($value, 10%);
+    }
+  }
+
+  .btn-sm-icon-#{$color} {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    background-color: $value;
+    border-radius: 50%;
+    box-shadow: $box-shadow-sm;
+    @if $color == light {
+      color: $dark;
+    } @else {
+      color: $white;
+    }
+    @include hover-focus-active {
+      background-color: darken($value, 10%);
+    }
+  }
 }
