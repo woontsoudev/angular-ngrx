@@ -2,13 +2,12 @@
 
 section {
   background-color: $white;
-  padding-top: $spacer * 2;
 }
 
 article {
   margin-bottom: $spacer * 2;
+}
 
-  h2 {
-    border-bottom: 2px solid $dark;
-  }
+.title {
+  border-bottom: 2px solid $dark;
 }

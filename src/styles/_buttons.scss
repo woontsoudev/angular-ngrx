@@ -1,3 +1,5 @@
+@import 'node_modules/bootstrap/scss/buttons';
+
 // .btn-theme-theme_color
 @each $color, $value in $theme-colors {
   .btn-theme-#{$color} {
@@ -92,6 +94,33 @@
     }
   }
 
+  .btn-flat-#{$color} {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    .badge {
+      background: $primary;
+      position: absolute;
+      border-radius: 50%;
+      top: -2px;
+      font-size: 10px;
+      right: 0px;
+      color: $white;
+    }
+    @if $color == light {
+      color: $dark;
+    } @else {
+      color: $value;
+    }
+    @include hover-focus-active {
+      box-shadow: $box-shadow-sm;
+      background-color: $gray-100;
+    }
+  }
+
   .btn-sm-icon-#{$color} {
     width: 30px;
     height: 30px;
@@ -108,4 +137,9 @@
       background-color: darken($value, 10%);
     }
   }
+}
+
+.my-btn {
+  @extend .btn;
+  color: red;
 }
