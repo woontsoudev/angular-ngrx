@@ -1,10 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-1">
-  <a class="navbar-brand" href="#">Renter<span class="font-weight-bold">Protect</span></a>
-  <button class="navbar-toggler" type="button" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="isCollapsed = !isCollapsed">
+  <a class="navbar-brand order-md-1" href="#">Renter<span class="font-weight-bold">Protect</span></a>
+  <button class="btn btn-flat-light my-2 my-sm-0 order-md-3" type="submit">
+      <span class="badge badge-light">4</span>
+    <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+  </button>
+  <button class="btn btn-flat-light my-2 my-sm-0 order-md-4" type="submit">
+    <fa-icon [icon]="['fas', 'user']"></fa-icon>
+  </button>
+  <button class="navbar-toggler order-md-5" type="button" [attr.aria-expanded]="!isCollapsed" aria-controls="collapse-nav" (click)="isCollapsed = !isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div id="collapseExample" class="navbar-collapse collapse" [ngbCollapse]="isCollapsed">
+  <div id="collapse-nav" class="navbar-collapse collapse order-md-2" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" routerLink="/dashboard" href="#">Dashboard</a>
@@ -21,13 +28,6 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn my-2 my-sm-0" type="submit">
-          <fa-icon [icon]="['fas', 'bell']"></fa-icon>
-      </button>
-      <button class="btn my-2 my-sm-0" type="submit">
-          <fa-icon [icon]="['fas', 'user']"></fa-icon>
-          <span class="badge badge-light">4</span>
-      </button>
     </form>
   </div>
 </nav>

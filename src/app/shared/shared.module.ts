@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageComponent } from './components/page/page.component';
 import { MinHeightLayoutCalcDirective } from './directives/minHeightLayoutCalc.directive';
+import { SubnavComponent } from './components/subnav/subnav.component';
 
 @NgModule({
   imports: [
@@ -26,14 +27,16 @@ import { MinHeightLayoutCalcDirective } from './directives/minHeightLayoutCalc.d
     FormsModule,
     NgBootstrapModule,
     IconsModule,
-    PageComponent
+    PageComponent,
+    SubnavComponent
   ],
   declarations: [
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
     PageComponent,
-    MinHeightLayoutCalcDirective
+    MinHeightLayoutCalcDirective,
+    SubnavComponent
   ],
   providers: [],
 })

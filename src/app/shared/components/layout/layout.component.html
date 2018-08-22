@@ -1,6 +1,7 @@
 <header #header>
   <ng-content select="[layout-header]"></ng-content>
 </header>
+  <ng-content select="[layout-subnav]"></ng-content>
 <main appMinHeightLayoutCalc [header]="header" [footer]="footer">
   <ng-content select="[layout-main]"></ng-content>
 </main>
