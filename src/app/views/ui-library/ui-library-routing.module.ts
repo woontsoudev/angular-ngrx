@@ -8,22 +8,27 @@ import { UiInteractionComponent } from './components/ui-interaction/ui-interacti
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'library/base',
+    pathMatch: 'full'
+  },
+  {
+    path: 'library',
     component: UiLibraryComponent,
     children: [
+      { path: '', redirectTo: 'base', pathMatch: 'full' },
       { path: 'base', component: UiBaseComponent },
       { path: 'interaction', component: UiInteractionComponent }
     ]
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'base',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-
-export class UiLibraryRoutingModule { }
+export class UiLibraryRoutingModule {}

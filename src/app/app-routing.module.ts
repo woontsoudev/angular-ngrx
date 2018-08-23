@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: './views/residents/residents.module#ResidentsModule'
   },
   {
-    path: 'ui/library',
+    path: 'ui',
     loadChildren: './views/ui-library/ui-library.module#UiLibraryModule'
   },
   {
