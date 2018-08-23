@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/transitions";
+
+.navbar {
+  .collapse {
+    &:not(.show) {
+      display: none;
+    }
+    &.show {
+      display: flex;
+    }
+  }
+}

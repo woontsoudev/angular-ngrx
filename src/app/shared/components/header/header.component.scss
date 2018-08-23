@@ -1,11 +1,20 @@
+@import '~src/styles/variables-core';
+
+.navbar {
+  border-bottom: 1px solid $gray-500;
+}
 .navbar-brand {
-  font-size: 2rem;
-  margin-right: 2em;
+  font-size: $font-size-base * 2;
+  margin-right: $spacer * 2;
 }
 
 .nav-link {
-  font-size: 1.2rem;
-  padding-bottom: 2px;
+  font-size: $font-size-lg;
+  padding-bottom: $spacer / 4;
+
+  &:hover {
+    font-weight: $font-weight-normal;
+  }
 }
 
 .nav-item {
@@ -14,6 +23,14 @@
 
 .navbar-nav {
   .active {
-    border-bottom: 3px solid darkslategray;
+    border-bottom: 3px solid $dark;
   }
+}
+
+.navbar-collapse {
+  display: flex;
+}
+
+.search {
+  border-radius: $border-radius-xs;
 }

@@ -1,5 +1,6 @@
-// Modify the default bootstrap theme
+@import './variables-core';
 
+// Modify the default bootstrap theme
 $theme-colors: (
   "primary": $theme-light-blue,
   "secondary": $theme-dark-gray,
