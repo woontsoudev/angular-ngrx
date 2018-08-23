@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { UiLibraryComponent } from './ui-library.component';
-import { UiBaseComponent } from './components/ui-base.component';
-import { UiInteractionComponent } from './components/ui-interaction.component';
+import { UiBaseComponent } from './components/ui-base/ui-base.component';
+import { UiInteractionComponent } from './components/ui-interaction/ui-interaction.component';
 
 const routes: Routes = [
   {
