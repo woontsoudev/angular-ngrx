@@ -1,21 +1,21 @@
-<h2 class="title">Redux example</h2>
-<div class="container-fluid">
+<app-title-bar title="redux example"></app-title-bar>
+<div class="container-fluid pt-3">
   <div class="row">
     <div class="col">
       <article>
-        <button class="btn btn-danger mr-1 mb-1" (click)="decrement()">Decrement</button>
+        <button class="btn btn-danger mr-1" (click)="decrement()">Decrement</button>
         <button class="btn btn-primary" (click)="increment()">Increment</button>
         <p>count: {{count$ | async}}</p>
       </article>
     </div>
   </div>
 </div>
-<h2 class="title">Tables</h2>
+<app-title-bar title="tables"></app-title-bar>
 <div class="container-fluid">
   <div class="row">
     <div class="col">
       <article>
-        <app-data-table></app-data-table>
+        <app-action-bar></app-action-bar>
       </article>
     </div>
   </div>
