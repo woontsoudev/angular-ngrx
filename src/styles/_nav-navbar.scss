@@ -2,8 +2,6 @@
 @import '~bootstrap/scss/nav';
 
 .sub-nav {
-  border-bottom: 1px solid $gray-500;
-
   .nav-item {
     &.active {
       border-bottom: 2px solid $dark;

@@ -5,6 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { UiLibraryComponent } from './ui-library.component';
 import { UiBaseComponent } from './components/ui-base/ui-base.component';
 import { UiInteractionComponent } from './components/ui-interaction/ui-interaction.component';
+import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { UiInteractionComponent } from './components/ui-interaction/ui-interacti
   declarations: [
     UiLibraryComponent,
     UiBaseComponent,
-    UiInteractionComponent
+    UiInteractionComponent,
+    UiTablesComponent
   ],
   providers: [],
 })

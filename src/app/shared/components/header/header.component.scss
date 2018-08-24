@@ -1,8 +1,10 @@
 @import '~src/styles/variables-core';
 
-.navbar {
+nav {
   border-bottom: 1px solid $gray-500;
+  background-color: $white;
 }
+
 .navbar-brand {
   font-size: $font-size-base * 2;
   margin-right: $spacer * 2;

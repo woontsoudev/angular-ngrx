@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UiLibraryComponent } from './ui-library.component';
 import { UiBaseComponent } from './components/ui-base/ui-base.component';
 import { UiInteractionComponent } from './components/ui-interaction/ui-interaction.component';
+import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'base', pathMatch: 'full' },
       { path: 'base', component: UiBaseComponent },
-      { path: 'interaction', component: UiInteractionComponent }
+      { path: 'interaction', component: UiInteractionComponent },
+      { path: 'tables', component: UiTablesComponent }
     ]
   },
   {

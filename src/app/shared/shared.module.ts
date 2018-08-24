@@ -13,6 +13,8 @@ import { PageComponent } from './components/page/page.component';
 import { MinHeightLayoutCalcDirective } from './directives/minHeightLayoutCalc.directive';
 import { SubnavComponent } from './components/subnav/subnav.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { ActionBarComponent } from './components/action-bar/action-bar.component';
+import { TitleBarComponent } from './components/title-bar/title-bar.component';
 
 @NgModule({
   imports: [
@@ -33,7 +35,9 @@ import { DataTableComponent } from './components/data-table/data-table.component
     IconsModule,
     PageComponent,
     SubnavComponent,
-    DataTableComponent
+    DataTableComponent,
+    ActionBarComponent,
+    TitleBarComponent
   ],
   declarations: [
     LayoutComponent,
@@ -42,7 +46,9 @@ import { DataTableComponent } from './components/data-table/data-table.component
     PageComponent,
     MinHeightLayoutCalcDirective,
     SubnavComponent,
-    DataTableComponent
+    DataTableComponent,
+    ActionBarComponent,
+    TitleBarComponent
   ],
   providers: [],
 })
