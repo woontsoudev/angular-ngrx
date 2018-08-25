@@ -5,14 +5,24 @@
 
 // Font
 $font-family-base: 'Roboto';
-$base_font_size: 16px;
+$font-size-base: 1rem;
+
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.60;
+$h3-font-size: $font-size-base * 1.35;
+$h4-font-size: $font-size-base * 1.10;
+$h5-font-size: $font-size-base * 0.85;
+$h6-font-size: $font-size-base * 0.60;
 
 // Colors
-$theme-light-blue: #2DC6F5;
-$theme-dark-gray: #282560;
-$theme-light-gray: #E6E6E6;
-$theme-red: #DA1800;
-$theme-yellow: #FFB31F;
+$theme-light-blue: #2dc6f5;
+$theme-dark-gray: #4D4D4D;
+$theme-light-gray: #e6e6e6;
+$theme-red: #da1800;
+$theme-yellow: #ffb31f;
 
 // Borders
-$border-radius-xs: .1rem;
+$border-radius-xs: 0.1rem;
+
+// Heading
+$heading-bar-height: 60px;

@@ -3,6 +3,10 @@
 .title-bar {
   border-top: 1px solid $gray-500;
   text-transform: uppercase;
-  height: 70px;
-}
+  height: $heading-bar-height;
 
+  h3 {
+    font-weight: 900;
+    letter-spacing: 0.2px;
+  }
+}
