@@ -1,7 +1,32 @@
+@import '~src/styles/variables-core';
+
 .ui-chkbox-label {
   margin-bottom: 0;
 }
 
 body .ui-paginator .ui-paginator-pages .ui-paginator-page {
   padding: 0px;
+}
+
+.ui-table {
+  .ui-table-caption, .ui-table-wrapper {
+    @include make-container();
+  }
+
+  .ui-table-caption {
+    input {
+      border: 0;
+    }
+  }
+
+  .ui-table-tbody {
+    tr td {
+      padding-left: $spacer * 2;
+    }
+  }
+
+  .ui-paginator-bottom {
+    border: 0;
+    margin-bottom: $spacer;
+  }
 }
