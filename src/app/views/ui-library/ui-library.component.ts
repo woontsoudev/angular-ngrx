@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store } from '@ngrx/store';
 
-import * as ConuterActions from '../../actions/counter.actions';
-import * as CounterReducer from '../../reducers/counter.reducer';
+import * as LayoutActions from '../../actions/layout.actions';
+import * as LayoutReducer from '../../reducers/layout.reducer';
 
 @Component({
   selector: 'app-ui-library',
@@ -11,18 +11,19 @@ import * as CounterReducer from '../../reducers/counter.reducer';
   styleUrls: ['./ui-library.component.scss']
 })
 export class UiLibraryComponent implements OnInit {
-  public count$: Observable<number>;
-  constructor(private store: Store<CounterReducer.State>) {
-    this.count$ = store.select((state: any) => state.counterStore.count);
+  public modalExample$: Observable<boolean>;
+
+  constructor(private layoutStore: Store<LayoutReducer.State>) {
+    this.modalExample$ = layoutStore.select((state: any) => state.layoutStore.modalExample);
   }
 
   ngOnInit() {}
 
-  increment() {
-    this.store.dispatch(new ConuterActions.IncrementCounter());
+  onVisibilityChange() {
+    this.layoutStore.dispatch(new LayoutActions.ToggleModalExample());
   }
 
-  decrement() {
-    this.store.dispatch(new ConuterActions.DecrementCounter());
+  onToggleExampleModal() {
+    this.layoutStore.dispatch(new LayoutActions.ToggleModalExample());
   }
 }

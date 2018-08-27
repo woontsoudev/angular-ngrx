@@ -8,7 +8,7 @@
     <fa-icon [icon]="['fas', 'user']"></fa-icon>
   </button>
   <button class="navbar-toggler order-4" type="button" [attr.aria-expanded]="!isCollapsed" aria-controls="collapse-nav" (click)="isCollapsed = !isCollapsed">
-    <span class="navbar-toggler-icon"></span>
+    <fa-icon [icon]="['fas', 'bars']"></fa-icon>
   </button>
 
   <div id="collapse-nav" class="navbar-collapse collapse flex-column flex-lg-row order-5 order-lg-2" [ngbCollapse]="isCollapsed">
