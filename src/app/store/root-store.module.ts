@@ -12,10 +12,7 @@ import { reducers } from './root-reducers';
       // logOnly: environment.production, // add when eviroments
     })
   ],
-  exports: [
-    StoreModule,
-    StoreDevtoolsModule
-  ],
+  exports: [StoreModule, StoreDevtoolsModule],
   providers: []
 })
 export class RootStoreModule {}

@@ -8,7 +8,10 @@ const initialState: State = {
   modalExample: false
 };
 
-export function reducer(state = initialState, action: LayoutActions.All): State {
+export function reducer(
+  state = initialState,
+  action: LayoutActions.All
+): State {
   switch (action.type) {
     case LayoutActions.TOGGLE_MODAL_EXAMPLE: {
       return {

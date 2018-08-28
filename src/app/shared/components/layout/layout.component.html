@@ -1,11 +1,15 @@
 <header #header>
-  <ng-content select="[layout-header]"></ng-content>
+    <ng-content select="[layout-header]"></ng-content>
 </header>
-  <ng-content select="[layout-subnav]"></ng-content>
-<main appMinHeightLayoutCalc [header]="header" [footer]="footer">
-  <ng-content select="[layout-main]"></ng-content>
+<ng-content select="[layout-subnav]"></ng-content>
+<main
+    appMinHeightLayoutCalc
+    [header]="header"
+    [footer]="footer"
+>
+    <ng-content select="[layout-main]"></ng-content>
 </main>
 <footer #footer>
-  <ng-content select="[layout-footer]"></ng-content>
+    <ng-content select="[layout-footer]"></ng-content>
 </footer>
 <ng-content select="[layout-modals]"></ng-content>

@@ -8,10 +8,7 @@ import { UiInteractionComponent } from './components/ui-interaction/ui-interacti
 import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 
 @NgModule({
-  imports: [
-    UiLibraryRoutingModule,
-    SharedModule
-  ],
+  imports: [UiLibraryRoutingModule, SharedModule],
   exports: [],
   declarations: [
     UiLibraryComponent,
@@ -19,7 +16,6 @@ import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
     UiInteractionComponent,
     UiTablesComponent
   ],
-  providers: [],
+  providers: []
 })
-
-export class UiLibraryModule { }
+export class UiLibraryModule {}

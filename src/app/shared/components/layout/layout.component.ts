@@ -5,11 +5,8 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: 'layout.component.html',
   styleUrls: ['./layout.component.css']
 })
-
 export class LayoutComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

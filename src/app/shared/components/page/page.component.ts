@@ -5,12 +5,13 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: 'page.component.html',
   styleUrls: ['./page.component.css']
 })
-
 export class PageComponent implements OnInit {
-  @Input() showHeader = true;
-  @Input() showFooter = true;
+  @Input()
+  showHeader = true;
+  @Input()
+  showFooter = true;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

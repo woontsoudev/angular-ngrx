@@ -5,15 +5,9 @@ import { SharedModule } from '../../shared/shared.module';
 import { PropertiesComponent } from './properties.component';
 
 @NgModule({
-  imports: [
-    PropertiesRoutingModule,
-    SharedModule
-  ],
+  imports: [PropertiesRoutingModule, SharedModule],
   exports: [],
-  declarations: [
-    PropertiesComponent
-  ],
-  providers: [],
+  declarations: [PropertiesComponent],
+  providers: []
 })
-
-export class PropertiesModule { }
+export class PropertiesModule {}
