@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'residents.component.html'
 })
 export class ResidentsComponent implements OnInit {
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {}
 }

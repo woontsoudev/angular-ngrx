@@ -8,7 +8,10 @@ const initialState: State = {
   count: 0
 };
 
-export function reducer(state = initialState, action: CounterActions.All): State {
+export function reducer(
+  state = initialState,
+  action: CounterActions.All
+): State {
   switch (action.type) {
     case CounterActions.INCREMENT_COUNTER: {
       return {

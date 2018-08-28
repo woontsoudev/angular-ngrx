@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-ui-tables',
   templateUrl: 'ui-tables.component.html'
 })
-
 export class UiTablesComponent implements OnInit {
   public cars = [
     { brand: 'VW', year: 2012, color: 'Orange', vin: 'dsad231ff' },
@@ -36,7 +35,7 @@ export class UiTablesComponent implements OnInit {
     { field: 'color', header: 'Color' }
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

@@ -5,15 +5,9 @@ import { SharedModule } from '../../shared/shared.module';
 import { ResidentsComponent } from './residents.component';
 
 @NgModule({
-  imports: [
-    ResidentsRoutingModule,
-    SharedModule
-  ],
+  imports: [ResidentsRoutingModule, SharedModule],
   exports: [],
-  declarations: [
-    ResidentsComponent
-  ],
-  providers: [],
+  declarations: [ResidentsComponent],
+  providers: []
 })
-
-export class ResidentsModule { }
+export class ResidentsModule {}

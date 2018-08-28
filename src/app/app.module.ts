@@ -7,9 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RootStoreModule } from './store/root-store.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,4 +17,4 @@ import { RootStoreModule } from './store/root-store.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

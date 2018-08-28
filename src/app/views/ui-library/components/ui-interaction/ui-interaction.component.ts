@@ -11,7 +11,6 @@ import * as LayoutReducer from '../../../../reducers/layout.reducer';
   selector: 'app-ui-interaction',
   templateUrl: './ui-interaction.component.html'
 })
-
 export class UiInteractionComponent implements OnInit {
   public count$: Observable<number>;
   public modalExample$: Observable<boolean>;
@@ -21,7 +20,9 @@ export class UiInteractionComponent implements OnInit {
     private layoutStore: Store<LayoutReducer.State>
   ) {
     this.count$ = counterStore.select((state: any) => state.counterStore.count);
-    this.modalExample$ = layoutStore.select((state: any) => state.layoutStore.modalExample);
+    this.modalExample$ = layoutStore.select(
+      (state: any) => state.layoutStore.modalExample
+    );
   }
 
   ngOnInit() {}

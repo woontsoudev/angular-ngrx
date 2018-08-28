@@ -5,10 +5,10 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: 'title-bar.component.html',
   styleUrls: ['./title-bar.component.scss']
 })
-
 export class TitleBarComponent implements OnInit {
-  @Input() title: string;
-  constructor() { }
+  @Input()
+  title: string;
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

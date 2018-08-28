@@ -7,4 +7,4 @@ import { ButtonModule } from 'primeng/button';
 @NgModule({
   exports: [TableModule, CheckboxModule, DialogModule, ButtonModule]
 })
-export class PrimeNgModule { }
+export class PrimeNgModule {}

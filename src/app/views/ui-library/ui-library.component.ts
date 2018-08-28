@@ -14,7 +14,9 @@ export class UiLibraryComponent implements OnInit {
   public modalExample$: Observable<boolean>;
 
   constructor(private layoutStore: Store<LayoutReducer.State>) {
-    this.modalExample$ = layoutStore.select((state: any) => state.layoutStore.modalExample);
+    this.modalExample$ = layoutStore.select(
+      (state: any) => state.layoutStore.modalExample
+    );
   }
 
   ngOnInit() {}

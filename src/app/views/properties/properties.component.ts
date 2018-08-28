@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'properties.component.html'
 })
 export class PropertiesComponent implements OnInit {
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
