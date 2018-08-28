@@ -7,13 +7,14 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class DataTableComponent implements OnInit {
-  @Input() data: any[];
-  @Input() cols: any[];
-  @Input() selectedValues: any[];
+  @Input()
+  data: any[];
+  @Input()
+  cols: any[];
+  @Input()
+  selectedValues: any[];
 
   constructor() {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 }

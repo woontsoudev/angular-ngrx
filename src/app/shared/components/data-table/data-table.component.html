@@ -1,25 +1,60 @@
-<p-table #dt [columns]="cols" [value]="data" [paginator]="true" [rows]="10">
-  <ng-template pTemplate="header" let-columns>
-    <tr>
-      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
-          <p-sortIcon [field]="col.field"></p-sortIcon>
-        {{col.header}}
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="caption">
-    <div class="d-flex">
-      <fa-icon class="mr-1" [icon]="['fas', 'search']" size="lg"></fa-icon>
-      <input type="text" class="mr-auto" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')">
-      <p-checkbox name="groupname" label="Show Disabled" value="disabled" [(ngModel)]="selectedValues"></p-checkbox>
-      <p-checkbox name="groupname" label="50 Items" value="val2" [(ngModel)]="selectedValues"></p-checkbox>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
-    <tr>
-      <td *ngFor="let col of columns">
-        {{rowData[col.field]}}
-      </td>
-    </tr>
-  </ng-template>
+<p-table
+    #dt
+    [columns]="cols"
+    [value]="data"
+    [paginator]="true"
+    [rows]="10"
+>
+    <ng-template
+        pTemplate="header"
+        let-columns
+    >
+        <tr>
+            <th
+                *ngFor="let col of columns"
+                [pSortableColumn]="col.field"
+            >
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="caption">
+        <div class="d-flex">
+            <fa-icon
+                class="mr-1"
+                [icon]="['fas', 'search']"
+                size="lg"
+            ></fa-icon>
+            <input
+                type="text"
+                class="mr-auto"
+                pInputText
+                size="50"
+                placeholder="Global Filter"
+                (input)="dt.filterGlobal($event.target.value, 'contains')"
+            >
+            <p-checkbox
+                name="groupname"
+                label="Show Disabled"
+                value="disabled"
+                [(ngModel)]="selectedValues"
+            ></p-checkbox>
+            <p-checkbox
+                name="groupname"
+                label="50 Items"
+                value="val2"
+                [(ngModel)]="selectedValues"
+            ></p-checkbox>
+        </div>
+    </ng-template>
+    <ng-template
+        pTemplate="body"
+        let-rowData
+        let-columns="columns"
+    >
+        <tr>
+            <td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+        </tr>
+    </ng-template>
 </p-table>

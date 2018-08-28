@@ -50,6 +50,6 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     ActionBarComponent,
     TitleBarComponent
   ],
-  providers: [],
+  providers: []
 })
-export class SharedModule { }
+export class SharedModule {}
