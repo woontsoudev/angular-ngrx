@@ -10,6 +10,7 @@ body .ui-paginator .ui-paginator-pages .ui-paginator-page {
 
 .ui-table {
   .ui-table-caption, .ui-table-wrapper {
+    
     @include make-container();
   }
 
