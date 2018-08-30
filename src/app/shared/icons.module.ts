@@ -8,10 +8,23 @@ import {
   faUser,
   faSyncAlt,
   faSearch,
-  faBars
+  faBars,
+  faEllipsisH,
+  faEnvelope,
+  faTrashAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faAngry, faBell, faUser, faSyncAlt, faSearch, faBars);
+library.add(
+  faAngry,
+  faBell,
+  faUser,
+  faSyncAlt,
+  faSearch,
+  faBars,
+  faEllipsisH,
+  faEnvelope,
+  faTrashAlt
+);
 
 @NgModule({
   exports: [FontAwesomeModule]

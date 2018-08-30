@@ -12,9 +12,23 @@ export class DataTableComponent implements OnInit {
   @Input()
   cols: any[];
   @Input()
+  rows: number;
+  @Input()
   selectedValues: any[];
+  @Input()
+  dataKey: string;
+  @Input()
+  filterDisabled: string;
+  @Input()
+  filterByNumber: number;
+
+  public filterBySelectedNumber: number;
 
   constructor() {}
 
   ngOnInit() {}
+
+  onFilterByNumber(event) {
+    console.log(event);
+  }
 }
