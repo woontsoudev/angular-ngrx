@@ -3,13 +3,20 @@
     [columns]="cols"
     [value]="data"
     [paginator]="true"
-    [rows]="10"
+    [rows]="rows"
+    [(selection)]="selectedValues"
+    [dataKey]="dataKey"
+    [responsive]="true"
+    class="datatable"
 >
     <ng-template
         pTemplate="header"
         let-columns
     >
         <tr>
+            <th class="datatable-checkbox-heading">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
             <th
                 *ngFor="let col of columns"
                 [pSortableColumn]="col.field"
@@ -17,34 +24,36 @@
                 <p-sortIcon [field]="col.field"></p-sortIcon>
                 {{col.header}}
             </th>
+            <th style="width: 0; padding: 0"></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="caption">
-        <div class="d-flex">
+        <div class="d-flex h-100">
             <fa-icon
-                class="mr-1"
+                class="mr-2 datatable-input-filter d-flex align-items-center"
                 [icon]="['fas', 'search']"
                 size="lg"
             ></fa-icon>
             <input
                 type="text"
-                class="mr-auto"
+                class="w-25 flex-grow-1 d-flex align-items-center"
                 pInputText
                 size="50"
-                placeholder="Global Filter"
+                placeholder="Search Cars"
                 (input)="dt.filterGlobal($event.target.value, 'contains')"
             >
             <p-checkbox
-                name="groupname"
+                name="filterdisable"
+                class="flex-grow-0 d-flex align-items-center datatable-checkbox-filter"
                 label="Show Disabled"
-                value="disabled"
-                [(ngModel)]="selectedValues"
+                value="val1"
+                [(ngModel)]="filterDisabled"
             ></p-checkbox>
             <p-checkbox
-                name="groupname"
+                name="filter50"
+                class="flex-grow-0 d-flex align-items-center datatable-checkbox-filter"
                 label="50 Items"
-                value="val2"
-                [(ngModel)]="selectedValues"
+                (onChange)="onFilterByNumber($event)"
             ></p-checkbox>
         </div>
     </ng-template>
@@ -53,8 +62,61 @@
         let-rowData
         let-columns="columns"
     >
-        <tr>
-            <td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+        <tr
+            [pSelectableRow]="rowData"
+            class="datatable-row"
+        >
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns">
+                <span class="ui-column-title">{{col.header}}</span>
+                {{rowData[col.field]}}
+            </td>
+            <td class="datatable-row-actions">
+                <div class="datatable-row-actions-btn-group align-items-center h-100">
+                    <button
+                        type="button"
+                        class="btn btn-sm-icon-primary"
+                    >
+                        <fa-icon
+                            [icon]="['fas', 'ellipsis-h']"
+                            size="sm"
+                        ></fa-icon>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm-icon-primary"
+                    >
+                        <fa-icon
+                            [icon]="['fas', 'envelope']"
+                            size="sm"
+                        ></fa-icon>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm-icon-primary"
+                    >
+                        <fa-icon
+                            [icon]="['fas', 'trash-alt']"
+                            size="sm"
+                        ></fa-icon>
+                    </button>
+                </div>
+            </td>
         </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        {{filterByNumber}}
+        <br>
+        {{filterDisabled}}
+        <ul>
+            <li
+                *ngFor="let car of selectedValues"
+                style="text-align: left"
+            >
+                {{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}
+            </li>
+        </ul>
     </ng-template>
 </p-table>

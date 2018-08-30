@@ -1,5 +1,5 @@
 {
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 2000,
   "files.exclude": {
     "**/.git": true,
@@ -14,6 +14,6 @@
   "files.hotExit": "onExit",
   "files.defaultLanguage": "typescript",
   "files.trimTrailingWhitespace": true,
-  "prettier.tslintIntegration": true
-  // "editor.formatOnSave": true
+  "prettier.tslintIntegration": true,
+  "editor.formatOnSave": true
 }

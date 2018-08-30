@@ -1,33 +1,125 @@
 @import '~src/styles/variables-core';
 
-.ui-chkbox-label {
-  margin-bottom: 0;
-}
-
-body .ui-paginator .ui-paginator-pages .ui-paginator-page {
-  padding: 0px;
-}
-
-.ui-table {
-  .ui-table-caption, .ui-table-wrapper {
-    
-    @include make-container();
+.datatable {
+  .ui-chkbox-label {
+    margin-bottom: 0;
   }
 
-  .ui-table-caption {
-    input {
+  .ui-paginator .ui-paginator-pages .ui-paginator-page {
+    padding: 0px;
+  }
+
+  .ui-table {
+    .ui-table-caption {
+      border-right: 0;
+      border-left: 0;
+      border-color: $theme-light-gray;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: $heading-bar-md-height;
+
+      input {
+        border: 0;
+      }
+    }
+
+    .ui-table-wrapper {
+      .ui-table-thead {
+        .ui-table-sort-icon {
+          color: $theme-dark-gray;
+        }
+        tr th:first-child {
+          padding-left: ($grid-gutter-width / 2);
+        }
+      }
+    }
+
+    .ui-paginator-bottom {
       border: 0;
+      margin-bottom: $spacer;
     }
   }
 
-  .ui-table-tbody {
-    tr td {
-      padding-left: $spacer * 2;
+  .ui-state-highlight {
+    background-color: lighten($color: $theme-light-blue, $amount: 35);
+    color: $theme-dark-gray;
+  }
+
+  .datatable-row {
+    height: $heading-bar-md-height;
+
+    td:first-child {
+      padding-left: ($grid-gutter-width / 2);
+    }
+
+    td:last-child {
+      padding-right: ($grid-gutter-width / 2);
+    }
+
+    &:hover {
+      background-color: lighten($color: $theme-light-blue, $amount: 35);
+
+      .datatable-row-actions {
+        .datatable-row-actions-btn-group {
+          display: flex;
+        }
+      }
     }
   }
 
-  .ui-paginator-bottom {
-    border: 0;
-    margin-bottom: $spacer;
+  .datatable-row-actions {
+    position: relative;
+    right: 0;
+
+    .datatable-row-actions-btn-group {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: -90px;
+
+      button {
+        display: inline;
+        margin-right: $spacer / 4;
+        background-color: $white;
+        color: $gray-500;
+
+        @include hover-focus-active {
+          background-color: $theme-light-blue;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .datatable-checkbox-heading {
+    width: $datatable-checkbox-width;
+  }
+
+  .datatable-checkbox-filter {
+    padding: 0 $spacer / 2;
+    margin: 0 $spacer / 2;
+    border-left: 1px solid $theme-light-gray;
+
+    label {
+      color: $theme-dark-gray;
+      font-weight: normal;
+      font-size: $font-size-sm;
+    }
+  }
+
+  .datatable-input-filter {
+    color: $gray-600;
+  }
+
+  @media (max-width: 640px) {
+    .datatable-row {
+      position: relative;
+    }
+
+    .datatable-row .datatable-row-actions-btn-group {
+      display: flex;
+      position: unset;
+      justify-content: flex-end;
+    }
   }
 }
