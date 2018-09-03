@@ -114,12 +114,14 @@
   @media (max-width: 640px) {
     .datatable-row {
       position: relative;
+      border-bottom: 1px solid $theme-light-gray;
     }
 
     .datatable-row .datatable-row-actions-btn-group {
       display: flex;
       position: unset;
       justify-content: flex-end;
+      margin-bottom: $spacer / 2;
     }
   }
 }

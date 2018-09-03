@@ -11,7 +11,8 @@ import {
   faBars,
   faEllipsisH,
   faEnvelope,
-  faTrashAlt
+  faTrashAlt,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -23,7 +24,8 @@ library.add(
   faBars,
   faEllipsisH,
   faEnvelope,
-  faTrashAlt
+  faTrashAlt,
+  faTimes
 );
 
 @NgModule({

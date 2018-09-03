@@ -21,10 +21,6 @@ export class UiLibraryComponent implements OnInit {
 
   ngOnInit() {}
 
-  onVisibilityChange() {
-    this.layoutStore.dispatch(new LayoutActions.ToggleModalExample());
-  }
-
   onToggleExampleModal() {
     this.layoutStore.dispatch(new LayoutActions.ToggleModalExample());
   }
