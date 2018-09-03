@@ -47,40 +47,36 @@
     </section>
     <div modals>
         <p-dialog
-            header="Godfather I"
-            (visibleChange)="onVisibilityChange()"
+            (visibleChange)="onToggleExampleModal()"
             [visible]="modalExample$ | async"
             [modal]="true"
             [responsive]="true"
-            [width]="350"
+            [width]="450"
             [minWidth]="200"
             [minY]="70"
-            [maximizable]="true"
+            [maximizable]="false"
+            [closable]="false"
             [baseZIndex]="10000"
+            class="modal"
         >
-            <span>
-                The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-        His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-        Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-        kind and benevolent to those who give respect,
-        but given to ruthless violence whenever anything stands against the good of the family.
-            </span>
+            <p-header>
+                Header content here
+                <fa-icon
+                    (click)="onToggleExampleModal()"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </p-header>
+            <span>Some text</span>
             <p-footer>
                 <button
-                    type="button"
-                    pButton
-                    icon="pi pi-check"
-                    (click)="display=false"
-                    label="Yes"
-                ></button>
-                <button
-                    type="button"
-                    pButton
-                    icon="pi pi-times"
                     (click)="onToggleExampleModal()"
-                    label="No"
-                    class="ui-button-secondary"
-                ></button>
+                    type="button"
+                    class="btn btn-theme-primary"
+                >
+                    Close
+                </button>
             </p-footer>
         </p-dialog>
     </div>
