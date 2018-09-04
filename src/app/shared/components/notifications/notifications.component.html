@@ -1,0 +1,16 @@
+<ng-template #popContent>
+
+    <ul>
+        <li></li>
+    </ul>
+</ng-template>
+
+<div
+    class="btn btn-flat-secondary"
+    placement="bottom"
+    [ngbPopover]="popContent"
+    popoverTitle="NOTIFICATIONS"
+    [autoClose]="'outside'"
+>
+    <ng-content select="[notification-toggle]"></ng-content>
+</div>
