@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { NgModule } from "@angular/core";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 import {
   faAngry,
@@ -12,8 +12,9 @@ import {
   faEllipsisH,
   faEnvelope,
   faTrashAlt,
-  faTimes
-} from '@fortawesome/free-solid-svg-icons';
+  faTimes,
+  faExclamationCircle
+} from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faAngry,
@@ -25,7 +26,8 @@ library.add(
   faEllipsisH,
   faEnvelope,
   faTrashAlt,
-  faTimes
+  faTimes,
+  faExclamationCircle
 );
 
 @NgModule({

@@ -1,16 +1,34 @@
-<ng-template #popContent>
+<div class="notifications">
+    <ng-template #popContent>
+        <ul class="notifications__list">
+            <li
+                *ngFor="let noti of notifications"
+                class="notifications__list__option d-flex align-items-center color-secondary"
+            >
+                <fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
+                <div class="notifications__list__option__caption">
+                    <p>
+                        <strong>{{noti.name}}</strong>
+                        {{noti.desc}} - {{noti.unit}}
+                    </p>
+                    <p class="smaller">{{noti.agent}} - {{noti.date}}</p>
+                </div>
+                <app-action-buttons
+                    size="xs"
+                    color="light-gray"
+                ></app-action-buttons>
+            </li>
+        </ul>
+    </ng-template>
 
-    <ul>
-        <li></li>
-    </ul>
-</ng-template>
-
-<div
-    class="btn btn-flat-secondary"
-    placement="bottom"
-    [ngbPopover]="popContent"
-    popoverTitle="NOTIFICATIONS"
-    [autoClose]="'outside'"
->
-    <ng-content select="[notification-toggle]"></ng-content>
+    <div
+        class="btn btn-flat-secondary"
+        placement="bottom"
+        [ngbPopover]="popContent"
+        popoverTitle="NOTIFICATIONS"
+        [autoClose]="'outside'"
+        popoverClass="notifications-popover"
+    >
+        <ng-content select="[notification-toggle]"></ng-content>
+    </div>
 </div>

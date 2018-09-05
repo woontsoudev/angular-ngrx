@@ -1,0 +1,85 @@
+@import "~src/styles/variables-core";
+@import "~bootstrap/scss/popover";
+
+.notifications {
+  position: relative;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow: auto;
+    cursor: default;
+  }
+
+  app-action-buttons {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__list__option {
+    padding: 5px 10px;
+    &:hover {
+      background-color: $theme-light-blue-2;
+
+      app-action-buttons {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__list__option__caption {
+    flex: 1;
+    padding-left: 10px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+
+    p {
+      margin: 0;
+    }
+
+    .smaller {
+      font-size: 0.66rem;
+    }
+  }
+}
+
+// Popover
+.notifications-popover {
+  width: 400px;
+  min-width: 330px;
+  max-width: 100%;
+  left: auto !important;
+  right: -35px !important;
+  border: 1px solid $theme-light-gray;
+  box-shadow: $box-shadow-light;
+
+  .popover-body {
+    padding: 10px 0 0 0;
+  }
+
+  .popover-header {
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1.2px;
+    background-color: $white;
+    border-bottom: 1px solid $theme-light-gray;
+  }
+
+  .arrow {
+    left: auto !important;
+    right: 30px;
+    width: 2rem;
+
+    &::after,
+    &::before {
+      border-width: 0 0.9rem 0.5rem 0.9rem;
+    }
+
+    &::before {
+      border-bottom-color: $theme-light-gray;
+    }
+  }
+}

@@ -3,9 +3,12 @@ import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
+// Modules
 import { PrimeNgModule } from "./primeng.module";
 import { NgBootstrapModule } from "./ng-bootstrap.module";
 import { IconsModule } from "./icons.module";
+
+// Components
 import { LayoutComponent } from "./components/layout/layout.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";

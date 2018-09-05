@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-action-buttons",
@@ -6,6 +6,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./action-buttons.component.scss"]
 })
 export class ActionButtonsComponent implements OnInit {
+  @Input()
+  size = "sm";
+  @Input()
+  color = "";
+
   constructor() {}
 
   ngOnInit() {}
