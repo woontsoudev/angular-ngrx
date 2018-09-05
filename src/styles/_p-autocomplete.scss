@@ -1,0 +1,61 @@
+.p-autoComplete {
+  .ui-autocomplete {
+    width: 100%;
+
+    .ui-autocomplete-multiple-container:not(.ui-state-disabled):hover,
+    .ui-autocomplete-multiple-container:not(.ui-state-disabled):focus,
+    .ui-autocomplete-multiple-container:not(.ui-state-disabled).ui-state-focus {
+      border-color: $theme-dark-gray;
+    }
+  }
+
+  .ui-state-default {
+    border: 0;
+  }
+
+  .ui-inputtext.ui-state-focus,
+  .ui-inputtext:focus {
+    box-shadow: none;
+  }
+
+  .ui-inputtext {
+    width: 100%;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    border-color: $gray-500;
+
+    @include hover-focus-active {
+      border-color: $theme-dark-gray;
+    }
+  }
+
+  .ui-autocomplete-panel {
+    border-radius: 0;
+  }
+
+  .ui-autocomplete-token.ui-state-highlight {
+    background-color: transparent;
+    border: 1px solid $theme-light-blue;
+    color: $theme-light-blue;
+    padding: ($spacer / 3) ($spacer / 2);
+    border-radius: $spacer;
+    margin-bottom: $spacer / 2;
+  }
+
+  .ui-shadow {
+    box-shadow: 1px 1px 3px 1px #bdbdbd;
+  }
+
+  .ui-state-highlight {
+    background-color: $theme-light-blue;
+  }
+
+  .ui-autocomplete-items {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .ui-autocomplete-list-item {
+    border-radius: 0;
+  }
+}
