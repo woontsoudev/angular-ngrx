@@ -21,14 +21,16 @@
         </ul>
     </ng-template>
 
-    <div
+    <button
         class="btn btn-flat-secondary"
         placement="bottom"
         [ngbPopover]="popContent"
         popoverTitle="NOTIFICATIONS"
         [autoClose]="'outside'"
         popoverClass="notifications-popover"
+        type="submit"
     >
-        <ng-content select="[notification-toggle]"></ng-content>
-    </div>
+        <span class="badge badge-light">4</span>
+        <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+    </button>
 </div>

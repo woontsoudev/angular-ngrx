@@ -7,6 +7,6 @@ export const getMockArray = (model, count) => {
       })
     );
   }
-  console.log("mocks::::", mocks);
+
   return mocks;
 };
