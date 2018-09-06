@@ -1,12 +1,12 @@
-<div class="notifications">
+<div class="notifications arrow">
     <ng-template #popContent>
-        <ul class="notifications__list">
+        <ul class="list">
             <li
                 *ngFor="let noti of notifications"
-                class="notifications__list__option d-flex align-items-center color-secondary"
+                class="option d-flex align-items-center color-secondary"
             >
                 <fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
-                <div class="notifications__list__option__caption">
+                <div class="caption">
                     <p>
                         <strong>{{noti.name}}</strong>
                         {{noti.desc}} - {{noti.unit}}
@@ -22,15 +22,18 @@
     </ng-template>
 
     <button
-        class="btn btn-flat-secondary"
+        #popover="ngbPopover"
+        class="btn btn-flat-secondary btn-toogle-pop"
         placement="bottom"
         [ngbPopover]="popContent"
         popoverTitle="NOTIFICATIONS"
         [autoClose]="'outside'"
         popoverClass="notifications-popover"
         type="submit"
+        [class.open]="popover.isOpen()"
     >
         <span class="badge badge-light">4</span>
         <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+        <div class="arrow"></div>
     </button>
 </div>

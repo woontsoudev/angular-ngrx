@@ -1,9 +1,9 @@
-@import '~src/styles/variables-core';
+@import "~src/styles/variables-core";
 
 nav {
   border-bottom: 1px solid $gray-500;
   background-color: $white;
-  min-height: $heading-bar-height;
+  height: $heading-bar-height;
 
   .nav-link {
     padding-bottom: 0;
