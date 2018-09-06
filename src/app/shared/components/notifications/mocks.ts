@@ -9,9 +9,9 @@ export interface Noti {
 
 export const NOTIFICATIONS: Noti = {
   id: 1,
-  name: "Policy Lapse",
-  desc: "Hillside Acres",
-  agent: "Lizette Arnolds",
-  unit: "Unit 240A",
-  date: "7/25/2018"
+  name: 'Policy Lapse',
+  desc: 'Hillside Acres',
+  agent: 'Lizette Arnolds',
+  unit: 'Unit 240A',
+  date: '7/25/2018'
 };

@@ -1,6 +1,6 @@
-import { NgModule } from "@angular/core";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faAngry,
@@ -14,7 +14,7 @@ import {
   faTrashAlt,
   faTimes,
   faExclamationCircle
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faAngry,
