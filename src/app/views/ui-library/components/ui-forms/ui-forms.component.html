@@ -5,9 +5,10 @@
             <article>
                 <h4>Auto complete multiple selection</h4>
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group-underlined col">
+                        <label for="autocomplete">Please select a country</label>
                         <p-autoComplete
-                            class="p-autoComplete"
+                            class="p-autoComplete form-control"
                             [(ngModel)]="countries"
                             [suggestions]="filteredCountriesMultiple"
                             (completeMethod)="filterCountryMultiple($event)"
@@ -23,9 +24,10 @@
             <article>
                 <h4>Dropdown</h4>
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group-underlined col">
+                        <label for="dropdown">Select a City</label>
                         <p-dropdown
-                            class="p-dropdown"
+                            class="p-dropdown form-control"
                             [options]="cities"
                             [(ngModel)]="selectedCity"
                             [autoWidth]="false"
@@ -41,8 +43,10 @@
             <article>
                 <h4>Calendar</h4>
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group-underlined col">
+                        <label for="calendar">Set a Date</label>
                         <p-calendar
+                            class="p-calendar form-control"
                             [(ngModel)]="date1"
                             showIcon="true"
                         ></p-calendar>
@@ -53,7 +57,7 @@
         <div class="col">
             <article>
                 <h4>FormControl</h4>
-                <div class="form-group">
+                <div class="form-group-underlined">
                     <label for="formControlNameInput">Name</label>
                     <input
                         type="text"
@@ -78,7 +82,7 @@
                     (ngSubmit)="onSubmitWithFb()"
                 >
                     <div class="form-row">
-                        <div class="form-group col">
+                        <div class="form-group-underlined col">
                             <label for="profileFormFirstNameInput">First Name</label>
                             <input
                                 type="text"
@@ -88,13 +92,13 @@
                             >
                             <div
                                 *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-                                class="alert alert-danger"
+                                class="invalid-feedback"
                             >
 
                                 <div *ngIf="firstName.errors.required">firstName is required.</div>
                             </div>
                         </div>
-                        <div class="form-group col">
+                        <div class="form-group-underlined col">
                             <label for="profileFormLastNameInput">Last Name</label>
                             <input
                                 type="text"
@@ -106,7 +110,7 @@
                     </div>
                     <div formGroupName="address">
                         <div class="form-row">
-                            <div class="form-group col">
+                            <div class="form-group-underlined col">
                                 <label for="profileFormStreetInput">Street</label>
                                 <input
                                     type="text"
@@ -117,7 +121,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col">
+                            <div class="form-group-underlined col">
                                 <label for="profileFormCityInput">City</label>
                                 <input
                                     type="text"
@@ -126,7 +130,7 @@
                                     id="profileFormCityInput"
                                 >
                             </div>
-                            <div class="form-group col">
+                            <div class="form-group-underlined col">
                                 <label for="profileFormCityInput">State</label>
                                 <input
                                     type="text"
@@ -137,7 +141,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-6">
+                            <div class="form-group-underlined col-6">
                                 <label for="profileFormZipcodeInput">Zip Code</label>
                                 <input
                                     type="text"
@@ -157,6 +161,7 @@
                     </button>
                 </form>
                 <p>Form Status: {{ profileForm.status }}</p>
+                <p>{{firstName}}</p>
             </article>
         </div>
     </div>

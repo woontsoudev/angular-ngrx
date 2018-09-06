@@ -1,0 +1,29 @@
+@import '~bootstrap/scss/forms';
+
+.form-group-underlined {
+  @extend .form-group;
+
+  > label {
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+    font-weight: bold;
+  }
+
+  .form-control {
+    border: none;
+    padding: 0;
+    height: calc(1.25rem + 2px);
+    font-size: $font-size-sm;
+
+    @include hover-focus-active {
+      box-shadow: none;
+      border-color: $theme-dark-gray;
+    }
+  }
+
+  input.form-control {
+    border-bottom: 2px solid $gray-500;
+    border-radius: 0;
+    padding: 0 $spacer / 4;
+  }
+}

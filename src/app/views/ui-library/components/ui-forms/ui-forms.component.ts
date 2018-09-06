@@ -84,6 +84,7 @@ export class UiFormsComponent implements OnInit {
   }
 
   get firstName(): any {
+    console.log(this.profileForm.get('firstName'));
     return this.profileForm.get('firstName');
   }
 }

@@ -1,6 +1,7 @@
 .p-dropdown {
   .ui-state-default {
     border: 0;
+    color: $gray-500;
   }
   .ui-dropdown {
     width: 100%;
@@ -13,6 +14,10 @@
     &:not(.ui-state-disabled).ui-state-focus {
       border-color: $theme-dark-gray;
       box-shadow: none;
+
+      .ui-dropdown-trigger {
+        color: $theme-dark-gray;
+      }
     }
 
     .ui-shadow {
@@ -31,6 +36,11 @@
 
     .ui-state-highlight {
       background-color: $theme-light-blue;
+    }
+
+    .ui-dropdown-label {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 

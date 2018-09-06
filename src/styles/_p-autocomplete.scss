@@ -58,4 +58,13 @@
   .ui-autocomplete-list-item {
     border-radius: 0;
   }
+
+  .ui-autocomplete-input-token {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.p-autoComplete.form-control {
+  height: auto;
 }

@@ -1,0 +1,43 @@
+.p-calendar {
+  .ui-calendar {
+    width: 100%;
+    border-bottom: 2px solid $gray-500;
+
+    @include hover-focus-active {
+      border-color: $theme-dark-gray;
+
+      .ui-calendar-button {
+        color: $theme-dark-gray;
+      }
+    }
+
+    .ui-state-default {
+      border-radius: 0;
+      border: 0;
+      width: 90%;
+    }
+
+    .ui-calendar-button {
+      border: 0;
+      background: none;
+      color: $gray-500;
+      width: 10%;
+
+      @include hover-focus-active {
+        border: 0;
+        background: none;
+        color: $gray-500;
+      }
+    }
+
+    .ui-inputtext {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .ui-inputtext:focus {
+      box-shadow: none;
+      border-color: $theme-dark-gray;
+    }
+  }
+}
