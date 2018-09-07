@@ -1,0 +1,130 @@
+@import "~src/styles/variables-core";
+@import "~bootstrap/scss/popover";
+
+.notifications {
+  position: static;
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow: auto;
+    cursor: default;
+  }
+
+  app-action-buttons {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .option {
+    padding: 5px 10px;
+    &:hover {
+      background-color: lighten($color: $theme-light-blue, $amount: 35);
+
+      app-action-buttons {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  .caption {
+    flex: 1;
+    padding-left: 10px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+
+    p {
+      margin: 0;
+    }
+
+    .smaller {
+      font-size: 0.66rem;
+    }
+  }
+
+  .btn-toogle-pop {
+    .arrow {
+      display: none;
+    }
+
+    &.open {
+      .arrow {
+        display: block;
+      }
+    }
+  }
+
+  // Custom arrow
+  .arrow {
+    position: absolute;
+    display: block;
+    width: 2rem;
+    height: 0.5rem;
+    margin: 0 0.3rem;
+    z-index: 9999;
+    bottom: -13px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0 0.9rem 0.5rem 0.9rem;
+    }
+
+    &::after {
+      top: 1px;
+      border-bottom-color: #fff;
+    }
+
+    &::before {
+      border-bottom-color: $theme-light-gray;
+    }
+  }
+}
+
+// Popover
+.notifications-popover {
+  width: 100%;
+  max-width: 100%;
+  top: 58px !important;
+  left: auto !important;
+  right: 0;
+  border: 1px solid $theme-light-gray;
+  box-shadow: $box-shadow-light;
+
+  .popover-body {
+    padding: 10px 0 0 0;
+  }
+
+  .popover-header {
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1.2px;
+    background-color: $white;
+    border-bottom: 1px solid $theme-light-gray;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .notifications {
+    position: relative;
+  }
+
+  .notifications-popover {
+    top: 44px !important;
+    width: 400px;
+    min-width: 330px;
+    left: auto !important;
+    right: -35px !important;
+  }
+}

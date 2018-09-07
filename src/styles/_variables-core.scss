@@ -1,11 +1,11 @@
 // Imports
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/mixins';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/utilities';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/utilities";
 
 // Font
-$font-family-base: 'Roboto';
+$font-family-base: "Roboto";
 $font-size-base: 1rem;
 
 $h1-font-size: $font-size-base * 2;
@@ -26,9 +26,11 @@ $theme-yellow: #ffb31f;
 $border-radius-xs: 0.1rem;
 
 // Heading
-$heading-bar-height: 60px;
+$heading-bar-height: 68px;
 $heading-bar-md-height: 46px;
 
 // UI components
 // // Data-table
 $datatable-checkbox-width: 2.5rem;
+
+$box-shadow-light: 0px 0px 4px rgba(0, 0, 0, 0.2);

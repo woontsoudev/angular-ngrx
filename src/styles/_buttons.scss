@@ -1,4 +1,4 @@
-@import 'node_modules/bootstrap/scss/buttons';
+@import "node_modules/bootstrap/scss/buttons";
 
 // .btn-theme-theme_color
 @each $color, $value in $theme-colors {
@@ -135,6 +135,50 @@
     }
     @include hover-focus-active {
       background-color: darken($value, 10%);
+    }
+  }
+
+  .btn-icon-round-#{$color} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    padding: 0px;
+    background-color: $value;
+    border-radius: 50%;
+    box-shadow: $box-shadow-sm;
+
+    @if $color == light {
+      color: $dark;
+    } @else {
+      color: $white;
+    }
+    @include hover-focus-active {
+      background-color: darken($value, 10%);
+    }
+
+    // Modifiers
+    &.sm {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      min-height: 26px;
+    }
+
+    &.xs {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      min-height: 22px;
+    }
+
+    &.light-gray {
+      color: darken($theme-light-gray, 20%);
+      background-color: $white;
+      @include hover-focus-active {
+        color: $white;
+        background-color: $value;
+      }
     }
   }
 }
