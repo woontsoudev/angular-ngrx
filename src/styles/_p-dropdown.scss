@@ -12,11 +12,11 @@
     &:not(.ui-state-disabled):hover,
     &:not(.ui-state-disabled):focus,
     &:not(.ui-state-disabled).ui-state-focus {
-      border-color: $theme-dark-gray;
+      border-color: $theme-light-blue;
       box-shadow: none;
 
       .ui-dropdown-trigger {
-        color: $theme-dark-gray;
+        color: $theme-light-blue;
       }
     }
 
@@ -44,8 +44,20 @@
     }
   }
 
+  .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight,
   .ui-dropdown-panel
-    .ui-dropdown-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+    .ui-dropdown-items
+    .ui-dropdown-item-group.ui-state-highlight {
+    background-color: $theme-light-blue;
+    color: $white;
+  }
+
+  .ui-dropdown-panel
+    .ui-dropdown-items
+    .ui-dropdown-item:not(.ui-state-highlight):not(.ui-state-disabled):hover,
+  .ui-dropdown-panel
+    .ui-dropdown-items
+    .ui-dropdown-item-group:not(.ui-state-highlight):not(.ui-state-disabled):hover {
     background-color: $theme-light-blue;
     color: $white;
   }

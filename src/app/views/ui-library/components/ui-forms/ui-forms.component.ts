@@ -14,24 +14,29 @@ import { COUNTRIES } from './COUNTRIES';
   styleUrls: ['../../ui-library.component.scss']
 })
 export class UiFormsComponent implements OnInit {
-  public name = new FormControl('');
+  public nameField = new FormControl('');
   public profileForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: [''],
+    name: ['', Validators.required],
+    username: [
+      '',
+      [Validators.required, Validators.minLength(4), Validators.maxLength(8)]
+    ],
     address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
+      country: ['', Validators.required],
       zip: ['']
     })
   });
   public filteredCountriesMultiple: any[];
   public countries: any[];
+  public countriesList: any[];
   public cities: any[];
   public selectedCity: any;
   public date1: Date;
 
   constructor(private fb: FormBuilder) {
+    this.countriesList = COUNTRIES;
     this.cities = [
       { name: 'New York', code: 'NY' },
       { name: 'Rome', code: 'RM' },
@@ -44,7 +49,7 @@ export class UiFormsComponent implements OnInit {
   ngOnInit() {}
 
   updateName() {
-    this.name.setValue('Billy');
+    this.nameField.setValue('Billy');
   }
 
   onSubmit() {
@@ -59,7 +64,7 @@ export class UiFormsComponent implements OnInit {
 
   updateProfile() {
     this.profileForm.patchValue({
-      firstName: 'Mandy',
+      name: 'Mandy',
       address: {
         street: '123 Drew Street'
       }
@@ -83,8 +88,23 @@ export class UiFormsComponent implements OnInit {
     return filtered;
   }
 
-  get firstName(): any {
-    console.log(this.profileForm.get('firstName'));
-    return this.profileForm.get('firstName');
+  get name(): any {
+    return this.profileForm.get('name');
+  }
+
+  get username(): any {
+    return this.profileForm.get('username');
+  }
+
+  get street(): any {
+    return this.profileForm.get('address').get('street');
+  }
+
+  get city(): any {
+    return this.profileForm.get('address').get('city');
+  }
+
+  get country(): any {
+    return this.profileForm.get('address').get('country');
   }
 }

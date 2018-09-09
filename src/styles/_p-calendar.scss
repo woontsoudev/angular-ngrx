@@ -4,10 +4,10 @@
     border-bottom: 2px solid $gray-500;
 
     @include hover-focus-active {
-      border-color: $theme-dark-gray;
+      border-color: $theme-light-blue;
 
       .ui-calendar-button {
-        color: $theme-dark-gray;
+        color: $theme-light-blue;
       }
     }
 
@@ -26,7 +26,7 @@
       @include hover-focus-active {
         border: 0;
         background: none;
-        color: $gray-500;
+        color: $theme-light-blue;
       }
     }
 
@@ -37,7 +37,34 @@
 
     .ui-inputtext:focus {
       box-shadow: none;
-      border-color: $theme-dark-gray;
+      border-color: $theme-light-blue;
     }
+  }
+
+  .ui-datepicker table td > a.ui-state-active {
+    background-color: $theme-light-blue;
+    color: $white;
+  }
+
+  .ui-datepicker table td.ui-datepicker-today a {
+    background-color: $theme-light-gray;
+    color: $white;
+  }
+
+  .ui-datepicker:not(.ui-state-disabled)
+    table
+    td
+    a:not(.ui-state-active):not(.ui-state-highlight):hover {
+    background-color: $theme-light-blue;
+    color: $white;
+  }
+
+  .ui-datepicker:not(.ui-state-disabled)
+    .ui-datepicker-header
+    .ui-datepicker-prev:hover,
+  .ui-datepicker:not(.ui-state-disabled)
+    .ui-datepicker-header
+    .ui-datepicker-next:hover {
+    color: $theme-light-blue;
   }
 }

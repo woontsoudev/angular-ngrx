@@ -1,11 +1,35 @@
 .p-autoComplete {
+  .ui-autocomplete-panel
+    .ui-autocomplete-items
+    .ui-autocomplete-list-item.ui-state-highlight {
+    background-color: $theme-light-blue;
+  }
+
   .ui-autocomplete {
     width: 100%;
 
-    .ui-autocomplete-multiple-container:not(.ui-state-disabled):hover,
-    .ui-autocomplete-multiple-container:not(.ui-state-disabled):focus,
-    .ui-autocomplete-multiple-container:not(.ui-state-disabled).ui-state-focus {
-      border-color: $theme-dark-gray;
+    &.ui-autocomplete-multiple .ui-autocomplete-multiple-container {
+      padding-bottom: 0;
+    }
+
+    &.ui-autocomplete-multiple
+      .ui-autocomplete-multiple-container:not(.ui-state-disabled).ui-state-focus {
+      border-color: $theme-light-blue;
+    }
+
+    &.ui-autocomplete-multiple
+      .ui-autocomplete-multiple-container:not(.ui-state-disabled) {
+      @include hover-focus-active {
+        border-color: $theme-light-blue;
+      }
+    }
+
+    &.ui-autocomplete-multiple
+      .ui-autocomplete-multiple-container
+      .ui-autocomplete-token {
+      background-color: transparent;
+      color: $theme-light-blue;
+      margin-bottom: 3px;
     }
   }
 
@@ -25,7 +49,7 @@
     border-color: $gray-500;
 
     @include hover-focus-active {
-      border-color: $theme-dark-gray;
+      border-color: $theme-light-blue;
     }
   }
 
@@ -34,12 +58,9 @@
   }
 
   .ui-autocomplete-token.ui-state-highlight {
-    background-color: transparent;
     border: 1px solid $theme-light-blue;
-    color: $theme-light-blue;
     padding: ($spacer / 3) ($spacer / 2);
     border-radius: $spacer;
-    margin-bottom: $spacer / 2;
   }
 
   .ui-shadow {
