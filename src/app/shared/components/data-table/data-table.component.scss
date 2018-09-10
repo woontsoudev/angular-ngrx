@@ -13,7 +13,9 @@
     .ui-table-caption {
       border-right: 0;
       border-left: 0;
+      border-bottom: 1px solid;
       border-color: $theme-light-gray;
+      background-color: $white;
       padding-top: 0;
       padding-bottom: 0;
       height: $heading-bar-md-height;
@@ -38,11 +40,47 @@
       border: 0;
       margin-bottom: $spacer;
     }
-  }
 
-  .ui-state-highlight {
-    background-color: lighten($color: $theme-light-blue, $amount: 35);
-    color: $theme-dark-gray;
+    .ui-table-tbody > tr {
+      background-color: $white;
+    }
+
+    .ui-table-thead > tr > th {
+      background-color: $white;
+    }
+
+    .ui-table-tbody > tr > td,
+    .ui-table-thead > tr > th {
+      border: none;
+    }
+
+    .ui-table-tbody > tr:nth-child(even) {
+      background-color: $white;
+    }
+
+    .ui-table-tbody > tr:hover {
+      background-color: lighten($color: $theme-light-blue, $amount: 30);
+    }
+
+    .ui-table-tbody > tr.ui-state-highlight {
+      background-color: lighten($color: $theme-light-blue, $amount: 30);
+      color: $theme-dark-gray;
+    }
+
+    .ui-table-tbody > tr:nth-child(even).ui-state-highlight {
+      background-color: lighten($color: $theme-light-blue, $amount: 30);
+      color: $theme-dark-gray;
+    }
+
+    .ui-sortable-column:not(.ui-state-highlight):hover,
+    .ui-sortable-column.ui-state-highlight {
+      background-color: $theme-light-blue;
+      color: $white;
+
+      .ui-table-sort-icon {
+        color: $white;
+      }
+    }
   }
 
   .datatable-row {
@@ -57,7 +95,7 @@
     }
 
     &:hover {
-      background-color: lighten($color: $theme-light-blue, $amount: 35);
+      background-color: lighten($color: $theme-light-blue, $amount: 30);
 
       .datatable-row-actions {
         .datatable-row-actions-btn-group {
