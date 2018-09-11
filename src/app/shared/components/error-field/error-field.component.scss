@@ -1,0 +1,12 @@
+@import '~src/styles/variables-core';
+
+.error {
+  padding-top: 2px;
+  height: ($font-size-xs * 2);
+}
+
+span {
+  font-size: $font-size-xs;
+  line-height: 12px;
+  color: $theme-red;
+}

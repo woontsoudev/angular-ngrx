@@ -1,0 +1,12 @@
+<div class="error">
+    <div *ngIf="field.invalid && (field.dirty || field.touched)">
+        <span *ngIf="field.hasError('required')">{{name}} is required</span>
+        <span *ngIf="field.hasError('minlength')">
+            {{name}} must be at least {{min}} characters long.
+        </span>
+        <span *ngIf="field.hasError('maxlength')">
+            {{name}} must be maximun {{max}} characters long.
+        </span>
+        <span *ngIf="field.hasError('email')">Please enter a valid email.</span>
+    </div>
+</div>

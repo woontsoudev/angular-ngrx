@@ -1,0 +1,70 @@
+.p-calendar {
+  .ui-calendar {
+    width: 100%;
+    border-bottom: 2px solid $gray-500;
+
+    @include hover-focus-active {
+      border-color: $theme-light-blue;
+
+      .ui-calendar-button {
+        color: $theme-light-blue;
+      }
+    }
+
+    .ui-state-default {
+      border-radius: 0;
+      border: 0;
+      width: 90%;
+    }
+
+    .ui-calendar-button {
+      border: 0;
+      background: none;
+      color: $gray-500;
+      width: 10%;
+
+      @include hover-focus-active {
+        border: 0;
+        background: none;
+        color: $theme-light-blue;
+      }
+    }
+
+    .ui-inputtext {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .ui-inputtext:focus {
+      box-shadow: none;
+      border-color: $theme-light-blue;
+    }
+  }
+
+  .ui-datepicker table td > a.ui-state-active {
+    background-color: $theme-light-blue;
+    color: $white;
+  }
+
+  .ui-datepicker table td.ui-datepicker-today a {
+    background-color: $theme-light-gray;
+    color: $white;
+  }
+
+  .ui-datepicker:not(.ui-state-disabled)
+    table
+    td
+    a:not(.ui-state-active):not(.ui-state-highlight):hover {
+    background-color: $theme-light-blue;
+    color: $white;
+  }
+
+  .ui-datepicker:not(.ui-state-disabled)
+    .ui-datepicker-header
+    .ui-datepicker-prev:hover,
+  .ui-datepicker:not(.ui-state-disabled)
+    .ui-datepicker-header
+    .ui-datepicker-next:hover {
+    color: $theme-light-blue;
+  }
+}

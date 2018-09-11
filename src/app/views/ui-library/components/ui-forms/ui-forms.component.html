@@ -1,0 +1,184 @@
+<app-title-bar title="Forms"></app-title-bar>
+<div class="container-fluid pt-3">
+    <div class="row">
+        <div class="col">
+            <article>
+                <h4>Auto complete multiple selection</h4>
+                <div class="form-row">
+                    <div class="form-group-underlined col">
+                        <label for="autocomplete">Please select a country</label>
+                        <p-autoComplete
+                            class="p-autoComplete form-control"
+                            [(ngModel)]="countries"
+                            [suggestions]="filteredCountriesMultiple"
+                            (completeMethod)="filterCountryMultiple($event)"
+                            [minLength]="1"
+                            placeholder="Countries"
+                            field="name"
+                            [multiple]="true"
+                        >
+                        </p-autoComplete>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h4>Dropdown</h4>
+                <div class="form-row">
+                    <div class="form-group-underlined col">
+                        <label for="dropdown">Select a City</label>
+                        <p-dropdown
+                            class="p-dropdown form-control"
+                            [options]="cities"
+                            [(ngModel)]="selectedCity"
+                            [autoWidth]="false"
+                            placeholder="Select a City"
+                            optionLabel="name"
+                        ></p-dropdown>
+                    </div>
+                </div>
+                <p>
+                    Selected City: {{selectedCity ? selectedCity.name : 'none'}}
+                </p>
+            </article>
+            <article>
+                <h4>Calendar</h4>
+                <div class="form-row">
+                    <div class="form-group-underlined col">
+                        <label for="calendar">Set a Date</label>
+                        <p-calendar
+                            class="p-calendar form-control"
+                            [(ngModel)]="date1"
+                            showIcon="true"
+                        ></p-calendar>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="col">
+            <article>
+                <h4>FormControl</h4>
+                <div class="form-group-underlined">
+                    <label for="formControlNameInput">Name</label>
+                    <input
+                        type="text"
+                        [formControl]="nameField"
+                        type="text"
+                        class="form-control"
+                        id="formControlNameInput"
+                    >
+                </div>
+                <p>Value: {{ nameField.value }}</p>
+                <button
+                    class="btn btn-theme-primary"
+                    (click)="updateName()"
+                >
+                    update
+                </button>
+            </article>
+            <article>
+                <h4>FormBuilder</h4>
+                <form
+                    [formGroup]="profileForm"
+                    (ngSubmit)="onSubmitWithFb()"
+                >
+                    <div class="form-row">
+                        <div class="form-group-underlined col">
+                            <label for="profileFormNameInput">First Name</label>
+                            <input
+                                type="text"
+                                formControlName="name"
+                                class="form-control"
+                                id="profileFormNameInput"
+                            >
+                            <app-error-field
+                                [field]="name"
+                                name="Name"
+                            ></app-error-field>
+                        </div>
+                        <div class="form-group-underlined col">
+                            <label for="profileFormUsernameInput">Username</label>
+                            <input
+                                type="text"
+                                formControlName="username"
+                                class="form-control"
+                                id="profileFormUsernameInput"
+                            >
+                            <app-error-field
+                                [field]="username"
+                                name="Username"
+                                min="4"
+                                max="8"
+                            ></app-error-field>
+                        </div>
+                    </div>
+                    <div formGroupName="address">
+                        <div class="form-row">
+                            <div class="form-group-underlined col">
+                                <label for="profileFormStreetInput">Street</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    formControlName="street"
+                                    id="profileFormStreetInput"
+                                >
+                                <app-error-field
+                                    [field]="street"
+                                    name="Street"
+                                ></app-error-field>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-underlined col">
+                                <label for="profileFormCityInput">Country</label>
+                                <p-dropdown
+                                    class="p-dropdown form-control"
+                                    formControlName="country"
+                                    [options]="countriesList"
+                                    [autoWidth]="false"
+                                    placeholder="Select a Country"
+                                    optionLabel="name"
+                                ></p-dropdown>
+                                <app-error-field
+                                    [field]="country"
+                                    name="Country"
+                                ></app-error-field>
+                            </div>
+                            <div class="form-group-underlined col">
+                                <label for="profileFormCityInput">City</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    formControlName="city"
+                                    id="profileFormCityInput"
+                                >
+                                <app-error-field
+                                    [field]="city"
+                                    name="City"
+                                ></app-error-field>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-underlined col-6">
+                                <label for="profileFormZipcodeInput">Zip Code</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    formControlName="zip"
+                                    id="profileFormZipcodeInput"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="btn btn-theme-primary mr-1"
+                        type="submit"
+                        [disabled]="!profileForm.valid"
+                    >
+                        Submit
+                    </button>
+                </form>
+                <p>Form Status: {{ profileForm.status }}</p>
+            </article>
+        </div>
+    </div>
+</div>

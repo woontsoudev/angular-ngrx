@@ -1,6 +1,6 @@
 // .color-theme-color
 @each $color, $value in $theme-colors {
-  @include text-emphasis-variant(".color-#{$color}", $value);
+  @include text-emphasis-variant('.color-#{$color}', $value);
 }
 
 // Includes:

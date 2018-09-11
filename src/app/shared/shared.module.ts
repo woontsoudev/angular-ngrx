@@ -20,6 +20,7 @@ import { ActionBarComponent } from './components/action-bar/action-bar.component
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
+import { ErrorFieldComponent } from './components/error-field/error-field.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,10 @@ import { ActionButtonsComponent } from './components/action-buttons/action-butto
     SubnavComponent,
     DataTableComponent,
     ActionBarComponent,
-    TitleBarComponent
+    TitleBarComponent,
+    ErrorFieldComponent,
+    NotificationsComponent,
+    ActionButtonsComponent
   ],
   declarations: [
     LayoutComponent,
@@ -54,6 +58,7 @@ import { ActionButtonsComponent } from './components/action-buttons/action-butto
     DataTableComponent,
     ActionBarComponent,
     TitleBarComponent,
+    ErrorFieldComponent,
     NotificationsComponent,
     ActionButtonsComponent
   ],

@@ -1,0 +1,91 @@
+.p-autoComplete {
+  .ui-autocomplete-panel
+    .ui-autocomplete-items
+    .ui-autocomplete-list-item.ui-state-highlight {
+    background-color: $theme-light-blue;
+  }
+
+  .ui-autocomplete {
+    width: 100%;
+
+    &.ui-autocomplete-multiple .ui-autocomplete-multiple-container {
+      padding-bottom: 0;
+    }
+
+    &.ui-autocomplete-multiple
+      .ui-autocomplete-multiple-container:not(.ui-state-disabled).ui-state-focus {
+      border-color: $theme-light-blue;
+    }
+
+    &.ui-autocomplete-multiple
+      .ui-autocomplete-multiple-container:not(.ui-state-disabled) {
+      @include hover-focus-active {
+        border-color: $theme-light-blue;
+      }
+    }
+
+    &.ui-autocomplete-multiple
+      .ui-autocomplete-multiple-container
+      .ui-autocomplete-token {
+      background-color: transparent;
+      color: $theme-light-blue;
+      margin-bottom: 3px;
+    }
+  }
+
+  .ui-state-default {
+    border: 0;
+  }
+
+  .ui-inputtext.ui-state-focus,
+  .ui-inputtext:focus {
+    box-shadow: none;
+  }
+
+  .ui-inputtext {
+    width: 100%;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    border-color: $gray-500;
+
+    @include hover-focus-active {
+      border-color: $theme-light-blue;
+    }
+  }
+
+  .ui-autocomplete-panel {
+    border-radius: 0;
+  }
+
+  .ui-autocomplete-token.ui-state-highlight {
+    border: 1px solid $theme-light-blue;
+    padding: ($spacer / 3) ($spacer / 2);
+    border-radius: $spacer;
+  }
+
+  .ui-shadow {
+    box-shadow: 1px 1px 3px 1px #bdbdbd;
+  }
+
+  .ui-state-highlight {
+    background-color: $theme-light-blue;
+  }
+
+  .ui-autocomplete-items {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .ui-autocomplete-list-item {
+    border-radius: 0;
+  }
+
+  .ui-autocomplete-input-token {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.p-autoComplete.form-control {
+  height: auto;
+}
