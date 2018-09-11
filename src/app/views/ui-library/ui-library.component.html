@@ -91,5 +91,38 @@
                 </button>
             </p-footer>
         </p-dialog>
+        <p-dialog
+            (visibleChange)="onToggleCarsDemoModal()"
+            [visible]="carsDemoModal$ | async"
+            [modal]="true"
+            [responsive]="true"
+            [width]="450"
+            [minWidth]="200"
+            [minY]="70"
+            [maximizable]="false"
+            [closable]="false"
+            [baseZIndex]="10000"
+            class="modal"
+        >
+            <p-header>
+                Edit
+                <fa-icon
+                    (click)="onToggleCarsDemoModal()"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </p-header>
+            <span>Edit something</span>
+            <p-footer>
+                <button
+                    (click)="onToggleCarsDemoModal()"
+                    type="button"
+                    class="btn btn-theme-primary"
+                >
+                    Close
+                </button>
+            </p-footer>
+        </p-dialog>
     </div>
 </app-page>

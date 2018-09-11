@@ -2,10 +2,12 @@ import * as LayoutActions from '../actions/layout.actions';
 
 export interface State {
   modalExample: boolean;
+  carsDemoModal: boolean;
 }
 
 const initialState: State = {
-  modalExample: false
+  modalExample: false,
+  carsDemoModal: false
 };
 
 export function reducer(
@@ -17,6 +19,13 @@ export function reducer(
       return {
         ...state,
         modalExample: !state.modalExample
+      };
+    }
+
+    case LayoutActions.TOGGLE_CARSDEMO_MODAL: {
+      return {
+        ...state,
+        carsDemoModal: !state.carsDemoModal
       };
     }
 

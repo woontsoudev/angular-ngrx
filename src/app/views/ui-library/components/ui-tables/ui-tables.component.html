@@ -1,7 +1,8 @@
 <app-title-bar title="Data Table"></app-title-bar>
 <app-data-table
-    [data]="cars"
+    [data]="$cars | async"
     [cols]="cols"
     [rows]="10"
     dataKey="vin"
+    (rowSelect)="onRowSelect($event)"
 ></app-data-table>
