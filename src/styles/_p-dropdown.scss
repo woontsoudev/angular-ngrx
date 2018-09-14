@@ -77,9 +77,21 @@ $p-dropdown-square-width: 360px;
     align-self: stretch;
     width: 100% !important;
     border: 1px solid $theme-light-gray;
+    padding: 0 15px;
 
     label {
       padding-left: 0;
+    }
+
+    &:not(.ui-state-disabled):hover,
+    &:not(.ui-state-disabled):focus,
+    &:not(.ui-state-disabled).ui-state-focus {
+      border-color: $theme-light-gray;
+      box-shadow: none;
+
+      .ui-dropdown-trigger {
+        color: $theme-light-blue;
+      }
     }
   }
 
@@ -90,7 +102,6 @@ $p-dropdown-square-width: 360px;
       align-items: center;
       border: none;
       border-radius: 0;
-      padding: 0 15px;
 
       &:not(.ui-state-disabled):hover,
       &:not(.ui-state-disabled):focus,

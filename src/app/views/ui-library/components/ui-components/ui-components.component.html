@@ -1,18 +1,87 @@
-<app-title-bar title="dropdown bar"></app-title-bar>
-
-<!-- <app-dropdown></app-dropdown> -->
-
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">
-            With supporting text below as a natural lead-in to additional content.
-        </p>
-        <a
-            href="#"
-            class="btn btn-primary"
+<!-- Dropdown -->
+<app-title-bar title="dropdown"></app-title-bar>
+<div class="container-fluid pb-3">
+    <div class="row">
+        <p-dropdown
+            class="p-dropdown-square d-flex align-items-stretch align-self-stretch col-md-auto col-sm-12"
+            [options]="options"
+            [(ngModel)]="selectedOption"
+            [filter]="true"
+            filterBy="label,value.name"
+            filterPlaceholder="Search Properties"
+            autofocus="true"
         >
-            Go somewhere
-        </a>
+            <ng-template
+                let-option
+                pTemplate="item"
+            >
+                <div class="option d-flex align-items-start justify-content-center flex-column">
+                    <div class="option-title">{{option.label}}</div>
+                    <div class="option-subtitle">
+                        {{option.value && option.value.location}}
+                    </div>
+                </div>
+            </ng-template>
+        </p-dropdown>
+
+        <div class="d-flex align-items-start justify-content-center flex-column col pt-2">
+            <div>Selected:</div>
+            <label class="text-secondary small">{{selectedOption | json}}</label>
+        </div>
     </div>
 </div>
+
+<!-- Toolbar -->
+<app-title-bar title="toolbar"></app-title-bar>
+<app-toolbar>
+    <p-dropdown
+        class="p-dropdown-square flat d-flex align-items-stretch separator align-self-stretch col-md-auto col-sm-12 no-padding"
+        [options]="options"
+        [filter]="true"
+        filterBy="label,value.name"
+        filterPlaceholder="Search Properties"
+        autofocus="true"
+    >
+        <ng-template
+            let-option
+            pTemplate="item"
+        >
+            <div class="option d-flex align-items-start justify-content-center flex-column">
+                <div class="option-title">{{option.label}}</div>
+                <div class="option-subtitle">
+                    {{option.value && option.value.location}}
+                </div>
+            </div>
+        </ng-template>
+    </p-dropdown>
+
+    <label class="align-items-center col py-2">100 Causeway Street Boston, MA 02111</label>
+
+    <div class="d-flex col-md-auto col-sm-12 py-2 flex-wrap">
+        <div class="p-1 col no-padding">
+            <button
+                type="button"
+                class="btn btn-theme-primary w-100"
+            >
+                <fa-icon
+                    [icon]="['fas', 'plus']"
+                    size="sm"
+                ></fa-icon>
+                Edit Property
+            </button>
+        </div>
+
+        <div class="p-1 col no-padding">
+            <button
+                type="button"
+                class="btn btn-theme-primary filled w-100"
+            >
+                <fa-icon
+                    [icon]="['fas', 'sync-alt']"
+                    size="sm"
+                ></fa-icon>
+                Sync Property
+            </button>
+        </div>
+    </div>
+</app-toolbar>

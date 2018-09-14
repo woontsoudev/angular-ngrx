@@ -14,15 +14,17 @@ $toolbar-height: 66px;
 }
 
 ::ng-deep {
-  label {
-    margin: 0;
-    font-weight: 100;
-    font-size: 0.9rem;
-  }
+  .toolbar {
+    label {
+      margin: 0;
+      font-weight: 100;
+      font-size: 0.9rem;
+    }
 
-  .p-dropdown-square {
-    min-height: $toolbar-height;
-    border-bottom: 1px solid $theme-light-gray;
+    .p-dropdown-square {
+      min-height: $toolbar-height;
+      border-bottom: 1px solid $theme-light-gray;
+    }
   }
 }
 
@@ -39,9 +41,11 @@ $toolbar-height: 66px;
   }
 
   ::ng-deep {
-    .p-dropdown-square {
-      min-height: auto;
-      border-bottom: none;
+    .toolbar {
+      .p-dropdown-square {
+        min-height: auto;
+        border-bottom: none;
+      }
     }
   }
 }

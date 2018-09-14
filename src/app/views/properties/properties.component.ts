@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SelectItem } from 'primeng/api';
-
-interface Option {
-  name: string;
-  code: string;
-}
+import { Option } from './interfaces';
 
 @Component({
   selector: 'app-properties',
@@ -13,7 +9,6 @@ interface Option {
 })
 export class PropertiesComponent implements OnInit {
   options: SelectItem[];
-
   selectedOption: Option;
 
   constructor() {
