@@ -25,6 +25,11 @@
         background-color: darken($value, 2%);
       }
     }
+
+    &.filled {
+      background-color: $value;
+      color: $white;
+    }
   }
 
   .btn-sm-theme-#{$color} {
@@ -50,6 +55,11 @@
         background-color: darken($value, 2%);
       }
     }
+
+    &.filled {
+      background-color: $value;
+      color: $color;
+    }
   }
 
   .btn-theme-icon-#{$color} {
@@ -74,6 +84,11 @@
         color: $white;
         background-color: darken($value, 2%);
       }
+    }
+
+    &.filled {
+      background-color: $value;
+      color: $white;
     }
   }
 

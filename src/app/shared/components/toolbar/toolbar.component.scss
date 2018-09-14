@@ -1,0 +1,47 @@
+@import '~src/styles/variables-core';
+
+$toolbar-height: 66px;
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  min-height: $toolbar-height;
+  background-color: $white;
+  border: 1px solid $theme-light-gray;
+  padding-bottom: 5px;
+}
+
+::ng-deep {
+  label {
+    margin: 0;
+    font-weight: 100;
+    font-size: 0.9rem;
+  }
+
+  .p-dropdown-square {
+    min-height: $toolbar-height;
+    border-bottom: 1px solid $theme-light-gray;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .toolbar {
+    flex-wrap: initial;
+    height: $toolbar-height;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .toolbar {
+    padding-bottom: 0;
+  }
+
+  ::ng-deep {
+    .p-dropdown-square {
+      min-height: auto;
+      border-bottom: none;
+    }
+  }
+}
