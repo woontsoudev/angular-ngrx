@@ -1,4 +1,5 @@
-export interface Option {
-  name: string;
-  code: string;
+export interface Property {
+  id: string;
+  label: string;
+  value: object;
 }

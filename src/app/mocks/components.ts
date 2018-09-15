@@ -1,6 +1,5 @@
 // Properties dropdown
 export const dropDownOptions = [
-  { label: 'Select a Property', value: null },
   {
     label: 'Hillside Acres Community',
     value: {

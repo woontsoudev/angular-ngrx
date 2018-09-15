@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectItem } from 'primeng/api';
+import { Observable } from 'rxjs/internal/Observable';
+import { Store } from '@ngrx/store';
 
-// Dropdown
-import { dropDownOptions } from '../../../../mocks/components';
-import { Option } from '../../../properties/interfaces';
+import { Property } from '../../../properties/interfaces';
+
+import * as PropertiesActions from '../../../../actions/properties.actions';
+import * as PropertiesReducer from '../../../../reducers/properties.reducer';
 
 @Component({
   selector: 'app-ui-components',
@@ -11,12 +13,28 @@ import { Option } from '../../../properties/interfaces';
   styleUrls: ['../../ui-library.component.scss']
 })
 export class UiComponentsComponent implements OnInit {
-  options: SelectItem[];
-  selectedOption: Option;
+  selectedOption: Property;
 
-  constructor() {
-    this.options = dropDownOptions;
+  public properties$: Observable<Property[]>;
+  public selectedProperty$: Observable<Property>;
+
+  constructor(private propertiesStore: Store<PropertiesReducer.State>) {
+    this.properties$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.properties
+    );
+
+    this.selectedProperty$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedProperty
+    );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.propertiesStore.dispatch(new PropertiesActions.AddProperties());
+  }
+
+  setProperty() {
+    this.propertiesStore.dispatch(
+      new PropertiesActions.SelectProperty(this.selectedOption)
+    );
+  }
 }

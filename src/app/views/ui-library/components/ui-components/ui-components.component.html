@@ -4,10 +4,11 @@
     <div class="row">
         <p-dropdown
             class="p-dropdown-square d-flex align-items-stretch align-self-stretch col-md-auto col-sm-12"
-            [options]="options"
+            [options]="properties$ | async"
             [(ngModel)]="selectedOption"
             [filter]="true"
-            filterBy="label,value.name"
+            (onChange)="setProperty()"
+            filterBy="label,value.location"
             filterPlaceholder="Search Properties"
             autofocus="true"
         >
@@ -23,9 +24,8 @@
                 </div>
             </ng-template>
         </p-dropdown>
-
         <div class="d-flex align-items-start justify-content-center flex-column col pt-2">
-            <div>Selected:</div>
+            <div>Selected (Save in redux store):</div>
             <label class="text-secondary small">{{selectedOption | json}}</label>
         </div>
     </div>
@@ -36,9 +36,9 @@
 <app-toolbar>
     <p-dropdown
         class="p-dropdown-square flat d-flex align-items-stretch separator align-self-stretch col-md-auto col-sm-12 no-padding"
-        [options]="options"
+        [options]="properties$ | async"
         [filter]="true"
-        filterBy="label,value.name"
+        filterBy="label,value.location"
         filterPlaceholder="Search Properties"
         autofocus="true"
     >
