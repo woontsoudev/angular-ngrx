@@ -8,6 +8,7 @@ import { UiInteractionComponent } from './components/ui-interaction/ui-interacti
 import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 import { UiFormsComponent } from './components/ui-forms/ui-forms.component';
 import { UiComponentsComponent } from './components/ui-components/ui-components.component';
+import { EditCarFormComponent } from './components/edit-car/edit-car-form.component';
 
 @NgModule({
   imports: [UiLibraryRoutingModule, SharedModule],
@@ -18,7 +19,8 @@ import { UiComponentsComponent } from './components/ui-components/ui-components.
     UiInteractionComponent,
     UiTablesComponent,
     UiFormsComponent,
-    UiComponentsComponent
+    UiComponentsComponent,
+    EditCarFormComponent
   ],
   providers: []
 })

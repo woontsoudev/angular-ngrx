@@ -12,10 +12,14 @@ import * as LayoutReducer from '../../reducers/layout.reducer';
 })
 export class UiLibraryComponent implements OnInit {
   public modalExample$: Observable<boolean>;
+  public carsDemoModal$: Observable<boolean>;
 
   constructor(private layoutStore: Store<LayoutReducer.State>) {
     this.modalExample$ = layoutStore.select(
       (state: any) => state.layoutStore.modalExample
+    );
+    this.carsDemoModal$ = layoutStore.select(
+      (state: any) => state.layoutStore.carsDemoModal
     );
   }
 
@@ -23,5 +27,9 @@ export class UiLibraryComponent implements OnInit {
 
   onToggleExampleModal() {
     this.layoutStore.dispatch(new LayoutActions.ToggleModalExample());
+  }
+
+  onToggleCarsDemoModal() {
+    this.layoutStore.dispatch(new LayoutActions.ToggleCarsDemoModal());
   }
 }

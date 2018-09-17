@@ -48,7 +48,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     ErrorFieldComponent,
     NotificationsComponent,
     ActionButtonsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    RouterModule
   ],
   declarations: [
     LayoutComponent,

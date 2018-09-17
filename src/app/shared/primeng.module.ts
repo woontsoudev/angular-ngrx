@@ -9,6 +9,7 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { InputTextModule } from 'primeng/inputtext';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   exports: [
@@ -21,7 +22,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     KeyFilterModule,
     InputTextModule,
     AutoCompleteModule,
-    InputSwitchModule
+    InputSwitchModule,
+    ConfirmDialogModule
   ]
 })
 export class PrimeNgModule {}
