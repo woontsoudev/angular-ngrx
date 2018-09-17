@@ -1,0 +1,68 @@
+<form
+    [formGroup]="editCarForm"
+    (ngSubmit)="onSubmitWithFb()"
+>
+    <div class="form-row">
+        <div class="form-group-underlined col">
+            <label for="editCarFormBrandInput">Brand</label>
+            <input
+                type="text"
+                formControlName="brand"
+                class="form-control"
+                id="editCarFormBrandInput"
+            >
+            <app-error-field
+                [field]="brand"
+                name="Brand"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="editCarFormVinInput">Vin</label>
+            <input
+                type="text"
+                formControlName="vin"
+                class="form-control"
+                id="editCarFormVinInput"
+            >
+            <app-error-field
+                [field]="vin"
+                name="Vin"
+            ></app-error-field>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group-underlined col">
+            <label for="editCarFormColorInput">Color</label>
+            <input
+                type="text"
+                formControlName="color"
+                class="form-control"
+                id="editCarFormColorInput"
+            >
+            <app-error-field
+                [field]="color"
+                name="Color"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="editCarFormYearInput">Year</label>
+            <input
+                type="text"
+                formControlName="year"
+                class="form-control"
+                id="editCarFormYearInput"
+            >
+            <app-error-field
+                [field]="year"
+                name="Year"
+            ></app-error-field>
+        </div>
+    </div>
+    <button
+        class="btn btn-theme-primary mr-1"
+        type="submit"
+        [disabled]="!editCarForm.valid"
+    >
+        Submit
+    </button>
+</form>

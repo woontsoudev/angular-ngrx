@@ -1,7 +1,17 @@
-<app-title-bar title="Data Table"></app-title-bar>
+<app-title-bar title="Data Table">
+    <button
+        actions
+        class="btn btn-theme-primary"
+        (click)="onAddCar()"
+    >
+        Add Car
+    </button>
+</app-title-bar>
 <app-data-table
-    [data]="cars"
+    [data]="$cars | async"
     [cols]="cols"
     [rows]="10"
     dataKey="vin"
+    (rowSelect)="onRowSelect($event)"
+    (rowDelete)="onRowDelete($event)"
 ></app-data-table>

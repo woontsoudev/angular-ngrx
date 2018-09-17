@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewEncapsulation,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-data-table',
@@ -8,7 +16,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 })
 export class DataTableComponent implements OnInit {
   @Input()
-  data: any[];
+  data: Observable<any[]>;
   @Input()
   cols: any[];
   @Input()
@@ -21,6 +29,10 @@ export class DataTableComponent implements OnInit {
   filterDisabled: string;
   @Input()
   filterByNumber: number;
+  @Output()
+  rowSelect = new EventEmitter<any>();
+  @Output()
+  rowDelete = new EventEmitter<any>();
 
   public filterBySelectedNumber: number;
 
@@ -30,5 +42,13 @@ export class DataTableComponent implements OnInit {
 
   onFilterByNumber(event) {
     console.log(event);
+  }
+
+  onRowSelect(item) {
+    this.rowSelect.emit(item);
+  }
+
+  onRowDelete(item) {
+    this.rowDelete.emit(item);
   }
 }

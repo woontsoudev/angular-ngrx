@@ -46,7 +46,8 @@ import { ErrorFieldComponent } from './components/error-field/error-field.compon
     TitleBarComponent,
     ErrorFieldComponent,
     NotificationsComponent,
-    ActionButtonsComponent
+    ActionButtonsComponent,
+    RouterModule
   ],
   declarations: [
     LayoutComponent,
