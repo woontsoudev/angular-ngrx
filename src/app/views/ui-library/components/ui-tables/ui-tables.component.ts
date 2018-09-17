@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import * as CarsDemoActions from '../../../../actions/cars-demo.actions';
 import * as CarsDemoReducer from '../../../../reducers/cars-demo.reducer';
 import * as LayoutReducer from '../../../../reducers/layout.reducer';
-import * as LayoutActions from '../../../../actions/layout.actions';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-ui-tables',
@@ -23,7 +23,8 @@ export class UiTablesComponent implements OnInit {
 
   constructor(
     private carsDemoStore: Store<CarsDemoReducer.State>,
-    private layoutStore: Store<LayoutReducer.State>
+    private layoutStore: Store<LayoutReducer.State>,
+    private confirmationService: ConfirmationService
   ) {
     this.$cars = carsDemoStore.select((state: any) => state.carsDemoStore.cars);
   }
@@ -38,5 +39,14 @@ export class UiTablesComponent implements OnInit {
 
   onAddCar() {
     this.carsDemoStore.dispatch(new CarsDemoActions.CreateCar());
+  }
+
+  onRowDelete(car) {
+    this.confirmationService.confirm({
+      message: `Do you want to delete ${car.brand}?`,
+      accept: () => {
+        this.carsDemoStore.dispatch(new CarsDemoActions.DeleteCar(car));
+      }
+    });
   }
 }

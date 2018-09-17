@@ -31,6 +31,8 @@ export class DataTableComponent implements OnInit {
   filterByNumber: number;
   @Output()
   rowSelect = new EventEmitter<any>();
+  @Output()
+  rowDelete = new EventEmitter<any>();
 
   public filterBySelectedNumber: number;
 
@@ -44,5 +46,9 @@ export class DataTableComponent implements OnInit {
 
   onRowSelect(item) {
     this.rowSelect.emit(item);
+  }
+
+  onRowDelete(item) {
+    this.rowDelete.emit(item);
   }
 }

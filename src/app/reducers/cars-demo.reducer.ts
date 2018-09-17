@@ -36,9 +36,7 @@ export function reducer(
     case CarsDemoActions.SAVE_CAR: {
       const car = action.payload;
       let cars;
-      console.log(action.payload);
       if (state.cars.find(item => item.id === car.id)) {
-        console.log('finded');
         cars = state.cars.map(item => (item.id === car.id ? car : item));
         state.cars = cars;
       } else {
@@ -46,6 +44,16 @@ export function reducer(
       }
       return {
         ...state
+      };
+    }
+
+    case CarsDemoActions.REMOVE_CAR: {
+      const carId = action.payload;
+      const cars = state.cars.filter(car => car.id !== carId);
+
+      return {
+        ...state,
+        cars
       };
     }
 

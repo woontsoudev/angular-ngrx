@@ -3,6 +3,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
+import { MessageService } from 'primeng/api';
 
 import { CarsDemoService } from '../services/cars-demo.service';
 import * as CarsDemoActions from '../actions/cars-demo.actions';
@@ -15,11 +16,13 @@ export class CarsDemoEffects {
   getCars$: Observable<Action> = this.action$.pipe(
     ofType(CarsDemoActions.GET_CARS),
     switchMap(
-      (): Observable<any> => {
+      (): Observable<CarsDemoActions.SetCars> => {
         return this.carsDemoService.getCars().pipe(
-          map(data => {
-            return new CarsDemoActions.SetCars(data);
-          }),
+          map(
+            (cars: Car[]): any => {
+              return new CarsDemoActions.SetCars(cars);
+            }
+          ),
           catchError(err => {
             return of([err]);
           })
@@ -31,13 +34,12 @@ export class CarsDemoEffects {
   @Effect()
   editCar$: Observable<Action> = this.action$.pipe(
     ofType(CarsDemoActions.EDIT_CAR),
+    map((action: CarsDemoActions.EditCar) => action.payload),
     switchMap(
-      (data): Action[] => {
+      (car): Action[] => {
         return [
           new LayoutActions.ToggleCarsDemoModal(),
-          new CarsDemoActions.SetEditingCar(
-            (<{ payload?: string }>data).payload
-          )
+          new CarsDemoActions.SetEditingCar(car)
         ];
       }
     )
@@ -46,24 +48,28 @@ export class CarsDemoEffects {
   @Effect()
   updateCar$: Observable<Action> = this.action$.pipe(
     ofType(CarsDemoActions.UPDATE_CAR),
+    map((action: CarsDemoActions.UpdateCar) => action.payload),
     switchMap(
-      (data): any => {
-        return this.carsDemoService
-          .updateCar((<{ payload?: Car }>data).payload)
-          .pipe(
-            map((res: Car) => {
-              return res;
-            }),
-            catchError(err => {
-              return of([err]);
-            })
-          );
+      (car): Observable<{}> => {
+        return this.carsDemoService.updateCar(car).pipe(
+          map((res: Car) => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Done',
+              detail: `${res.brand} was edited`
+            });
+            return res;
+          }),
+          catchError(err => {
+            return of([err]);
+          })
+        );
       }
     ),
     switchMap(
-      (data): Action[] => {
+      (car): Action[] => {
         return [
-          new CarsDemoActions.SaveCar(data),
+          new CarsDemoActions.SaveCar(car),
           new LayoutActions.ToggleCarsDemoModal()
         ];
       }
@@ -74,7 +80,7 @@ export class CarsDemoEffects {
   createCar$: Observable<Action> = this.action$.pipe(
     ofType(CarsDemoActions.CREATE_CAR),
     switchMap(
-      (data): Action[] => {
+      (): Action[] => {
         return [
           new LayoutActions.ToggleCarsDemoModal(),
           new CarsDemoActions.SetEditingCar('')
@@ -86,18 +92,22 @@ export class CarsDemoEffects {
   @Effect()
   addCar$: Observable<Action> = this.action$.pipe(
     ofType(CarsDemoActions.ADD_CAR),
+    map((action: CarsDemoActions.AddCar) => action.payload),
     switchMap(
-      (data): any => {
-        return this.carsDemoService
-          .addCar((<{ payload?: Car }>data).payload)
-          .pipe(
-            map((res: Car) => {
-              return res;
-            }),
-            catchError(err => {
-              return of([err]);
-            })
-          );
+      (car): Observable<{}> => {
+        return this.carsDemoService.addCar(car).pipe(
+          map((res: Car) => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Done',
+              detail: `${res.brand} was added`
+            });
+            return res;
+          }),
+          catchError(err => {
+            return of([err]);
+          })
+        );
       }
     ),
     switchMap(
@@ -110,8 +120,35 @@ export class CarsDemoEffects {
     )
   );
 
+  @Effect()
+  deleteCar$: Observable<Action> = this.action$.pipe(
+    ofType(CarsDemoActions.DELETE_CAR),
+    map((action: CarsDemoActions.DeleteCar) => action.payload),
+    switchMap((car: Car) => {
+      return this.carsDemoService.deleteCar(car.id).pipe(
+        map(() => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Done',
+            detail: `${car.brand} was successfully deleted`
+          });
+          return car;
+        }),
+        catchError(err => {
+          return of([err]);
+        })
+      );
+    }),
+    switchMap(
+      (car: Car): Action[] => {
+        return [new CarsDemoActions.RemoveCar(car.id)];
+      }
+    )
+  );
+
   constructor(
     private action$: Actions,
-    private carsDemoService: CarsDemoService
+    private carsDemoService: CarsDemoService,
+    private messageService: MessageService
   ) {}
 }

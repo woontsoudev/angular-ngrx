@@ -8,6 +8,8 @@ export const SET_EDITING_CAR = '[CARSDEMO] set editing';
 export const UPDATE_CAR = '[CARSDEMO] update';
 export const SAVE_CAR = '[CARSDEMO] save';
 export const CREATE_CAR = '[CARSDEMO] create';
+export const DELETE_CAR = '[CARSDEMO] delete';
+export const REMOVE_CAR = '[CARSDEMO] remove';
 
 export class GetCars implements Action {
   readonly type = GET_CARS;
@@ -47,6 +49,16 @@ export class SetEditingCar implements Action {
   constructor(public payload: any) {}
 }
 
+export class DeleteCar implements Action {
+  readonly type = DELETE_CAR;
+  constructor(public payload: any) {}
+}
+
+export class RemoveCar implements Action {
+  readonly type = REMOVE_CAR;
+  constructor(public payload: any) {}
+}
+
 export type All =
   | GetCars
   | AddCar
@@ -54,4 +66,6 @@ export type All =
   | EditCar
   | SetEditingCar
   | UpdateCar
-  | SaveCar;
+  | SaveCar
+  | DeleteCar
+  | RemoveCar;

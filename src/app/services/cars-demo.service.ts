@@ -18,4 +18,8 @@ export class CarsDemoService {
   addCar(car) {
     return this.http.post(`${environment.API}/cars`, car);
   }
+
+  deleteCar(id) {
+    return this.http.delete(`${environment.API}/cars/${id}`);
+  }
 }

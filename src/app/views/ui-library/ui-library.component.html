@@ -62,6 +62,7 @@
             (visibleChange)="onToggleExampleModal()"
             [visible]="modalExample$ | async"
             [modal]="true"
+            [blockScroll]="true"
             [responsive]="true"
             [width]="450"
             [minWidth]="200"
@@ -94,6 +95,7 @@
         <p-dialog
             (visibleChange)="onToggleCarsDemoModal()"
             [visible]="carsDemoModal$ | async"
+            [blockScroll]="true"
             [modal]="true"
             [responsive]="true"
             [width]="450"
@@ -115,5 +117,10 @@
             </p-header>
             <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form>
         </p-dialog>
+        <p-confirmDialog
+            header="Confirmation"
+            icon="pi pi-exclamation-triangle"
+            width="425"
+        ></p-confirmDialog>
     </div>
 </app-page>
