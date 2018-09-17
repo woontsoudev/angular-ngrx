@@ -1,4 +1,12 @@
-<app-title-bar title="Data Table"></app-title-bar>
+<app-title-bar title="Data Table">
+    <button
+        actions
+        class="btn btn-theme-primary"
+        (click)="onAddCar()"
+    >
+        Add Car
+    </button>
+</app-title-bar>
 <app-data-table
     [data]="$cars | async"
     [cols]="cols"

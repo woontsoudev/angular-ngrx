@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { EffectsModule } from '@ngrx/effects';
 
 import { UiLibraryRoutingModule } from './ui-library-routing.module';
 import { SharedModule } from '../../shared/shared.module';
@@ -8,22 +7,18 @@ import { UiBaseComponent } from './components/ui-base/ui-base.component';
 import { UiInteractionComponent } from './components/ui-interaction/ui-interaction.component';
 import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 import { UiFormsComponent } from './components/ui-forms/ui-forms.component';
-import { CarsDemoService } from '../../services/cars-demo.service';
-import { CarsDemoEffects } from '../../effects/cars-demo.effects';
+import { EditCarFormComponent } from './components/edit-car/edit-car-form.component';
 
 @NgModule({
-  imports: [
-    UiLibraryRoutingModule,
-    SharedModule
-    // EffectsModule.forFeature([CarsDemoEffects])
-  ],
+  imports: [UiLibraryRoutingModule, SharedModule],
   exports: [],
   declarations: [
     UiLibraryComponent,
     UiBaseComponent,
     UiInteractionComponent,
     UiTablesComponent,
-    UiFormsComponent
+    UiFormsComponent,
+    EditCarFormComponent
   ],
   providers: []
 })

@@ -7,15 +7,22 @@ body .ui-widget-overlay {
   .ui-dialog {
     box-shadow: 1px 1px 3px 1px #bdbdbd;
     border-radius: 2px;
-  }
 
-  .ui-dialog .ui-dialog-titlebar {
-    background-color: $theme-light-blue;
-    border-radius: 2px;
-    color: $white;
-    padding: $spacer / 2;
-    font-family: 'Roboto';
-    font-size: $font-size-sm;
+    .ui-dialog-footer,
+    .ui-dialog-content {
+      border: 0;
+    }
+
+    .ui-dialog-titlebar {
+      background-color: $theme-light-blue;
+      border: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      color: $white;
+      padding: $spacer / 2;
+      font-family: 'Roboto';
+      font-size: $font-size-sm;
+    }
   }
 
   .ui-widget-content {

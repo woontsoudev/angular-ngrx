@@ -10,4 +10,12 @@ export class CarsDemoService {
   getCars() {
     return this.http.get(`${environment.API}/cars`);
   }
+
+  updateCar(car) {
+    return this.http.put(`${environment.API}/cars/${car.id}`, car);
+  }
+
+  addCar(car) {
+    return this.http.post(`${environment.API}/cars`, car);
+  }
 }

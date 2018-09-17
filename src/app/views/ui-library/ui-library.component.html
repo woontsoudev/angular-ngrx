@@ -113,16 +113,7 @@
                     size="lg"
                 ></fa-icon>
             </p-header>
-            <span>Edit something</span>
-            <p-footer>
-                <button
-                    (click)="onToggleCarsDemoModal()"
-                    type="button"
-                    class="btn btn-theme-primary"
-                >
-                    Close
-                </button>
-            </p-footer>
+            <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form>
         </p-dialog>
     </div>
 </app-page>

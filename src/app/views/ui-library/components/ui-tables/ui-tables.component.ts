@@ -6,7 +6,6 @@ import * as CarsDemoActions from '../../../../actions/cars-demo.actions';
 import * as CarsDemoReducer from '../../../../reducers/cars-demo.reducer';
 import * as LayoutReducer from '../../../../reducers/layout.reducer';
 import * as LayoutActions from '../../../../actions/layout.actions';
-import { CarsDemoService } from 'src/app/services/cars-demo.service';
 
 @Component({
   selector: 'app-ui-tables',
@@ -20,12 +19,11 @@ export class UiTablesComponent implements OnInit {
     { field: 'color', header: 'Color' }
   ];
 
-  public $cars: Observable<any>;
+  public $cars: Observable<any[]>;
 
   constructor(
     private carsDemoStore: Store<CarsDemoReducer.State>,
-    private layoutStore: Store<LayoutReducer.State>,
-    private carsDemoService: CarsDemoService
+    private layoutStore: Store<LayoutReducer.State>
   ) {
     this.$cars = carsDemoStore.select((state: any) => state.carsDemoStore.cars);
   }
@@ -34,8 +32,11 @@ export class UiTablesComponent implements OnInit {
     this.carsDemoStore.dispatch(new CarsDemoActions.GetCars());
   }
 
-  onRowSelect(event) {
-    this.layoutStore.dispatch(new LayoutActions.ToggleCarsDemoModal());
-    console.log(event);
+  onRowSelect(car) {
+    this.carsDemoStore.dispatch(new CarsDemoActions.EditCar(car.id));
+  }
+
+  onAddCar() {
+    this.carsDemoStore.dispatch(new CarsDemoActions.CreateCar());
   }
 }

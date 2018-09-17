@@ -1,7 +1,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col title-bar d-flex align-items-center">
-            <h3 class="m-0">{{title}}</h3>
+            <h3 class="m-0 flex-grow-1">{{title}}</h3>
+            <ng-content select="[actions]"></ng-content>
         </div>
     </div>
 </div>

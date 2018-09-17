@@ -6,6 +6,7 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-data-table',
@@ -15,7 +16,7 @@ import {
 })
 export class DataTableComponent implements OnInit {
   @Input()
-  data: any[];
+  data: Observable<any[]>;
   @Input()
   cols: any[];
   @Input()
