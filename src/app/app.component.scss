@@ -1,1 +1,11 @@
-// @import '~src/styles/variables';
+@import '~src/styles/variables-core';
+
+p-progressSpinner {
+  width: 100%;
+  position: absolute;
+  z-index: 1002; // fix in core module
+  height: 100%;
+  top: 0;
+  align-items: center;
+  display: flex;
+}
