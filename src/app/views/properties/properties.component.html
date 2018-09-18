@@ -4,5 +4,11 @@
         class="container-fluid"
     >
         <p>Properties</p>
+
+        <app-toolbar
+            class="row"
+            [dropdownOptions]="dropdownProperties$ | async"
+            (dropdownSelectedItem)="onSelectProperty($event)"
+        ></app-toolbar>
     </section>
 </app-page>

@@ -101,80 +101,198 @@
   ],
   "properties": [
     {
-      "id": 2,
-      "name": "Tokio"
+      "id": 0,
+      "yardiCode": "",
+      "yardiSyncDate": "2018-09-18T19:11:34.617Z",
+      "name": "Hillside Acres Community",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111",
+      "county": "",
+      "country": "",
+      "occupancyType": "",
+      "numberOfUnits": 0,
+      "yearBuilt": 0,
+      "gated": true,
+      "professionallyManaged": true,
+      "professionallyManagedSince": 0,
+      "mapsShareUrl": "",
+      "enabled": true,
+      "created": "2018-09-18T19:11:34.617Z",
+      "updated": "2018-09-18T19:11:34.617Z",
+      "units": [
+        {
+          "id": 0,
+          "unitId": "",
+          "name": "",
+          "type": "",
+          "squareFootage": 0,
+          "bedrooms": 0,
+          "bathrooms": 0,
+          "leaseFrom": "2018-09-18T19:11:34.617Z",
+          "leaseTo": "2018-09-18T19:11:34.617Z",
+          "enabled": true,
+          "created": "2018-09-18T19:11:34.618Z",
+          "updated": "2018-09-18T19:11:34.618Z",
+          "residents": [
+            {
+              "id": 0,
+              "yardiCustomerId": "",
+              "lastName": "",
+              "email": "",
+              "phone1": "",
+              "phone2": "",
+              "enabled": true,
+              "created": "2018-09-18T19:11:34.618Z",
+              "updated": "2018-09-18T19:11:34.618Z",
+              "policies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-18T19:11:34.618Z",
+                  "startDate": "2018-09-18T19:11:34.618Z",
+                  "endDate": "2018-09-18T19:11:34.618Z",
+                  "created": "2018-09-18T19:11:34.618Z",
+                  "updated": "2018-09-18T19:11:34.618Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ],
+              "coveringPolicies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-18T19:11:34.618Z",
+                  "startDate": "2018-09-18T19:11:34.618Z",
+                  "endDate": "2018-09-18T19:11:34.618Z",
+                  "created": "2018-09-18T19:11:34.618Z",
+                  "updated": "2018-09-18T19:11:34.618Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ]
+            }
+          ],
+          "policies": [
+            {
+              "id": 0,
+              "carrier": "",
+              "policyNumber": "",
+              "liabilityCoverage": 0,
+              "effectiveDate": "2018-09-18T19:11:34.618Z",
+              "startDate": "2018-09-18T19:11:34.618Z",
+              "endDate": "2018-09-18T19:11:34.618Z",
+              "created": "2018-09-18T19:11:34.618Z",
+              "updated": "2018-09-18T19:11:34.618Z",
+              "primaryHolder": {},
+              "coveredResidents": [null]
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": 3,
-      "name": "New York"
-    },
-    {
-      "name": "San jose",
-      "id": 4
-    },
-    {
-      "name": "Bahamas",
-      "id": 5
-    }
-  ],
-  "users": [
-    {
-      "username": "boruca updated v2",
-      "email": "john.doe@test.com",
-      "addressLine1": "my current address 1",
-      "phone": "25989-8922",
-      "id": 1
-    },
-    {
-      "username": "fulanito",
-      "email": "optimus.prime@test.com",
-      "addressLine1": "my current address 2",
-      "phone": "25989-8922",
-      "id": 3
-    },
-    {
-      "id": 4,
-      "role": {
-        "id": 1,
-        "name": "role 1"
-      },
-      "username": "sutanito",
-      "firstName": "Peter",
-      "lastName": "Parker",
-      "email": "peter.parker@test.com",
-      "password": "secretpassword",
-      "addressLine1": "my current address 1",
-      "addressLine2": "the address 2",
-      "phone": "23232-4443",
-      "created": "21/02/16"
-    },
-    {
-      "username": "Tito",
-      "email": "test1@test.com",
-      "addressLine1": "address 1 test",
-      "phone": "21254-56562",
-      "id": 5
-    },
-    {
-      "username": "test 1",
-      "email": "test",
-      "addressLine1": "test",
-      "phone": "test",
-      "id": 6
-    },
-    {
-      "username": "test 2",
-      "email": "test",
-      "addressLine1": "test",
-      "phone": "test",
-      "id": 7
-    }
-  ],
-  "property-relations": [
-    {
-      "userId": 3,
-      "propertyId": 2,
-      "id": 5
+      "id": 1,
+      "yardiCode": "",
+      "yardiSyncDate": "2018-09-18T19:11:34.617Z",
+      "name": "Riverwalk Community",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111",
+      "county": "",
+      "country": "",
+      "occupancyType": "",
+      "numberOfUnits": 0,
+      "yearBuilt": 0,
+      "gated": true,
+      "professionallyManaged": true,
+      "professionallyManagedSince": 0,
+      "mapsShareUrl": "",
+      "enabled": true,
+      "created": "2018-09-18T19:11:34.617Z",
+      "updated": "2018-09-18T19:11:34.617Z",
+      "units": [
+        {
+          "id": 0,
+          "unitId": "",
+          "name": "",
+          "type": "",
+          "squareFootage": 0,
+          "bedrooms": 0,
+          "bathrooms": 0,
+          "leaseFrom": "2018-09-18T19:11:34.617Z",
+          "leaseTo": "2018-09-18T19:11:34.617Z",
+          "enabled": true,
+          "created": "2018-09-18T19:11:34.618Z",
+          "updated": "2018-09-18T19:11:34.618Z",
+          "residents": [
+            {
+              "id": 0,
+              "yardiCustomerId": "",
+              "lastName": "",
+              "email": "",
+              "phone1": "",
+              "phone2": "",
+              "enabled": true,
+              "created": "2018-09-18T19:11:34.618Z",
+              "updated": "2018-09-18T19:11:34.618Z",
+              "policies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-18T19:11:34.618Z",
+                  "startDate": "2018-09-18T19:11:34.618Z",
+                  "endDate": "2018-09-18T19:11:34.618Z",
+                  "created": "2018-09-18T19:11:34.618Z",
+                  "updated": "2018-09-18T19:11:34.618Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ],
+              "coveringPolicies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-18T19:11:34.618Z",
+                  "startDate": "2018-09-18T19:11:34.618Z",
+                  "endDate": "2018-09-18T19:11:34.618Z",
+                  "created": "2018-09-18T19:11:34.618Z",
+                  "updated": "2018-09-18T19:11:34.618Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ]
+            }
+          ],
+          "policies": [
+            {
+              "id": 0,
+              "carrier": "",
+              "policyNumber": "",
+              "liabilityCoverage": 0,
+              "effectiveDate": "2018-09-18T19:11:34.618Z",
+              "startDate": "2018-09-18T19:11:34.618Z",
+              "endDate": "2018-09-18T19:11:34.618Z",
+              "created": "2018-09-18T19:11:34.618Z",
+              "updated": "2018-09-18T19:11:34.618Z",
+              "primaryHolder": {},
+              "coveredResidents": [null]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

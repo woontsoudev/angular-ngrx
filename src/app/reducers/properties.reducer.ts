@@ -6,12 +6,7 @@ export interface State {
 }
 
 const initialState: State = {
-  properties: [
-    {
-      label: 'Select a property',
-      value: {}
-    }
-  ],
+  properties: [],
   selectedProperty: {}
 };
 
