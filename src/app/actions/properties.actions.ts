@@ -14,14 +14,9 @@ export class SetProperties implements Action {
   constructor(public payload: any) {}
 }
 
-export class SelectProperty implements Action {
-  readonly type = SELECT_PROPERTY;
-  constructor(public payload: object) {}
-}
-
 export class SetProperty implements Action {
   readonly type = SET_PROPERTY;
   constructor(public payload: object) {}
 }
 
-export type All = GetProperties | SelectProperty | SetProperties | SetProperty;
+export type All = GetProperties | SetProperties | SetProperty;

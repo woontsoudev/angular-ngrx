@@ -21,33 +21,36 @@
         </ng-template>
     </p-dropdown>
 
-    <label class="align-items-center col py-2">100 Causeway Street Boston, MA 02111</label>
+    <div class="d-flex col py-0 flex-wrap">
+        <label class="d-flex align-items-center col py-2 px-0">100 Causeway Street Boston, MA 02111</label>
 
-    <div class="d-flex col-md-auto col-sm-12 py-2 flex-wrap">
-        <div class="p-1 col">
-            <button
-                type="button"
-                class="btn btn-theme-primary w-100"
-            >
-                <fa-icon
-                    [icon]="['fas', 'plus']"
-                    size="sm"
-                ></fa-icon>
-                Edit Property
-            </button>
-        </div>
+        <div class="d-flex col-lg-auto col-md-12 py-2 px-0">
+            <div class="p-1 col">
+                <button
+                    type="button"
+                    class="btn btn-theme-primary w-100"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'plus']"
+                        size="sm"
+                    ></fa-icon>
+                    Edit Property
+                </button>
+            </div>
 
-        <div class="p-1 col">
-            <button
-                type="button"
-                class="btn btn-theme-primary filled w-100"
-            >
-                <fa-icon
-                    [icon]="['fas', 'sync-alt']"
-                    size="sm"
-                ></fa-icon>
-                Sync Property
-            </button>
+            <div class="p-1 col">
+                <button
+                    type="button"
+                    class="btn btn-theme-primary filled w-100"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'sync-alt']"
+                        size="sm"
+                    ></fa-icon>
+                    Sync Property
+                </button>
+            </div>
         </div>
     </div>
+
 </div>

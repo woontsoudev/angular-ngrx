@@ -28,6 +28,6 @@ export class UiComponentsComponent implements OnInit {
   }
 
   onSelectedItem(item) {
-    this.propertiesStore.dispatch(new PropertiesActions.SelectProperty(item));
+    this.propertiesStore.dispatch(new PropertiesActions.SetProperty(item));
   }
 }

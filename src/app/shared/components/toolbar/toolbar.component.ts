@@ -1,12 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  OnChanges,
-  Output,
-  EventEmitter
-} from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -15,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ToolbarComponent implements OnInit {
   @Input()
-  dropdownOptions: [];
+  dropdownOptions: any[];
   @Output()
   dropdownSelectedItem = new EventEmitter<object>();
 

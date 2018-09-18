@@ -26,17 +26,6 @@ export class PropertiesEffects {
     )
   );
 
-  @Effect()
-  selectProperty$: Observable<Action> = this.actions$.pipe(
-    ofType(PropertiesActions.SELECT_PROPERTY),
-    map((action: PropertiesActions.SelectProperty) => action.payload),
-    switchMap(
-      (property): Action[] => {
-        return [new PropertiesActions.SetProperty(property)];
-      }
-    )
-  );
-
   constructor(
     private actions$: Actions,
     private propertiesService: PropertiesService

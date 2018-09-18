@@ -201,7 +201,7 @@ $p-dropdown-square-width: 360px;
 
 @include media-breakpoint-up(md) {
   .p-dropdown-square {
-    max-width: $p-dropdown-square-width;
+    width: $p-dropdown-square-width;
 
     .ui-dropdown-panel {
       min-width: $p-dropdown-square-width;
