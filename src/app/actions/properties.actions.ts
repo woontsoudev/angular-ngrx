@@ -1,19 +1,27 @@
 import { Action } from '@ngrx/store';
 
-import { dropDownOptions } from '../mocks/components';
+export const GET_PROPERTIES = '[Properties] get';
+export const SET_PROPERTIES = '[Properties] set';
+export const SELECT_PROPERTY = '[Properties] select property';
+export const SET_PROPERTY = '[Properties] set property';
 
-export const ADD_PROPERTIES = '[Properties] add';
-export const SELECT_PROPERTY = '[Properties] select';
+export class GetProperties implements Action {
+  readonly type = GET_PROPERTIES;
+}
 
-export class AddProperties implements Action {
-  readonly type = ADD_PROPERTIES;
-  readonly payload = dropDownOptions;
+export class SetProperties implements Action {
+  readonly type = SET_PROPERTIES;
+  constructor(public payload: any) {}
 }
 
 export class SelectProperty implements Action {
   readonly type = SELECT_PROPERTY;
-
   constructor(public payload: object) {}
 }
 
-export type All = AddProperties | SelectProperty;
+export class SetProperty implements Action {
+  readonly type = SET_PROPERTY;
+  constructor(public payload: object) {}
+}
+
+export type All = GetProperties | SelectProperty | SetProperties | SetProperty;

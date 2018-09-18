@@ -16,25 +16,18 @@ export class UiComponentsComponent implements OnInit {
   selectedOption: Property;
 
   public properties$: Observable<Property[]>;
-  public selectedProperty$: Observable<Property>;
 
   constructor(private propertiesStore: Store<PropertiesReducer.State>) {
     this.properties$ = propertiesStore.select(
       (state: any) => state.propertiesStore.properties
     );
-
-    this.selectedProperty$ = propertiesStore.select(
-      (state: any) => state.propertiesStore.selectedProperty
-    );
   }
 
   ngOnInit() {
-    this.propertiesStore.dispatch(new PropertiesActions.AddProperties());
+    this.propertiesStore.dispatch(new PropertiesActions.GetProperties());
   }
 
-  setProperty() {
-    this.propertiesStore.dispatch(
-      new PropertiesActions.SelectProperty(this.selectedOption)
-    );
+  onSelectedItem(item) {
+    this.propertiesStore.dispatch(new PropertiesActions.SelectProperty(item));
   }
 }

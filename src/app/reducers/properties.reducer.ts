@@ -20,12 +20,13 @@ export function reducer(
   action: PropertyActions.All
 ): State {
   switch (action.type) {
-    case PropertyActions.ADD_PROPERTIES:
+    case PropertyActions.SET_PROPERTIES:
+      const properties = state.properties.concat(action.payload);
       return {
         ...state,
-        properties: state.properties.concat(action.payload)
+        properties
       };
-    case PropertyActions.SELECT_PROPERTY:
+    case PropertyActions.SET_PROPERTY:
       return {
         ...state,
         selectedProperty: action.payload
