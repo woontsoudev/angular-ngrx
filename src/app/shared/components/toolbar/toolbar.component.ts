@@ -1,9 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: 'toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ToolbarComponent implements OnInit {
   @Input()
