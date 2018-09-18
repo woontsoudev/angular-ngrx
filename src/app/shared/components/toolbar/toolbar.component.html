@@ -1,0 +1,56 @@
+<div class="toolbar">
+    <p-dropdown
+        class="p-dropdown d-flex align-items-stretch separator align-self-stretch col-md-auto col-sm-12 p-0"
+        [options]="dropdownOptions"
+        [filter]="true"
+        (onChange)="onDropdownSelectedItem($event)"
+        filterBy="label,value.location"
+        filterPlaceholder="Search Properties"
+        autofocus="true"
+    >
+        <ng-template
+            let-option
+            pTemplate="item"
+        >
+            <div class="option d-flex align-items-start justify-content-center flex-column">
+                <div class="option-title">{{option.label}}</div>
+                <div class="option-subtitle">
+                    {{option.value && option.value.location}}
+                </div>
+            </div>
+        </ng-template>
+    </p-dropdown>
+
+    <div class="d-flex col py-0 flex-wrap">
+        <label class="d-flex align-items-center col py-2 px-0">100 Causeway Street Boston, MA 02111</label>
+
+        <div class="d-flex col-lg-auto col-md-12 py-2 px-0">
+            <div class="p-1 col">
+                <button
+                    type="button"
+                    class="btn btn-theme-primary w-100"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'plus']"
+                        size="sm"
+                    ></fa-icon>
+                    Edit Property
+                </button>
+            </div>
+
+            <div class="p-1 col">
+                <button
+                    type="button"
+                    class="btn btn-theme-primary filled w-100"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'sync-alt']"
+                        size="sm"
+                    ></fa-icon>
+                    Sync Property
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

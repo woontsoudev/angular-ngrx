@@ -21,6 +21,7 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
 import { ErrorFieldComponent } from './components/error-field/error-field.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { ErrorFieldComponent } from './components/error-field/error-field.compon
     ErrorFieldComponent,
     NotificationsComponent,
     ActionButtonsComponent,
+    ToolbarComponent,
     RouterModule
   ],
   declarations: [
@@ -61,7 +63,8 @@ import { ErrorFieldComponent } from './components/error-field/error-field.compon
     TitleBarComponent,
     ErrorFieldComponent,
     NotificationsComponent,
-    ActionButtonsComponent
+    ActionButtonsComponent,
+    ToolbarComponent
   ],
   providers: []
 })

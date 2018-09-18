@@ -1,0 +1,6 @@
+<!-- Toolbar -->
+<app-title-bar title="toolbar"></app-title-bar>
+<app-toolbar
+    [dropdownOptions]="properties$ | async"
+    (dropdownSelectedItem)="onSelectedItem($event)"
+></app-toolbar>

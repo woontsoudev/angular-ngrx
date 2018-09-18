@@ -6,6 +6,7 @@ import { UiBaseComponent } from './components/ui-base/ui-base.component';
 import { UiInteractionComponent } from './components/ui-interaction/ui-interaction.component';
 import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 import { UiFormsComponent } from './components/ui-forms/ui-forms.component';
+import { UiComponentsComponent } from './components/ui-components/ui-components.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
       { path: 'base', component: UiBaseComponent },
       { path: 'interaction', component: UiInteractionComponent },
       { path: 'tables', component: UiTablesComponent },
-      { path: 'forms', component: UiFormsComponent }
+      { path: 'forms', component: UiFormsComponent },
+      { path: 'components', component: UiComponentsComponent }
     ]
   },
   {
