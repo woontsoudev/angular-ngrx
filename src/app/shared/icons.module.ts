@@ -13,7 +13,8 @@ import {
   faEnvelope,
   faTrashAlt,
   faTimes,
-  faExclamationCircle
+  faExclamationCircle,
+  faPlus
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -27,7 +28,8 @@ library.add(
   faEnvelope,
   faTrashAlt,
   faTimes,
-  faExclamationCircle
+  faExclamationCircle,
+  faPlus
 );
 
 @NgModule({

@@ -37,3 +37,9 @@ $heading-bar-md-height: 46px;
 $datatable-checkbox-width: 3.5rem;
 
 $box-shadow-light: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+// Input's placeholder
+$input-placeholder-color: lighten(
+  $color: $theme-dark-gray,
+  $amount: 45
+);

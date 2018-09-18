@@ -7,6 +7,7 @@ import { UiBaseComponent } from './components/ui-base/ui-base.component';
 import { UiInteractionComponent } from './components/ui-interaction/ui-interaction.component';
 import { UiTablesComponent } from './components/ui-tables/ui-tables.component';
 import { UiFormsComponent } from './components/ui-forms/ui-forms.component';
+import { UiComponentsComponent } from './components/ui-components/ui-components.component';
 import { EditCarFormComponent } from './components/edit-car/edit-car-form.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { EditCarFormComponent } from './components/edit-car/edit-car-form.compon
     UiInteractionComponent,
     UiTablesComponent,
     UiFormsComponent,
+    UiComponentsComponent,
     EditCarFormComponent
   ],
   providers: []

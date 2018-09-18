@@ -18,6 +18,8 @@ import { httpInterceptorProviders } from './http-interceptors/index';
 import { RootStoreModule } from './store/root-store.module';
 import { CarsDemoEffects } from './effects/cars-demo.effects';
 import { CarsDemoService } from './services/cars-demo.service';
+import { PropertiesEffects } from './effects/properties.effects';
+import { PropertiesService } from './services/properties.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,13 +32,14 @@ import { CarsDemoService } from './services/cars-demo.service';
     ProgressSpinnerModule,
     AppRoutingModule,
     RootStoreModule,
-    EffectsModule.forRoot([CarsDemoEffects])
+    EffectsModule.forRoot([CarsDemoEffects, PropertiesEffects])
   ],
   providers: [
     httpInterceptorProviders,
     CarsDemoService,
     ConfirmationService,
-    MessageService
+    MessageService,
+    PropertiesService
   ],
   bootstrap: [AppComponent]
 })
