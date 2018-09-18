@@ -13,8 +13,6 @@ import * as PropertiesReducer from '../../../../reducers/properties.reducer';
   styleUrls: ['../../ui-library.component.scss']
 })
 export class UiComponentsComponent implements OnInit {
-  selectedOption: Property;
-
   public properties$: Observable<Property[]>;
 
   constructor(private propertiesStore: Store<PropertiesReducer.State>) {

@@ -1,35 +1,3 @@
-<!-- Dropdown -->
-<app-title-bar title="dropdown"></app-title-bar>
-<div class="container-fluid pb-3">
-    <div class="row">
-        <p-dropdown
-            class="p-dropdown-square d-flex align-items-stretch align-self-stretch col-md-auto col-sm-12"
-            [options]="properties$ | async"
-            [(ngModel)]="selectedOption"
-            [filter]="true"
-            filterBy="label,value.location"
-            filterPlaceholder="Search Properties"
-            autofocus="true"
-        >
-            <ng-template
-                let-option
-                pTemplate="item"
-            >
-                <div class="option d-flex align-items-start justify-content-center flex-column">
-                    <div class="option-title">{{option.label}}</div>
-                    <div class="option-subtitle">
-                        {{option.value && option.value.location}}
-                    </div>
-                </div>
-            </ng-template>
-        </p-dropdown>
-        <div class="d-flex align-items-start justify-content-center flex-column col pt-2">
-            <div>Selected:</div>
-            <label class="text-secondary small">{{selectedOption | json}}</label>
-        </div>
-    </div>
-</div>
-
 <!-- Toolbar -->
 <app-title-bar title="toolbar"></app-title-bar>
 <app-toolbar

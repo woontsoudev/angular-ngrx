@@ -2,7 +2,6 @@ import { Action } from '@ngrx/store';
 
 export const GET_PROPERTIES = '[Properties] get';
 export const SET_PROPERTIES = '[Properties] set';
-export const SELECT_PROPERTY = '[Properties] select property';
 export const SET_PROPERTY = '[Properties] set property';
 
 export class GetProperties implements Action {
