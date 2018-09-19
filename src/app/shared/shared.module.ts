@@ -22,6 +22,7 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
 import { ErrorFieldComponent } from './components/error-field/error-field.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     NotificationsComponent,
     ActionButtonsComponent,
     ToolbarComponent,
-    RouterModule
+    RouterModule,
+    ModalComponent
   ],
   declarations: [
     LayoutComponent,
@@ -64,7 +66,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     ErrorFieldComponent,
     NotificationsComponent,
     ActionButtonsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ModalComponent
   ],
   providers: []
 })
