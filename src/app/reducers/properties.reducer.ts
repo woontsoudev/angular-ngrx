@@ -2,11 +2,13 @@ import * as PropertyActions from '../actions/properties.actions';
 
 export interface State {
   properties: object[];
+  units: object[];
   selectedProperty: object;
 }
 
 const initialState: State = {
   properties: [],
+  units: [],
   selectedProperty: {}
 };
 
@@ -16,7 +18,7 @@ export function reducer(
 ): State {
   switch (action.type) {
     case PropertyActions.SET_PROPERTIES:
-      const properties = state.properties.concat(action.payload);
+      const properties = action.payload;
       return {
         ...state,
         properties
@@ -25,6 +27,12 @@ export function reducer(
       return {
         ...state,
         selectedProperty: action.payload
+      };
+    case PropertyActions.SET_UNITS:
+      const units = action.payload;
+      return {
+        ...state,
+        units
       };
     default:
       return state;

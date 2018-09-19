@@ -9,4 +9,8 @@ export class PropertiesService {
   getProperties() {
     return this.http.get(`${environment.API}/properties`);
   }
+
+  getUnits(propertyId) {
+    return this.http.get(`${environment.API}/units/${propertyId}`);
+  }
 }

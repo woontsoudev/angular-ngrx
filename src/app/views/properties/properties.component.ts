@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 
-import { Property } from '../properties/interfaces';
+import { Property } from '../../models/property.model';
 
 import * as PropertiesActions from '../../actions/properties.actions';
 import * as PropertiesReducer from '../../reducers/properties.reducer';
@@ -15,6 +15,7 @@ import * as PropertiesReducer from '../../reducers/properties.reducer';
 export class PropertiesComponent implements OnInit {
   public properties$: Observable<Property[]>;
   public dropdownProperties$: Observable<Property[]>;
+  public selectedProperty$: Observable<Property[]>;
 
   constructor(private propertiesStore: Store<PropertiesReducer.State>) {
     this.properties$ = propertiesStore.select(
@@ -34,19 +35,41 @@ export class PropertiesComponent implements OnInit {
         };
       })
     );
+
+    this.selectedProperty$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedProperty
+    );
   }
 
   ngOnInit() {
     this.propertiesStore.dispatch(new PropertiesActions.GetProperties());
+    // Set the first property as default the first time.
+    // this.onSelectProperty(null);
   }
 
   onSelectProperty(item) {
     this.properties$.subscribe(properties => {
       const property = properties.find(p => p.id === item.id);
-
       this.propertiesStore.dispatch(
         new PropertiesActions.SetProperty(property)
       );
     });
   }
+
+  // onRowSelectUnit(car) {
+  //   // this.carsDemoStore.dispatch(new CarsDemoActions.EditCar(car.id));
+  // }
+
+  // onAddUnit() {
+  //   // this.carsDemoStore.dispatch(new CarsDemoActions.CreateCar());
+  // }
+
+  // onRowDeleteUnit(car) {
+  //   // this.confirmationService.confirm({
+  //   //   message: `Do you want to delete ${car.brand}?`,
+  //   //   accept: () => {
+  //   //     this.carsDemoStore.dispatch(new CarsDemoActions.DeleteCar(car));
+  //   //   }
+  //   // });
+  // }
 }
