@@ -39,7 +39,7 @@
                 class="w-25 flex-grow-1 d-flex align-items-center"
                 pInputText
                 size="50"
-                placeholder="Search Cars"
+                placeholder="{{placeholder}}"
                 (input)="dt.filterGlobal($event.target.value, 'contains')"
             >
             <p-checkbox
@@ -114,10 +114,10 @@
         {{filterDisabled}}
         <ul>
             <li
-                *ngFor="let car of selectedValues"
+                *ngFor="let option of selectedValues"
                 style="text-align: left"
             >
-                {{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}
+                {{option | json}}
             </li>
         </ul>
     </ng-template>

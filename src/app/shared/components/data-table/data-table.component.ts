@@ -29,6 +29,8 @@ export class DataTableComponent implements OnInit {
   filterDisabled: string;
   @Input()
   filterByNumber: number;
+  @Input()
+  placeholder = 'Search...';
   @Output()
   rowSelect = new EventEmitter<any>();
   @Output()
