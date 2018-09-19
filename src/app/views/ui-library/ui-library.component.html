@@ -70,21 +70,11 @@
         <router-outlet></router-outlet>
     </section>
     <div modals>
-        <p-dialog
+        <app-modal
             (visibleChange)="onToggleExampleModal()"
             [visible]="modalExample$ | async"
-            [modal]="true"
-            [blockScroll]="true"
-            [responsive]="true"
-            [width]="450"
-            [minWidth]="200"
-            [minY]="70"
-            [maximizable]="false"
-            [closable]="false"
-            [baseZIndex]="10000"
-            class="modal"
         >
-            <p-header>
+            <div modal-header>
                 Header content here
                 <fa-icon
                     (click)="onToggleExampleModal()"
@@ -92,9 +82,9 @@
                     [icon]="['fas', 'times']"
                     size="lg"
                 ></fa-icon>
-            </p-header>
-            <span>Some text</span>
-            <p-footer>
+            </div>
+            <div modal-body>some text</div>
+            <div modal-footer>
                 <button
                     (click)="onToggleExampleModal()"
                     type="button"
@@ -102,33 +92,26 @@
                 >
                     Close
                 </button>
-            </p-footer>
-        </p-dialog>
-        <p-dialog
+            </div>
+        </app-modal>
+
+        <app-modal
             (visibleChange)="onToggleCarsDemoModal()"
             [visible]="carsDemoModal$ | async"
-            [blockScroll]="true"
-            [modal]="true"
-            [responsive]="true"
-            [width]="450"
-            [minWidth]="200"
-            [minY]="70"
-            [maximizable]="false"
-            [closable]="false"
-            [baseZIndex]="10000"
-            class="modal"
         >
-            <p-header>
-                Edit
+            <div modal-header>
+                Header content here
                 <fa-icon
                     (click)="onToggleCarsDemoModal()"
                     class="mr-1"
                     [icon]="['fas', 'times']"
                     size="lg"
                 ></fa-icon>
-            </p-header>
-            <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form>
-        </p-dialog>
+            </div>
+            <div modal-body>
+                <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form>
+            </div>
+        </app-modal>
         <p-confirmDialog
             header="Confirmation"
             icon="pi pi-exclamation-triangle"
