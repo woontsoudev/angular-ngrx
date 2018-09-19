@@ -11,74 +11,30 @@
             (dropdownSelectedItem)="onSelectProperty($event)"
         ></app-toolbar>
 
-        <app-units [selectedProperty]="selectedProperty$ | async"></app-units>
+        <div class="row">
+            <app-units [units]="units$ | async"></app-units>
+        </div>
+
     </section>
 
-    <!-- Modal -->
     <!-- <div modals>
-      <p-dialog
-          (visibleChange)="onToggleExampleModal()"
-          [visible]="modalExample$ | async"
-          [modal]="true"
-          [blockScroll]="true"
-          [responsive]="true"
-          [width]="450"
-          [minWidth]="200"
-          [minY]="70"
-          [maximizable]="false"
-          [closable]="false"
-          [baseZIndex]="10000"
-          class="modal"
-      >
-          <p-header>
-              Header content here
-              <fa-icon
-                  (click)="onToggleExampleModal()"
-                  class="mr-1"
-                  [icon]="['fas', 'times']"
-                  size="lg"
-              ></fa-icon>
-          </p-header>
-          <span>Some text</span>
-          <p-footer>
-              <button
-                  (click)="onToggleExampleModal()"
-                  type="button"
-                  class="btn btn-theme-primary"
-              >
-                  Close
-              </button>
-          </p-footer>
-      </p-dialog>
-      <p-dialog
-          (visibleChange)="onToggleCarsDemoModal()"
-          [visible]="carsDemoModal$ | async"
-          [blockScroll]="true"
-          [modal]="true"
-          [responsive]="true"
-          [width]="450"
-          [minWidth]="200"
-          [minY]="70"
-          [maximizable]="false"
-          [closable]="false"
-          [baseZIndex]="10000"
-          class="modal"
-      >
-          <p-header>
-              Edit
-              <fa-icon
-                  (click)="onToggleCarsDemoModal()"
-                  class="mr-1"
-                  [icon]="['fas', 'times']"
-                  size="lg"
-              ></fa-icon>
-          </p-header>
-          <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form>
-      </p-dialog>
-      <p-confirmDialog
-          header="Confirmation"
-          icon="pi pi-exclamation-triangle"
-          width="425"
-      ></p-confirmDialog>
-  </div> -->
+        <app-modal
+            (visibleChange)="onToggleModal()"
+            [visible]="unitsModal$ | async"
+        >
+            <div modal-header>
+                Header content here
+                <fa-icon
+                    (click)="onToggleModal()"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </div>
+            <div modal-body>
+                wewewe -->
+    <!-- <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form> -->
+    <!-- </div>
+        </app-modal>
+    </div> -->
 </app-page>

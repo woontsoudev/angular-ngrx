@@ -1,0 +1,36 @@
+<app-title-bar title="Data Table">
+    <button
+        actions
+        class="btn btn-theme-primary"
+        (click)="onAddUnit()"
+    >
+        Add Car
+    </button>
+</app-title-bar>
+<app-data-table
+    *ngIf="units"
+    [data]="units"
+    [cols]="cols"
+    [rows]="10"
+    dataKey="unitId"
+    (rowSelect)="onRowSelectUnit($event)"
+    (rowDelete)="onRowDeleteUnit($event)"
+></app-data-table>
+
+<div modals>
+    <app-modal
+        (visibleChange)="onToggleModal()"
+        [visible]="unitsModal$ | async"
+    >
+        <div modal-header>
+            Header content here
+            <fa-icon
+                (click)="onToggleModal()"
+                class="mr-1"
+                [icon]="['fas', 'times']"
+                size="lg"
+            ></fa-icon>
+        </div>
+        <div modal-body>Form modal</div>
+    </app-modal>
+</div>

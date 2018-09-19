@@ -6,10 +6,16 @@ export interface Unit {
   squareFootage: Number;
   bedrooms: Number;
   bathrooms: Number;
-  leaseFrom: '2018-09-19T01:08:11.873Z';
-  leaseTo: '2018-09-19T01:08:11.873Z';
+  leaseFrom: Date;
+  leaseTo: Date;
   enabled: boolean;
-  created: '2018-09-19T01:08:11.873Z';
-  updated: '2018-09-19T01:08:11.873Z';
-  residents: [];
+  created: Date;
+  updated: Date;
+  residents: any[];
+  // New ones (not coming into model)
+  policyEnd: Date;
+  coverageProvider: string;
+  policyStatus: string;
+  paidInFull: boolean;
+  atRisk: boolean;
 }

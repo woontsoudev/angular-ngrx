@@ -1,15 +1,17 @@
 import * as PropertyActions from '../actions/properties.actions';
 
 export interface State {
-  properties: object[];
-  units: object[];
-  selectedProperty: object;
+  properties: any[];
+  selectedProperty: any;
+  units: any[];
+  editingUnit: any;
 }
 
 const initialState: State = {
   properties: [],
+  selectedProperty: {},
   units: [],
-  selectedProperty: {}
+  editingUnit: {}
 };
 
 export function reducer(
@@ -33,6 +35,15 @@ export function reducer(
       return {
         ...state,
         units
+      };
+    case PropertyActions.SET_EDITING_UNIT:
+      const editingUnit =
+        action.payload !== ''
+          ? state.units.find(unit => unit.id === action.payload)
+          : {};
+      return {
+        ...state,
+        editingUnit
       };
     default:
       return state;

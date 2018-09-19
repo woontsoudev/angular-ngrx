@@ -15,13 +15,6 @@
       "id": "ieQQaJn"
     },
     {
-      "brand": "test new",
-      "color": "red",
-      "vin": "f2s5fds56e",
-      "year": "2012",
-      "id": "s1N9TnQ"
-    },
-    {
       "brand": "test 4",
       "color": "s",
       "vin": "fds",
@@ -152,28 +145,67 @@
   "units": [
     {
       "id": 0,
-      "unitId": "100",
-      "name": "John Black",
-      "type": "",
-      "squareFootage": 0,
-      "bedrooms": 0,
-      "bathrooms": 0,
-      "leaseFrom": "2018-09-19T01:08:11.873Z",
-      "leaseTo": "2018-09-19T01:08:11.873Z",
-      "enabled": true,
-      "created": "2018-09-19T01:08:11.873Z",
-      "updated": "2018-09-19T01:08:11.873Z",
-      "residents": [
+      "units": [
         {
-          "id": 0,
-          "yardiCustomerId": "",
-          "lastName": "",
-          "email": "",
-          "phone1": "",
-          "phone2": "",
+          "unitId": "100",
+          "name": "John Black",
+          "type": "",
+          "squareFootage": 0,
+          "bedrooms": 0,
+          "bathrooms": 0,
+          "leaseFrom": "2018-09-19T01:08:11.873Z",
+          "leaseTo": "2018-09-19T01:08:11.873Z",
           "enabled": true,
           "created": "2018-09-19T01:08:11.873Z",
           "updated": "2018-09-19T01:08:11.873Z",
+          "policyEnd": "2018-09-19T01:08:11.873Z",
+          "coverageProvider": "RenterProtect",
+          "policyStatus": "Covered",
+          "paidInFull": false,
+          "atRisk": true,
+          "residents": [
+            {
+              "id": 0,
+              "yardiCustomerId": "",
+              "lastName": "",
+              "email": "",
+              "phone1": "",
+              "phone2": "",
+              "enabled": true,
+              "created": "2018-09-19T01:08:11.873Z",
+              "updated": "2018-09-19T01:08:11.873Z",
+              "policies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-19T01:08:11.873Z",
+                  "startDate": "2018-09-19T01:08:11.873Z",
+                  "endDate": "2018-09-19T01:08:11.873Z",
+                  "created": "2018-09-19T01:08:11.873Z",
+                  "updated": "2018-09-19T01:08:11.873Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ],
+              "coveringPolicies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-19T01:08:11.873Z",
+                  "startDate": "2018-09-19T01:08:11.873Z",
+                  "endDate": "2018-09-19T01:08:11.873Z",
+                  "created": "2018-09-19T01:08:11.873Z",
+                  "updated": "2018-09-19T01:08:11.873Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ]
+            }
+          ],
           "policies": [
             {
               "id": 0,
@@ -188,8 +220,70 @@
               "primaryHolder": {},
               "coveredResidents": [null]
             }
+          ]
+        },
+        {
+          "id": 1,
+          "unitId": "102",
+          "name": "Lindsay Brie",
+          "type": "",
+          "squareFootage": 0,
+          "bedrooms": 0,
+          "bathrooms": 0,
+          "leaseFrom": "2018-09-19T01:08:11.873Z",
+          "leaseTo": "2018-09-19T01:08:11.873Z",
+          "enabled": true,
+          "created": "2018-09-19T01:08:11.873Z",
+          "updated": "2018-09-19T01:08:11.873Z",
+          "policyEnd": "2018-09-19T01:08:11.873Z",
+          "coverageProvider": "RenterProtect",
+          "policyStatus": "Covered",
+          "paidInFull": false,
+          "atRisk": true,
+          "residents": [
+            {
+              "id": 0,
+              "yardiCustomerId": "",
+              "lastName": "",
+              "email": "",
+              "phone1": "",
+              "phone2": "",
+              "enabled": true,
+              "created": "2018-09-19T01:08:11.873Z",
+              "updated": "2018-09-19T01:08:11.873Z",
+              "policies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-19T01:08:11.873Z",
+                  "startDate": "2018-09-19T01:08:11.873Z",
+                  "endDate": "2018-09-19T01:08:11.873Z",
+                  "created": "2018-09-19T01:08:11.873Z",
+                  "updated": "2018-09-19T01:08:11.873Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ],
+              "coveringPolicies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-19T01:08:11.873Z",
+                  "startDate": "2018-09-19T01:08:11.873Z",
+                  "endDate": "2018-09-19T01:08:11.873Z",
+                  "created": "2018-09-19T01:08:11.873Z",
+                  "updated": "2018-09-19T01:08:11.873Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ]
+            }
           ],
-          "coveringPolicies": [
+          "policies": [
             {
               "id": 0,
               "carrier": "",
@@ -204,48 +298,72 @@
               "coveredResidents": [null]
             }
           ]
-        }
-      ],
-      "policies": [
-        {
-          "id": 0,
-          "carrier": "",
-          "policyNumber": "",
-          "liabilityCoverage": 0,
-          "effectiveDate": "2018-09-19T01:08:11.873Z",
-          "startDate": "2018-09-19T01:08:11.873Z",
-          "endDate": "2018-09-19T01:08:11.873Z",
-          "created": "2018-09-19T01:08:11.873Z",
-          "updated": "2018-09-19T01:08:11.873Z",
-          "primaryHolder": {},
-          "coveredResidents": [null]
         }
       ]
     },
     {
       "id": 1,
-      "unitId": "101",
-      "name": "Ryan Fielder",
-      "type": "",
-      "squareFootage": 0,
-      "bedrooms": 0,
-      "bathrooms": 0,
-      "leaseFrom": "2018-09-19T01:08:11.873Z",
-      "leaseTo": "2018-09-19T01:08:11.873Z",
-      "enabled": true,
-      "created": "2018-09-19T01:08:11.873Z",
-      "updated": "2018-09-19T01:08:11.873Z",
-      "residents": [
+      "units": [
         {
-          "id": 0,
-          "yardiCustomerId": "",
-          "lastName": "",
-          "email": "",
-          "phone1": "",
-          "phone2": "",
+          "unitId": "101",
+          "name": "Ryan Fielder",
+          "type": "",
+          "squareFootage": 0,
+          "bedrooms": 0,
+          "bathrooms": 0,
+          "leaseFrom": "2018-09-19T01:08:11.873Z",
+          "leaseTo": "2018-09-19T01:08:11.873Z",
           "enabled": true,
           "created": "2018-09-19T01:08:11.873Z",
           "updated": "2018-09-19T01:08:11.873Z",
+          "policyEnd": "2018-09-19T01:08:11.873Z",
+          "coverageProvider": "RenterProtect",
+          "policyStatus": "Covered",
+          "paidInFull": false,
+          "atRisk": true,
+          "residents": [
+            {
+              "id": 0,
+              "yardiCustomerId": "",
+              "lastName": "",
+              "email": "",
+              "phone1": "",
+              "phone2": "",
+              "enabled": true,
+              "created": "2018-09-19T01:08:11.873Z",
+              "updated": "2018-09-19T01:08:11.873Z",
+              "policies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-19T01:08:11.873Z",
+                  "startDate": "2018-09-19T01:08:11.873Z",
+                  "endDate": "2018-09-19T01:08:11.873Z",
+                  "created": "2018-09-19T01:08:11.873Z",
+                  "updated": "2018-09-19T01:08:11.873Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ],
+              "coveringPolicies": [
+                {
+                  "id": 0,
+                  "carrier": "",
+                  "policyNumber": "",
+                  "liabilityCoverage": 0,
+                  "effectiveDate": "2018-09-19T01:08:11.873Z",
+                  "startDate": "2018-09-19T01:08:11.873Z",
+                  "endDate": "2018-09-19T01:08:11.873Z",
+                  "created": "2018-09-19T01:08:11.873Z",
+                  "updated": "2018-09-19T01:08:11.873Z",
+                  "primaryHolder": {},
+                  "coveredResidents": [null]
+                }
+              ]
+            }
+          ],
           "policies": [
             {
               "id": 0,
@@ -260,37 +378,7 @@
               "primaryHolder": {},
               "coveredResidents": [null]
             }
-          ],
-          "coveringPolicies": [
-            {
-              "id": 0,
-              "carrier": "",
-              "policyNumber": "",
-              "liabilityCoverage": 0,
-              "effectiveDate": "2018-09-19T01:08:11.873Z",
-              "startDate": "2018-09-19T01:08:11.873Z",
-              "endDate": "2018-09-19T01:08:11.873Z",
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "primaryHolder": {},
-              "coveredResidents": [null]
-            }
           ]
-        }
-      ],
-      "policies": [
-        {
-          "id": 0,
-          "carrier": "",
-          "policyNumber": "",
-          "liabilityCoverage": 0,
-          "effectiveDate": "2018-09-19T01:08:11.873Z",
-          "startDate": "2018-09-19T01:08:11.873Z",
-          "endDate": "2018-09-19T01:08:11.873Z",
-          "created": "2018-09-19T01:08:11.873Z",
-          "updated": "2018-09-19T01:08:11.873Z",
-          "primaryHolder": {},
-          "coveredResidents": [null]
         }
       ]
     }
