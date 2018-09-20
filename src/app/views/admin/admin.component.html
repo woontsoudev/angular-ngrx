@@ -1,8 +1,48 @@
 <app-page>
-    <section
-        main-content
-        class="container-fluid"
-    >
-        <p>Admin</p>
+    <app-subnav subnav>
+        <ul
+            nav-items
+            class="navbar-nav flex-row"
+        >
+            <li
+                class="nav-item"
+                [routerLinkActive]="['active']"
+            >
+                <a
+                    class="nav-link"
+                    [routerLink]="['./users']"
+                    href="#"
+                >
+                    Users
+                </a>
+            </li>
+            <li
+                class="nav-item"
+                [routerLinkActive]="['active']"
+            >
+                <a
+                    class="nav-link"
+                    [routerLink]="['./configuration']"
+                    href="#"
+                >
+                    Configuration
+                </a>
+            </li>
+            <li
+                class="nav-item"
+                [routerLinkActive]="['active']"
+            >
+                <a
+                    class="nav-link"
+                    [routerLink]="['./report']"
+                    href="#"
+                >
+                    Report
+                </a>
+            </li>
+        </ul>
+    </app-subnav>
+    <section main-content>
+        <router-outlet></router-outlet>
     </section>
 </app-page>
