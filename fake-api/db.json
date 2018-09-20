@@ -101,44 +101,68 @@
   ],
   "properties": [
     {
-      "label": "Hillside Acres Community",
-      "value": {
-        "id": 1,
-        "name": "Hillside Acres Community",
-        "location": "100 Causeway Street Boston, MA 02111"
-      }
+      "id": 2,
+      "name": "Tokio"
     },
     {
-      "label": "Riverwalk Community",
-      "value": {
-        "id": 2,
-        "name": "Riverwalk Community",
-        "location": "100 Causeway Street Boston, MA 02111"
-      }
+      "id": 3,
+      "name": "New York"
     },
     {
-      "label": "Mill No. 5",
-      "value": {
-        "id": 3,
-        "name": "Mil No. 5",
-        "location": "100 Causeway Street Boston, MA 02111"
-      }
+      "name": "San jose",
+      "id": 4
     },
     {
-      "label": "Merrifield Estates",
-      "value": {
-        "id": 4,
-        "name": "Merrifield Estates",
-        "location": "100 Causeway Street Boston, MA 02111"
-      }
+      "name": "Bahamas",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 2,
+      "name": "Mark Suckerber"
     },
     {
-      "label": "Edagewood Lofts",
-      "value": {
-        "id": 5,
-        "name": "Edagewood Lofts",
-        "location": "100 Causeway Street Boston, MA 02111"
-      }
+      "id": 3,
+      "name": "Homero Thompson"
+    },
+    {
+      "name": "cool",
+      "id": 4
+    },
+    {
+      "name": "cool",
+      "id": 5
+    },
+    {
+      "name": "Sara Connor",
+      "id": 6
+    },
+    {
+      "name": "Sara Connor",
+      "id": 7
+    }
+  ],
+  "property-relations": [
+    {
+      "userId": 2,
+      "propertyId": 2,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "propertyId": 5,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "propertyId": 2,
+      "id": 5
+    },
+    {
+      "userId": 5,
+      "propertyId": 1,
+      "id": 6
     }
   ]
 }
