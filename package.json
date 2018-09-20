@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "fakeapi": "json-server --watch ./fake-api/db.json"
+    "fakeapi": "json-server --routes ./fake-api/routes.json --watch ./fake-api/db.json"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,7 @@
+{
+  "/api/properties": "/properties",
+  "/api/properties/:propertyId": "/properties/:propertyId",
+  "/api/properties/:propertyId/users/:userId": "/property-relations",
+  "/api/properties/:propertyId/users": "/properties/:propertyId?_embed=property-relations",
+  "/api/properties/user/:userId": "/users/:userId?_embed=property-relations"
+}
