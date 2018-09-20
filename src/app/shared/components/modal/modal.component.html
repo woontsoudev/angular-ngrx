@@ -1,0 +1,23 @@
+<p-dialog
+    (visibleChange)="onVisibleChange($event)"
+    [visible]="visible"
+    [modal]="true"
+    [blockScroll]="true"
+    [responsive]="true"
+    [resizable]="false"
+    [width]="450"
+    [minWidth]="200"
+    [minY]="70"
+    [maximizable]="false"
+    [closable]="false"
+    [baseZIndex]="10000"
+    class="modal"
+>
+    <p-header>
+        <ng-content select="[modal-header]"></ng-content>
+    </p-header>
+    <ng-content select="[modal-body]"></ng-content>
+    <p-footer>
+        <ng-content select="[modal-footer]"></ng-content>
+    </p-footer>
+</p-dialog>
