@@ -101,10 +101,6 @@
   ],
   "properties": [
     {
-      "id": 1,
-      "name": "Budapest"
-    },
-    {
       "id": 2,
       "name": "Tokio"
     },
@@ -123,10 +119,6 @@
   ],
   "users": [
     {
-      "id": 1,
-      "name": "Joho Doe"
-    },
-    {
       "id": 2,
       "name": "Mark Suckerber"
     },
@@ -135,25 +127,23 @@
       "name": "Homero Thompson"
     },
     {
-      "name": "cool bith",
+      "name": "cool",
       "id": 4
     },
     {
-      "name": "cool bith",
+      "name": "cool",
       "id": 5
+    },
+    {
+      "name": "Sara Connor",
+      "id": 6
+    },
+    {
+      "name": "Sara Connor",
+      "id": 7
     }
   ],
   "property-relations": [
-    {
-      "userId": 5,
-      "propertyId": 2,
-      "id": 1
-    },
-    {
-      "userId": 3,
-      "propertyId": 2,
-      "id": 2
-    },
     {
       "userId": 2,
       "propertyId": 2,
@@ -165,9 +155,14 @@
       "id": 4
     },
     {
-      "userId": 1,
-      "propertyId": 5,
+      "userId": 3,
+      "propertyId": 2,
       "id": 5
+    },
+    {
+      "userId": 5,
+      "propertyId": 1,
+      "id": 6
     }
   ]
 }
