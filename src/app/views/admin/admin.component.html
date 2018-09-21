@@ -59,7 +59,9 @@
                     size="lg"
                 ></fa-icon>
             </div>
-            <div modal-body>Edit</div>
+            <div modal-body>
+                <app-edit-user-form *ngIf="usersModal$ | async"></app-edit-user-form>
+            </div>
         </app-modal>
         <p-confirmDialog
             header="Confirmation"

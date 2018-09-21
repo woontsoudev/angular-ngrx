@@ -45,6 +45,6 @@ export class UsersComponent implements OnInit {
   }
 
   onAddUser() {
-    console.log();
+    this.usersStore.dispatch(new UsersActions.CreateUser());
   }
 }

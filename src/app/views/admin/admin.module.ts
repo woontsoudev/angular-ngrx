@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import { UsersComponent } from './components/users/users.component';
 import { ConfigurationComponent } from './components/configuration/configuration.component';
 import { ReportComponent } from './components/report/report.component';
+import { EditUserFormComponent } from './components/edit-user-form/edit-user-form.component';
 
 @NgModule({
   imports: [AdminRoutingModule, SharedModule],
@@ -14,7 +15,8 @@ import { ReportComponent } from './components/report/report.component';
     AdminComponent,
     UsersComponent,
     ConfigurationComponent,
-    ReportComponent
+    ReportComponent,
+    EditUserFormComponent
   ],
   providers: []
 })
