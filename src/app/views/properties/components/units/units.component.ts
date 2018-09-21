@@ -47,7 +47,7 @@ export class UnitsComponent implements OnInit {
   }
 
   onAddUnit() {
-    // this.propertiesStore.dispatch(new PropertiesActions.CreateUnit());
+    // this.propertiesStore.dispatch(new PropertiesActions.EditUnit(null));
   }
 
   onRowDeleteUnit(unit) {

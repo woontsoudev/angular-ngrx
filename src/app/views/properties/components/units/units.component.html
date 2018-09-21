@@ -24,7 +24,7 @@
         [visible]="unitsModal$ | async"
     >
         <div modal-header>
-            Header content here
+            Add Unit
             <fa-icon
                 (click)="onToggleModal()"
                 class="mr-1"
@@ -32,6 +32,14 @@
                 size="lg"
             ></fa-icon>
         </div>
-        <div modal-body>Form modal</div>
+        <div modal-body>
+            <app-add-edit-units *ngIf="unitsModal$ | async"></app-add-edit-units>
+        </div>
     </app-modal>
+
+    <p-confirmDialog
+        header="Confirmation"
+        icon="pi pi-exclamation-triangle"
+        width="425"
+    ></p-confirmDialog>
 </div>

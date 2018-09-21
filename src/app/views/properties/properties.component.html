@@ -11,30 +11,8 @@
             (dropdownSelectedItem)="onSelectProperty($event)"
         ></app-toolbar>
 
-        <div class="row">
+        <div class="row bg-white mt-4">
             <app-units [units]="units$ | async"></app-units>
         </div>
-
     </section>
-
-    <!-- <div modals>
-        <app-modal
-            (visibleChange)="onToggleModal()"
-            [visible]="unitsModal$ | async"
-        >
-            <div modal-header>
-                Header content here
-                <fa-icon
-                    (click)="onToggleModal()"
-                    class="mr-1"
-                    [icon]="['fas', 'times']"
-                    size="lg"
-                ></fa-icon>
-            </div>
-            <div modal-body>
-                wewewe -->
-    <!-- <app-edit-car-form *ngIf="carsDemoModal$ | async"></app-edit-car-form> -->
-    <!-- </div>
-        </app-modal>
-    </div> -->
 </app-page>
