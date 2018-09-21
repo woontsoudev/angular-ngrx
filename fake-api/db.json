@@ -135,22 +135,6 @@
       "created": "02/15/18"
     },
     {
-      "id": 2,
-      "role": {
-        "id": 1,
-        "name": "role 1"
-      },
-      "username": "azul12",
-      "firstName": "Sara",
-      "lastName": "Connor",
-      "email": "sara.connor@test.com",
-      "password": "secretpassword",
-      "addressLine1": "my current address 1",
-      "addressLine2": "the address 2",
-      "phone": "225544-58951",
-      "created": "09/12/96"
-    },
-    {
       "id": 3,
       "role": {
         "id": 1,
@@ -185,24 +169,9 @@
   ],
   "property-relations": [
     {
-      "userId": 2,
-      "propertyId": 2,
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "propertyId": 5,
-      "id": 4
-    },
-    {
       "userId": 3,
       "propertyId": 2,
       "id": 5
-    },
-    {
-      "userId": 5,
-      "propertyId": 1,
-      "id": 6
     }
   ]
 }

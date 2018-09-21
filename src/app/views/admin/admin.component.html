@@ -45,4 +45,26 @@
     <section main-content>
         <router-outlet></router-outlet>
     </section>
+    <div modals>
+        <app-modal
+            (visibleChange)="onToggleCarsDemoModal()"
+            [visible]="usersModal$ | async"
+        >
+            <div modal-header>
+                Header content here
+                <fa-icon
+                    (click)="onToggleCarsDemoModal()"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </div>
+            <div modal-body>Edit</div>
+        </app-modal>
+        <p-confirmDialog
+            header="Confirmation"
+            icon="pi pi-exclamation-triangle"
+            width="425"
+        ></p-confirmDialog>
+    </div>
 </app-page>

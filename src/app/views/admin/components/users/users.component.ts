@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { Store } from '@ngrx/store';
+import { ConfirmationService } from 'primeng/api';
+
+import * as UsersActions from 'src/app/actions/users.actions';
+import * as UsersReducer from 'src/app/reducers/users.reducer';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -7,24 +13,35 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class UsersComponent implements OnInit {
   public cols = [
-    { field: 'name', header: 'Name' },
+    { field: 'username', header: 'Username' },
     { field: 'email', header: 'Email' },
-    { field: 'role', header: 'Role' },
-    { field: 'properties', header: 'Properties' },
-    { field: 'lastLogin', header: 'Last Login' }
+    { field: 'addressLine1', header: 'Address 1' },
+    { field: 'phone', header: 'Phone' }
   ];
   public $users: Observable<any[]>;
 
-  constructor() {}
-
-  ngOnInit() {}
-
-  onRowSelect(event) {
-    console.log(event);
+  constructor(
+    private usersStore: Store<UsersReducer.State>,
+    private confirmationService: ConfirmationService
+  ) {
+    this.$users = usersStore.select((state: any) => state.usersStore.users);
   }
 
-  onRowDelete(event) {
-    console.log(event);
+  ngOnInit() {
+    this.usersStore.dispatch(new UsersActions.GetUsers());
+  }
+
+  onRowSelect(user: User) {
+    this.usersStore.dispatch(new UsersActions.EditUser(user));
+  }
+
+  onRowDelete(user: User) {
+    this.confirmationService.confirm({
+      message: `Do you want to delete ${user.username}?`,
+      accept: () => {
+        this.usersStore.dispatch(new UsersActions.DeleteUser(user));
+      }
+    });
   }
 
   onAddUser() {
