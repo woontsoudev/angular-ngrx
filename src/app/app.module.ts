@@ -11,15 +11,21 @@ import { MessageService } from 'primeng/api';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
-// Custom
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { httpInterceptorProviders } from './http-interceptors/index';
-import { RootStoreModule } from './store/root-store.module';
+// Effects
 import { CarsDemoEffects } from './effects/cars-demo.effects';
-import { CarsDemoService } from './services/cars-demo.service';
 import { PropertiesEffects } from './effects/properties.effects';
+import { UsersEffects } from './effects/users.effects';
+
+// Services
+import { CarsDemoService } from './services/cars-demo.service';
 import { PropertiesService } from './services/properties.service';
+import { UsersService } from './services/users.service';
+import { httpInterceptorProviders } from './http-interceptors/index';
+
+// Custom
+import { RootStoreModule } from './store/root-store.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,14 +38,15 @@ import { PropertiesService } from './services/properties.service';
     ProgressSpinnerModule,
     AppRoutingModule,
     RootStoreModule,
-    EffectsModule.forRoot([CarsDemoEffects, PropertiesEffects])
+    EffectsModule.forRoot([CarsDemoEffects, PropertiesEffects, UsersEffects])
   ],
   providers: [
     httpInterceptorProviders,
     CarsDemoService,
     ConfirmationService,
     MessageService,
-    PropertiesService
+    PropertiesService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
