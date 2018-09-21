@@ -119,28 +119,68 @@
   ],
   "users": [
     {
+      "id": 1,
+      "role": {
+        "id": 1,
+        "name": "role 1"
+      },
+      "username": "boruca",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@test.com",
+      "password": "secretpassword",
+      "addressLine1": "my current address 1",
+      "addressLine2": "the address 2",
+      "phone": "25989-8922",
+      "created": "02/15/18"
+    },
+    {
       "id": 2,
-      "name": "Mark Suckerber"
+      "role": {
+        "id": 1,
+        "name": "role 1"
+      },
+      "username": "azul12",
+      "firstName": "Sara",
+      "lastName": "Connor",
+      "email": "sara.connor@test.com",
+      "password": "secretpassword",
+      "addressLine1": "my current address 1",
+      "addressLine2": "the address 2",
+      "phone": "225544-58951",
+      "created": "09/12/96"
     },
     {
       "id": 3,
-      "name": "Homero Thompson"
+      "role": {
+        "id": 1,
+        "name": "role 1"
+      },
+      "username": "fulanito",
+      "firstName": "Optimus",
+      "lastName": "Prime",
+      "email": "optimus.prime@test.com",
+      "password": "secretpassword",
+      "addressLine1": "my current address 1",
+      "addressLine2": "the address 2",
+      "phone": "25989-8922",
+      "created": "02/15/18"
     },
     {
-      "name": "cool",
-      "id": 4
-    },
-    {
-      "name": "cool",
-      "id": 5
-    },
-    {
-      "name": "Sara Connor",
-      "id": 6
-    },
-    {
-      "name": "Sara Connor",
-      "id": 7
+      "id": 4,
+      "role": {
+        "id": 1,
+        "name": "role 1"
+      },
+      "username": "sutanito",
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "email": "peter.parker@test.com",
+      "password": "secretpassword",
+      "addressLine1": "my current address 1",
+      "addressLine2": "the address 2",
+      "phone": "23232-4443",
+      "created": "21/02/16"
     }
   ],
   "property-relations": [
