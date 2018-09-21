@@ -1,0 +1,17 @@
+<app-title-bar title="Data Table">
+    <button
+        actions
+        class="btn btn-theme-primary"
+        (click)="onAddUser()"
+    >
+        Add User
+    </button>
+</app-title-bar>
+<app-data-table
+    [data]="$users | async"
+    [cols]="cols"
+    [rows]="10"
+    dataKey="vin"
+    (rowSelect)="onRowSelect($event)"
+    (rowDelete)="onRowDelete($event)"
+></app-data-table>

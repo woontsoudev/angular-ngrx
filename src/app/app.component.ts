@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store } from '@ngrx/store';
 
@@ -12,10 +12,19 @@ import * as LayoutReducer from './reducers/layout.reducer';
 })
 export class AppComponent implements OnInit {
   public loader$: Observable<boolean>;
+  public showLoader = false;
 
   constructor(private layoutStore: Store<LayoutReducer.State>) {
-    this.loader$ = layoutStore.select((state: any) => state.layoutStore.loader);
+    this.loader$ = this.layoutStore.select(
+      (state: any) => state.layoutStore.loader
+    );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loader$.subscribe(data => {
+      setTimeout(() => {
+        this.showLoader = data;
+      }, 0);
+    });
+  }
 }

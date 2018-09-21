@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'admin',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   }
 ];

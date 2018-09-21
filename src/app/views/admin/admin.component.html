@@ -1,8 +1,72 @@
 <app-page>
-    <section
-        main-content
-        class="container-fluid"
-    >
-        <p>Admin</p>
+    <app-subnav subnav>
+        <ul
+            nav-items
+            class="navbar-nav flex-row"
+        >
+            <li
+                class="nav-item"
+                [routerLinkActive]="['active']"
+            >
+                <a
+                    class="nav-link"
+                    [routerLink]="['./users']"
+                    href="#"
+                >
+                    Users
+                </a>
+            </li>
+            <li
+                class="nav-item"
+                [routerLinkActive]="['active']"
+            >
+                <a
+                    class="nav-link"
+                    [routerLink]="['./configuration']"
+                    href="#"
+                >
+                    Configuration
+                </a>
+            </li>
+            <li
+                class="nav-item"
+                [routerLinkActive]="['active']"
+            >
+                <a
+                    class="nav-link"
+                    [routerLink]="['./report']"
+                    href="#"
+                >
+                    Report
+                </a>
+            </li>
+        </ul>
+    </app-subnav>
+    <section main-content>
+        <router-outlet></router-outlet>
     </section>
+    <div modals>
+        <app-modal
+            (visibleChange)="onToggleCarsDemoModal()"
+            [visible]="usersModal$ | async"
+        >
+            <div modal-header>
+                Header content here
+                <fa-icon
+                    (click)="onToggleCarsDemoModal()"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </div>
+            <div modal-body>
+                <app-edit-user-form *ngIf="usersModal$ | async"></app-edit-user-form>
+            </div>
+        </app-modal>
+        <p-confirmDialog
+            header="Confirmation"
+            icon="pi pi-exclamation-triangle"
+            width="425"
+        ></p-confirmDialog>
+    </div>
 </app-page>

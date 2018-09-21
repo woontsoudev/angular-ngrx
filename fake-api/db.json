@@ -119,50 +119,62 @@
   ],
   "users": [
     {
-      "id": 2,
-      "name": "Mark Suckerber"
+      "username": "boruca updated v2",
+      "email": "john.doe@test.com",
+      "addressLine1": "my current address 1",
+      "phone": "25989-8922",
+      "id": 1
     },
     {
-      "id": 3,
-      "name": "Homero Thompson"
+      "username": "fulanito",
+      "email": "optimus.prime@test.com",
+      "addressLine1": "my current address 2",
+      "phone": "25989-8922",
+      "id": 3
     },
     {
-      "name": "cool",
-      "id": 4
+      "id": 4,
+      "role": {
+        "id": 1,
+        "name": "role 1"
+      },
+      "username": "sutanito",
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "email": "peter.parker@test.com",
+      "password": "secretpassword",
+      "addressLine1": "my current address 1",
+      "addressLine2": "the address 2",
+      "phone": "23232-4443",
+      "created": "21/02/16"
     },
     {
-      "name": "cool",
+      "username": "Tito",
+      "email": "test1@test.com",
+      "addressLine1": "address 1 test",
+      "phone": "21254-56562",
       "id": 5
     },
     {
-      "name": "Sara Connor",
+      "username": "test 1",
+      "email": "test",
+      "addressLine1": "test",
+      "phone": "test",
       "id": 6
     },
     {
-      "name": "Sara Connor",
+      "username": "test 2",
+      "email": "test",
+      "addressLine1": "test",
+      "phone": "test",
       "id": 7
     }
   ],
   "property-relations": [
     {
-      "userId": 2,
-      "propertyId": 2,
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "propertyId": 5,
-      "id": 4
-    },
-    {
       "userId": 3,
       "propertyId": 2,
       "id": 5
-    },
-    {
-      "userId": 5,
-      "propertyId": 1,
-      "id": 6
     }
   ]
 }
