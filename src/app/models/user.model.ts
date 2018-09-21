@@ -4,11 +4,11 @@ export interface Role {
 }
 
 export interface User {
-  id: string;
+  id: number;
   role: Role;
   username: string;
   firstName: string;
-  lastName: string;
+  lastName?: string;
   email: string;
   password: string;
   addressLine1: string;
