@@ -119,27 +119,18 @@
   ],
   "users": [
     {
-      "username": "boruca updated",
+      "username": "boruca updated v2",
       "email": "john.doe@test.com",
       "addressLine1": "my current address 1",
       "phone": "25989-8922",
       "id": 1
     },
     {
-      "id": 3,
-      "role": {
-        "id": 1,
-        "name": "role 1"
-      },
       "username": "fulanito",
-      "firstName": "Optimus",
-      "lastName": "Prime",
       "email": "optimus.prime@test.com",
-      "password": "secretpassword",
-      "addressLine1": "my current address 1",
-      "addressLine2": "the address 2",
+      "addressLine1": "my current address 2",
       "phone": "25989-8922",
-      "created": "02/15/18"
+      "id": 3
     },
     {
       "id": 4,
@@ -163,6 +154,20 @@
       "addressLine1": "address 1 test",
       "phone": "21254-56562",
       "id": 5
+    },
+    {
+      "username": "test 1",
+      "email": "test",
+      "addressLine1": "test",
+      "phone": "test",
+      "id": 6
+    },
+    {
+      "username": "test 2",
+      "email": "test",
+      "addressLine1": "test",
+      "phone": "test",
+      "id": 7
     }
   ],
   "property-relations": [

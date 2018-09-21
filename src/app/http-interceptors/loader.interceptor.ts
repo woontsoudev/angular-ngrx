@@ -7,7 +7,7 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { finalize, tap } from 'rxjs/operators';
+import { finalize, tap, map } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import * as LayoutActions from '../actions/layout.actions';
@@ -20,17 +20,16 @@ export class LoaderInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
+
     return next.handle(req).pipe(
       tap(evt => {
         if (evt instanceof HttpResponse) {
           console.log('---> status:', evt.status);
-          this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
         }
       }),
       finalize(() => {
-        setTimeout(() => {
-          this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
-        }, 1000);
+        this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
       })
     );
   }
