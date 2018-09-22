@@ -162,9 +162,33 @@
       "primaryPolicyHolder": "holder4"
     },
     {
+      "id": 1,
+      "propertyId": 3,
+      "name": "Lindsay Bri",
+      "type": "Residential",
+      "squareFootage": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "leaseFrom": "2018-09-26T06:00:00.000Z",
+      "leaseTo": "2018-09-19T01:08:11.873Z",
+      "enabled": true,
+      "created": "2018-09-19T01:08:11.873Z",
+      "updated": "2018-09-19T01:08:11.873Z",
+      "policyEnd": "2018-09-28T06:00:00.000Z",
+      "coverageProvider": "RenterProtect",
+      "policyStatus": "Covered",
+      "paidInFull": false,
+      "atRisk": true,
+      "residents": [],
+      "policies": [],
+      "policyProvider": "",
+      "primaryPolicyHolder": "Holder 4",
+      "email": "email@email.com"
+    },
+    {
       "id": 2,
       "propertyId": 2,
-      "name": "Ryan Fieldez",
+      "name": "Ryan Field",
       "type": "Residential",
       "squareFootage": 0,
       "bedrooms": 0,
@@ -176,13 +200,24 @@
       "updated": "2018-09-19T01:08:11.873Z",
       "policyEnd": "2018-09-19T06:00:00.000Z",
       "coverageProvider": "RenterProtect",
-      "policyStatus": "Cove red",
+      "policyStatus": "Covered",
       "paidInFull": false,
       "atRisk": true,
       "residents": [],
       "policies": [],
       "email": "email@email.com",
-      "primaryPolicyHolder": "holder4"
+      "primaryPolicyHolder": "Holder 5"
+    },
+    {
+      "name": "Caracola",
+      "leaseFrom": "2018-09-02T06:00:00.000Z",
+      "leaseTo": "2018-09-04T06:00:00.000Z",
+      "policyEnd": "2018-09-11T06:00:00.000Z",
+      "type": "Ultra Residential",
+      "email": "email@email.com",
+      "primaryPolicyHolder": "Holder 2",
+      "propertyId": 2,
+      "id": 3
     }
   ],
   "units-relations": [

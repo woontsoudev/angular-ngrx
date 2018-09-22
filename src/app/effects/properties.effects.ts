@@ -111,6 +111,51 @@ export class PropertiesEffects {
       (unit): Action[] => {
         return [
           new PropertiesActions.SaveUnit(unit),
+          new LayoutActions.ToggleUnitsModal(),
+          new PropertiesActions.SetEditingUnit('')
+        ];
+      }
+    )
+  );
+
+  @Effect()
+  createUnit$: Observable<Action> = this.actions$.pipe(
+    ofType(PropertiesActions.CREATE_UNIT),
+    switchMap(
+      (): Action[] => {
+        return [
+          new LayoutActions.ToggleUnitsModal(),
+          new PropertiesActions.SetEditingUnit('')
+        ];
+      }
+    )
+  );
+
+  @Effect()
+  addUnit$: Observable<Action> = this.actions$.pipe(
+    ofType(PropertiesActions.ADD_UNIT),
+    map((action: PropertiesActions.AddUnit) => action.payload),
+    switchMap(
+      (unit): Observable<{}> => {
+        return this.propertiesService.addUnit(unit).pipe(
+          map((res: Unit) => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Done',
+              detail: `${res.name} was added`
+            });
+            return res;
+          }),
+          catchError(err => {
+            return of([err]);
+          })
+        );
+      }
+    ),
+    switchMap(
+      (data): Action[] => {
+        return [
+          new PropertiesActions.SaveUnit(data),
           new LayoutActions.ToggleUnitsModal()
         ];
       }

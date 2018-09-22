@@ -9,6 +9,7 @@ export const EDIT_UNIT = '[Properties/Units] edit unit';
 export const SET_EDITING_UNIT = '[Properties/Units] set editing unit';
 export const ADD_UNIT = '[Properties/Units] add unit';
 export const UPDATE_UNIT = '[Properties/Units] update unit';
+export const CREATE_UNIT = '[Properties/Units] create unit';
 export const SAVE_UNIT = '[Properties/Units] save unit';
 export const DELETE_UNIT = '[Properties/Units] delete unit';
 export const REMOVE_UNIT = '[Properties/Units] remove unit';
@@ -54,6 +55,10 @@ export class UpdateUnit implements Action {
   constructor(public payload: any) {}
 }
 
+export class CreateUnit implements Action {
+  readonly type = CREATE_UNIT;
+}
+
 export class AddUnit implements Action {
   readonly type = ADD_UNIT;
   constructor(public payload: any) {}
@@ -83,6 +88,7 @@ export type All =
   | EditUnit
   | SetEditingUnit
   | UpdateUnit
+  | CreateUnit
   | AddUnit
   | SaveUnit
   | DeleteUnit

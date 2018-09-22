@@ -18,4 +18,5 @@ export interface Unit {
   policyStatus: string;
   paidInFull: boolean;
   atRisk: boolean;
+  primaryPolicyHolder: string;
 }

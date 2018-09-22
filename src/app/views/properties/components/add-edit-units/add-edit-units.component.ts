@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class AddEditComponent implements OnInit {
   public editingUnit$: Observable<Unit>;
+  public selectedProperty$: Observable<Unit>;
   public addEditForm = this.fb.group({
     id: [''],
     unit: ['', Validators.required],
@@ -35,6 +36,7 @@ export class AddEditComponent implements OnInit {
   public primaryPolicyHolders: any[];
   public editMode = false;
   public editingData = {};
+  public selectedProperty: any;
   public uploadedFiles: any[] = [];
 
   constructor(
@@ -42,24 +44,36 @@ export class AddEditComponent implements OnInit {
     private propertiesStore: Store<PropertiesReducer.State>
   ) {
     this.primaryPolicyHolders = [
-      { name: 'Holder 1', value: 'holder1' },
-      { name: 'Holder 2', value: 'holder2' },
-      { name: 'Holder 3', value: 'holder3' },
-      { name: 'Holder 4', value: 'holder4' },
-      { name: 'Holder 5', value: 'holder5' }
+      { name: 'Holder 1', value: 'Holder 1' },
+      { name: 'Holder 2', value: 'Holder 2' },
+      { name: 'Holder 3', value: 'Holder 3' },
+      { name: 'Holder 4', value: 'Holder 4' },
+      { name: 'Holder 5', value: 'Holder 5' }
     ];
 
     this.editingUnit$ = propertiesStore.select(
       (state: any) => state.propertiesStore.editingUnit
     );
+
+    this.selectedProperty$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedProperty
+    );
   }
 
   ngOnInit() {
+    this.selectedProperty$.subscribe(property => {
+      this.selectedProperty = property;
+    });
     this.editingUnit$.subscribe(data => {
       this.editingData = data;
 
-      if (data.unitId) {
-        const { id, unitId: unit, name: residentName, type: unitType } = data;
+      if (data.hasOwnProperty('id')) {
+        const {
+          id,
+          unitId: unit = `00${data.id}`, // Remove this mocked unitId when real endpoints are ready
+          name: residentName,
+          type: unitType
+        } = data;
         const policyFile = this.addEditForm.get('policyFile');
         policyFile.patchValue({
           file: '',
@@ -75,12 +89,13 @@ export class AddEditComponent implements OnInit {
           unitType,
           leaseDuration: [new Date(data.leaseFrom), new Date(data.leaseTo)],
           policyDuration: new Date(data.policyEnd),
-          primaryPolicyHolder: { name: 'Holder 4', value: 'holder4' },
+          primaryPolicyHolder: {
+            name: data.primaryPolicyHolder,
+            value: data.primaryPolicyHolder
+          },
           email: 'email@email.com',
           policyFile
         });
-
-        console.log('this.addEditForm:::', this.addEditForm);
 
         this.editMode = true;
       }
@@ -88,8 +103,6 @@ export class AddEditComponent implements OnInit {
   }
 
   onSubmitWithFb() {
-    console.log('this.addEditForm.value:::', this.addEditForm.value);
-
     const values = Object.assign({}, this.editingData, {
       name: this.addEditForm.value.residentName,
       leaseFrom: this.addEditForm.value.leaseDuration[0],
@@ -97,14 +110,13 @@ export class AddEditComponent implements OnInit {
       policyEnd: this.addEditForm.value.policyDuration,
       type: this.addEditForm.value.unitType,
       email: this.addEditForm.value.email,
-      primaryPolicyHolder: this.addEditForm.value.primaryPolicyHolder.value
+      primaryPolicyHolder: this.addEditForm.value.primaryPolicyHolder.value,
+      propertyId: this.selectedProperty.id
     });
 
     this.editMode
       ? this.propertiesStore.dispatch(new PropertiesActions.UpdateUnit(values))
-      : this.propertiesStore.dispatch(
-          new PropertiesActions.AddUnit(this.addEditForm.value)
-        );
+      : this.propertiesStore.dispatch(new PropertiesActions.AddUnit(values));
   }
 
   onUpload(event) {

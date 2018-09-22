@@ -3,6 +3,9 @@
     (ngSubmit)="onSubmitWithFb()"
 >
     <div class="form-row">
+        <div class="form-group-underlined col-sm-12">
+            <h2 class="h2">{{this.selectedProperty.name}}</h2>
+        </div>
         <div class="form-group-underlined col">
             <label for="addEditFormUnitInput">Unit</label>
             <input
@@ -47,13 +50,6 @@
         </div>
         <div class="form-group-underlined col">
             <label for="addEditLeaseDurationInput">Lease Duration</label>
-            <!-- <p-calendar
-                class="p-calendar form-control"
-                formControlName="leaseDuration"
-                showIcon="true"
-                dateFormat="dd-mm-yy"
-                id="addEditLeaseDurationInput"
-            ></p-calendar> -->
             <p-calendar
                 class="p-calendar form-control"
                 id="addEditLeaseDurationInput"
@@ -106,7 +102,6 @@
                 class="p-dropdown form-control"
                 [options]="primaryPolicyHolders"
                 [autoWidth]="false"
-                placeholder="Select a City"
                 optionLabel="name"
                 formControlName="primaryPolicyHolder"
                 id="addEditFormPrimaryPolicyHolderInput"
