@@ -34,7 +34,8 @@ export class AddEditComponent implements OnInit {
 
   public primaryPolicyHolders: any[];
   public editMode = false;
-  uploadedFiles: any[] = [];
+  public editingData = {};
+  public uploadedFiles: any[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -55,15 +56,10 @@ export class AddEditComponent implements OnInit {
 
   ngOnInit() {
     this.editingUnit$.subscribe(data => {
-      console.log('data::::', data);
+      this.editingData = data;
 
       if (data.unitId) {
         const { id, unitId: unit, name: residentName, type: unitType } = data;
-        const primaryPolicyHolder = { name: 'Holder 4', value: 'holder4' };
-
-        const email = 'email@email.com';
-        const leaseDuration = new Date(data.leaseFrom);
-        const policyDuration = new Date(data.policyEnd);
         const policyFile = this.addEditForm.get('policyFile');
         policyFile.patchValue({
           file: '',
@@ -77,28 +73,38 @@ export class AddEditComponent implements OnInit {
           unit,
           residentName,
           unitType,
-          leaseDuration,
-          policyDuration,
-          primaryPolicyHolder,
-          email,
+          leaseDuration: [new Date(data.leaseFrom), new Date(data.leaseTo)],
+          policyDuration: new Date(data.policyEnd),
+          primaryPolicyHolder: { name: 'Holder 4', value: 'holder4' },
+          email: 'email@email.com',
           policyFile
         });
 
         console.log('this.addEditForm:::', this.addEditForm);
+
+        this.editMode = true;
       }
     });
   }
 
   onSubmitWithFb() {
-    console.log('On submit:::', this.addEditForm);
+    console.log('this.addEditForm.value:::', this.addEditForm.value);
 
-    // this.editMode
-    //   ? this.propertiesStore.dispatch(
-    //       new PropertiesActions.UpdateCar(this.addEditForm.value)
-    //     )
-    //   : this.propertiesStore.dispatch(
-    //       new PropertiesActions.AddCar(this.addEditForm.value)
-    //     );
+    const values = Object.assign({}, this.editingData, {
+      name: this.addEditForm.value.residentName,
+      leaseFrom: this.addEditForm.value.leaseDuration[0],
+      leaseTo: this.addEditForm.value.leaseDuration[1],
+      policyEnd: this.addEditForm.value.policyDuration,
+      type: this.addEditForm.value.unitType,
+      email: this.addEditForm.value.email,
+      primaryPolicyHolder: this.addEditForm.value.primaryPolicyHolder.value
+    });
+
+    this.editMode
+      ? this.propertiesStore.dispatch(new PropertiesActions.UpdateUnit(values))
+      : this.propertiesStore.dispatch(
+          new PropertiesActions.AddUnit(this.addEditForm.value)
+        );
   }
 
   onUpload(event) {

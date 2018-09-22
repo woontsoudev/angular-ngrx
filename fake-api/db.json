@@ -94,295 +94,109 @@
   ],
   "properties": [
     {
-      "id": 0,
-      "yardiCode": "",
-      "yardiSyncDate": "2018-09-18T19:11:34.617Z",
-      "name": "Hillside Acres Community",
-      "address1": "100 Causeway Street",
-      "address2": "",
-      "city": "Boston",
-      "state": "Massachusetts",
-      "postalCode": "MA 02111",
-      "county": "",
-      "country": "",
-      "occupancyType": "",
-      "numberOfUnits": 0,
-      "yearBuilt": 0,
-      "gated": true,
-      "professionallyManaged": true,
-      "professionallyManagedSince": 0,
-      "mapsShareUrl": "",
-      "enabled": true,
-      "created": "2018-09-18T19:11:34.617Z",
-      "updated": "2018-09-18T19:11:34.617Z",
-      "units": []
-    },
-    {
-      "id": 1,
-      "yardiCode": "",
-      "yardiSyncDate": "2018-09-18T19:11:34.617Z",
+      "id": 2,
       "name": "Riverwalk Community",
       "address1": "100 Causeway Street",
       "address2": "",
       "city": "Boston",
       "state": "Massachusetts",
-      "postalCode": "MA 02111",
-      "county": "",
-      "country": "",
-      "occupancyType": "",
-      "numberOfUnits": 0,
-      "yearBuilt": 0,
-      "gated": true,
-      "professionallyManaged": true,
-      "professionallyManagedSince": 0,
-      "mapsShareUrl": "",
-      "enabled": true,
-      "created": "2018-09-18T19:11:34.617Z",
-      "updated": "2018-09-18T19:11:34.617Z",
-      "units": []
+      "postalCode": "MA 02111"
+    },
+    {
+      "id": 3,
+      "name": "Hillside Acres Community",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    },
+    {
+      "id": 4,
+      "name": "San jose",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    },
+    {
+      "id": 5,
+      "name": "Bahamas",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    }
+  ],
+  "units": [
+    {
+      "userId": 3,
+      "propertyId": 2,
+      "id": 5
     }
   ],
   "units": [
     {
       "id": 0,
-      "units": [
-        {
-          "id": 0,
-          "unitId": "100",
-          "name": "John Black",
-          "type": "Residential",
-          "squareFootage": 0,
-          "bedrooms": 0,
-          "bathrooms": 0,
-          "leaseFrom": "2018-09-19T01:08:11.873Z",
-          "leaseTo": "2018-09-19T01:08:11.873Z",
-          "enabled": true,
-          "created": "2018-09-19T01:08:11.873Z",
-          "updated": "2018-09-19T01:08:11.873Z",
-          "policyEnd": "2018-09-19T01:08:11.873Z",
-          "coverageProvider": "RenterProtect",
-          "policyStatus": "Covered",
-          "paidInFull": false,
-          "atRisk": true,
-          "residents": [
-            {
-              "id": 0,
-              "yardiCustomerId": "",
-              "lastName": "",
-              "email": "",
-              "phone1": "",
-              "phone2": "",
-              "enabled": true,
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "policies": [
-                {
-                  "id": 0,
-                  "carrier": "",
-                  "policyNumber": "",
-                  "liabilityCoverage": 0,
-                  "effectiveDate": "2018-09-19T01:08:11.873Z",
-                  "startDate": "2018-09-19T01:08:11.873Z",
-                  "endDate": "2018-09-19T01:08:11.873Z",
-                  "created": "2018-09-19T01:08:11.873Z",
-                  "updated": "2018-09-19T01:08:11.873Z",
-                  "primaryHolder": {},
-                  "coveredResidents": [null]
-                }
-              ],
-              "coveringPolicies": [
-                {
-                  "id": 0,
-                  "carrier": "",
-                  "policyNumber": "",
-                  "liabilityCoverage": 0,
-                  "effectiveDate": "2018-09-19T01:08:11.873Z",
-                  "startDate": "2018-09-19T01:08:11.873Z",
-                  "endDate": "2018-09-19T01:08:11.873Z",
-                  "created": "2018-09-19T01:08:11.873Z",
-                  "updated": "2018-09-19T01:08:11.873Z",
-                  "primaryHolder": {},
-                  "coveredResidents": [null]
-                }
-              ]
-            }
-          ],
-          "policies": [
-            {
-              "id": 0,
-              "carrier": "",
-              "policyNumber": "",
-              "liabilityCoverage": 0,
-              "effectiveDate": "2018-09-19T01:08:11.873Z",
-              "startDate": "2018-09-19T01:08:11.873Z",
-              "endDate": "2018-09-19T01:08:11.873Z",
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "primaryHolder": {},
-              "coveredResidents": [null]
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "unitId": "102",
-          "name": "Lindsay Brie",
-          "type": "Residential",
-          "squareFootage": 0,
-          "bedrooms": 0,
-          "bathrooms": 0,
-          "leaseFrom": "2018-09-19T01:08:11.873Z",
-          "leaseTo": "2018-09-19T01:08:11.873Z",
-          "enabled": true,
-          "created": "2018-09-19T01:08:11.873Z",
-          "updated": "2018-09-19T01:08:11.873Z",
-          "policyEnd": "2018-09-19T01:08:11.873Z",
-          "coverageProvider": "RenterProtect",
-          "policyStatus": "Covered",
-          "paidInFull": false,
-          "atRisk": true,
-          "residents": [
-            {
-              "id": 0,
-              "yardiCustomerId": "",
-              "lastName": "",
-              "email": "",
-              "phone1": "",
-              "phone2": "",
-              "enabled": true,
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "policies": [
-                {
-                  "id": 0,
-                  "carrier": "",
-                  "policyNumber": "",
-                  "liabilityCoverage": 0,
-                  "effectiveDate": "2018-09-19T01:08:11.873Z",
-                  "startDate": "2018-09-19T01:08:11.873Z",
-                  "endDate": "2018-09-19T01:08:11.873Z",
-                  "created": "2018-09-19T01:08:11.873Z",
-                  "updated": "2018-09-19T01:08:11.873Z",
-                  "primaryHolder": {},
-                  "coveredResidents": [null]
-                }
-              ],
-              "coveringPolicies": [
-                {
-                  "id": 0,
-                  "carrier": "",
-                  "policyNumber": "",
-                  "liabilityCoverage": 0,
-                  "effectiveDate": "2018-09-19T01:08:11.873Z",
-                  "startDate": "2018-09-19T01:08:11.873Z",
-                  "endDate": "2018-09-19T01:08:11.873Z",
-                  "created": "2018-09-19T01:08:11.873Z",
-                  "updated": "2018-09-19T01:08:11.873Z",
-                  "primaryHolder": {},
-                  "coveredResidents": [null]
-                }
-              ]
-            }
-          ],
-          "policies": [
-            {
-              "id": 0,
-              "carrier": "",
-              "policyNumber": "",
-              "liabilityCoverage": 0,
-              "effectiveDate": "2018-09-19T01:08:11.873Z",
-              "startDate": "2018-09-19T01:08:11.873Z",
-              "endDate": "2018-09-19T01:08:11.873Z",
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "primaryHolder": {},
-              "coveredResidents": [null]
-            }
-          ]
-        }
-      ]
+      "propertyId": 3,
+      "name": "Mario",
+      "type": "Residential",
+      "squareFootage": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "leaseFrom": "2019-01-17T06:00:00.000Z",
+      "leaseTo": "2019-09-19T01:08:11.873Z",
+      "enabled": true,
+      "created": "2018-09-19T01:08:11.873Z",
+      "updated": "2018-09-19T01:08:11.873Z",
+      "policyEnd": "2018-07-16T06:00:00.000Z",
+      "coverageProvider": "RenterProtect",
+      "policyStatus": "Covered",
+      "paidInFull": false,
+      "atRisk": true,
+      "residents": [],
+      "policies": [],
+      "email": "email@email.com",
+      "primaryPolicyHolder": "holder4"
     },
     {
-      "id": 1,
-      "units": [
-        {
-          "id": 2,
-          "unitId": "101",
-          "name": "Ryan Fielder",
-          "type": "Residential",
-          "squareFootage": 0,
-          "bedrooms": 0,
-          "bathrooms": 0,
-          "leaseFrom": "2018-09-19",
-          "leaseTo": "2018-09-19T01:08:11.873Z",
-          "enabled": true,
-          "created": "2018-09-19T01:08:11.873Z",
-          "updated": "2018-09-19T01:08:11.873Z",
-          "policyEnd": "2018-09-19T01:08:11.873Z",
-          "coverageProvider": "RenterProtect",
-          "policyStatus": "Covered",
-          "paidInFull": false,
-          "atRisk": true,
-          "residents": [
-            {
-              "id": 0,
-              "yardiCustomerId": "",
-              "lastName": "",
-              "email": "",
-              "phone1": "",
-              "phone2": "",
-              "enabled": true,
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "policies": [
-                {
-                  "id": 0,
-                  "carrier": "",
-                  "policyNumber": "",
-                  "liabilityCoverage": 0,
-                  "effectiveDate": "2018-09-19T01:08:11.873Z",
-                  "startDate": "2018-09-19T01:08:11.873Z",
-                  "endDate": "2018-09-19T01:08:11.873Z",
-                  "created": "2018-09-19T01:08:11.873Z",
-                  "updated": "2018-09-19T01:08:11.873Z",
-                  "primaryHolder": {},
-                  "coveredResidents": [null]
-                }
-              ],
-              "coveringPolicies": [
-                {
-                  "id": 0,
-                  "carrier": "",
-                  "policyNumber": "",
-                  "liabilityCoverage": 0,
-                  "effectiveDate": "2018-09-19T01:08:11.873Z",
-                  "startDate": "2018-09-19T01:08:11.873Z",
-                  "endDate": "2018-09-19T01:08:11.873Z",
-                  "created": "2018-09-19T01:08:11.873Z",
-                  "updated": "2018-09-19T01:08:11.873Z",
-                  "primaryHolder": {},
-                  "coveredResidents": [null]
-                }
-              ]
-            }
-          ],
-          "policies": [
-            {
-              "id": 0,
-              "carrier": "",
-              "policyNumber": "",
-              "liabilityCoverage": 0,
-              "effectiveDate": "2018-09-19T01:08:11.873Z",
-              "startDate": "2018-09-19T01:08:11.873Z",
-              "endDate": "2018-09-19T01:08:11.873Z",
-              "created": "2018-09-19T01:08:11.873Z",
-              "updated": "2018-09-19T01:08:11.873Z",
-              "primaryHolder": {},
-              "coveredResidents": [null]
-            }
-          ]
-        }
-      ]
+      "id": 2,
+      "propertyId": 2,
+      "name": "Ryan Fieldez",
+      "type": "Residential",
+      "squareFootage": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "leaseFrom": "2018-09-02T06:00:00.000Z",
+      "leaseTo": "2018-09-19T06:00:00.000Z",
+      "enabled": true,
+      "created": "2018-09-19T01:08:11.873Z",
+      "updated": "2018-09-19T01:08:11.873Z",
+      "policyEnd": "2018-09-19T06:00:00.000Z",
+      "coverageProvider": "RenterProtect",
+      "policyStatus": "Cove red",
+      "paidInFull": false,
+      "atRisk": true,
+      "residents": [],
+      "policies": [],
+      "email": "email@email.com",
+      "primaryPolicyHolder": "holder4"
+    }
+  ],
+  "units-relations": [
+    {
+      "propertyId": 3,
+      "id": 0
+    },
+    {
+      "propertyId": 3,
+      "id": 1
+    },
+    {
+      "propertyId": 2,
+      "id": 2
     }
   ]
 }

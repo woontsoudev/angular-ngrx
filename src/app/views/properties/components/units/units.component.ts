@@ -38,9 +38,7 @@ export class UnitsComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    // this.propertiesStore.dispatch(new PropertiesActions.GetUnits());
-  }
+  ngOnInit() {}
 
   onRowSelectUnit(unit) {
     this.propertiesStore.dispatch(new PropertiesActions.EditUnit(unit.id));
@@ -54,7 +52,7 @@ export class UnitsComponent implements OnInit {
     this.confirmationService.confirm({
       message: `Do you want to delete ${unit.name}?`,
       accept: () => {
-        // this.propertiesStore.dispatch(new PropertiesActions.DeleteUnit(unit));
+        this.propertiesStore.dispatch(new PropertiesActions.DeleteUnit(unit));
       }
     });
   }

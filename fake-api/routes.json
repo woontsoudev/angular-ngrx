@@ -7,5 +7,8 @@
   "/api/properties/:relationId/users/:propertyId": "/property-relations",
   "/api/properties/delete/:relationId/users/:propertyId": "/property-relations/:relationId",
   "/api/properties/:propertyId/users": "/properties/:propertyId?_embed=property-relations",
-  "/api/properties/user/:userId": "/users/:userId?_embed=property-relations"
+  "/api/properties/user/:userId": "/users/:userId?_embed=property-relations",
+  "/api/properties/:propertyId/units": "/properties/:propertyId?_embed=units",
+  "/api/properties/:propertyId/units/:unitId": "/properties/:propertyId?_embed=units",
+  "/api/unit/:unitId": "/units/:unitId"
 }

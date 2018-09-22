@@ -47,12 +47,20 @@
         </div>
         <div class="form-group-underlined col">
             <label for="addEditLeaseDurationInput">Lease Duration</label>
-            <p-calendar
+            <!-- <p-calendar
                 class="p-calendar form-control"
                 formControlName="leaseDuration"
                 showIcon="true"
                 dateFormat="dd-mm-yy"
                 id="addEditLeaseDurationInput"
+            ></p-calendar> -->
+            <p-calendar
+                class="p-calendar form-control"
+                id="addEditLeaseDurationInput"
+                formControlName="leaseDuration"
+                selectionMode="range"
+                showIcon="true"
+                dateFormat="dd-mm-yy"
             ></p-calendar>
             <app-error-field
                 [field]="leaseDuration"
