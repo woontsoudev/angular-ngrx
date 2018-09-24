@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 import { Store } from '@ngrx/store';
 import { ConfirmationService } from 'primeng/api';
 
-import * as LayoutActions from '../../../../actions/layout.actions';
 import * as PropertiesActions from '../../../../actions/properties.actions';
 import * as PropertiesReducer from '../../../../reducers/properties.reducer';
 
@@ -14,8 +12,6 @@ import * as PropertiesReducer from '../../../../reducers/properties.reducer';
 export class UnitsComponent implements OnInit {
   @Input()
   units: object;
-
-  public unitsModal$: Observable<boolean>;
 
   public cols = [
     { field: 'unitId', header: 'Unit' },
@@ -29,14 +25,9 @@ export class UnitsComponent implements OnInit {
   ];
 
   constructor(
-    private layoutStore: Store<PropertiesReducer.State>,
     private propertiesStore: Store<PropertiesReducer.State>,
     private confirmationService: ConfirmationService
-  ) {
-    this.unitsModal$ = layoutStore.select(
-      (state: any) => state.layoutStore.unitsModal
-    );
-  }
+  ) {}
 
   ngOnInit() {}
 
@@ -55,9 +46,5 @@ export class UnitsComponent implements OnInit {
         this.propertiesStore.dispatch(new PropertiesActions.DeleteUnit(unit));
       }
     });
-  }
-
-  onToggleModal() {
-    this.layoutStore.dispatch(new LayoutActions.ToggleUnitsModal());
   }
 }

@@ -12,8 +12,8 @@ import * as PropertiesActions from '../actions/properties.actions';
 import * as LayoutActions from '../actions/layout.actions';
 
 // Models
-import { Property } from '../models/property.model';
-import { Unit } from '../models/unit.model';
+import Property from '../models/property.model';
+import Unit from '../models/unit.model';
 
 @Injectable()
 export class PropertiesEffects {
@@ -58,6 +58,10 @@ export class PropertiesEffects {
       (property: Property): Observable<PropertiesActions.SetUnits> => {
         return this.propertiesService.getUnits(property.id).pipe(
           map(
+            // Replace the below line when endpoint is ready.
+            // Meanwhile it is using - units: any - as a declaration
+            // and - units.units - to get the nested
+            // units data located into the interim DB model.
             // (units: Unit[]): any => {
             (units: any): any => {
               return new PropertiesActions.SetUnits(units.units);
@@ -112,7 +116,7 @@ export class PropertiesEffects {
         return [
           new PropertiesActions.SaveUnit(unit),
           new LayoutActions.ToggleUnitsModal(),
-          new PropertiesActions.SetEditingUnit('')
+          new PropertiesActions.SetEditingUnit(null)
         ];
       }
     )
@@ -125,7 +129,7 @@ export class PropertiesEffects {
       (): Action[] => {
         return [
           new LayoutActions.ToggleUnitsModal(),
-          new PropertiesActions.SetEditingUnit('')
+          new PropertiesActions.SetEditingUnit(null)
         ];
       }
     )
@@ -167,7 +171,6 @@ export class PropertiesEffects {
     ofType(PropertiesActions.DELETE_UNIT),
     map((action: PropertiesActions.DeleteUnit) => action.payload),
     switchMap((unit: Unit) => {
-      console.log('Effect 1 SM:::', unit);
       return this.propertiesService.deleteUnit(unit.id).pipe(
         map(() => {
           this.messageService.add({

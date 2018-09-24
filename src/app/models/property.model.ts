@@ -1,6 +1,6 @@
-import { Unit } from './unit.model';
+import Unit from './unit.model';
 
-export interface Property {
+export default interface Property {
   id: Number;
   yardiCode?: string;
   yardiSyncDate: Date;

@@ -1,17 +1,19 @@
 import * as PropertyActions from '../actions/properties.actions';
+import Unit from '../models/unit.model';
+import Property from '../models/property.model';
 
 export interface State {
-  properties: any[];
-  selectedProperty: any;
-  units: any[];
-  editingUnit: any;
+  properties: Property[];
+  selectedProperty: {} | Property;
+  units: Unit[];
+  editingUnit: {} | Unit;
 }
 
 const initialState: State = {
   properties: [],
-  selectedProperty: {},
+  selectedProperty: null,
   units: [],
-  editingUnit: {}
+  editingUnit: null
 };
 
 export function reducer(
@@ -21,19 +23,23 @@ export function reducer(
   switch (action.type) {
     case PropertyActions.SET_PROPERTIES:
       const properties = action.payload;
+
       return {
         ...state,
         properties
       };
 
     case PropertyActions.SET_PROPERTY:
+      const selectedProperty = action.payload;
+
       return {
         ...state,
-        selectedProperty: action.payload
+        selectedProperty
       };
 
     case PropertyActions.SET_UNITS:
       const units = action.payload;
+
       return {
         ...state,
         units
@@ -44,6 +50,7 @@ export function reducer(
         action.payload !== ''
           ? state.units.find(unit => unit.id === action.payload)
           : {};
+
       return {
         ...state,
         editingUnit
@@ -51,11 +58,11 @@ export function reducer(
 
     case PropertyActions.SAVE_UNIT: {
       const unit = action.payload;
-      let units;
 
       if (state.units.find(item => item.id === unit.id)) {
-        units = state.units.map(item => (item.id === unit.id ? unit : item));
-        state.units = units;
+        state.units = state.units.map(
+          item => (item.id === unit.id ? unit : item)
+        );
       } else {
         state.units.push(unit);
       }
@@ -67,11 +74,10 @@ export function reducer(
 
     case PropertyActions.REMOVE_UNIT: {
       const unitId = action.payload;
-      const units = state.units.filter(unit => unit.id !== unitId);
+      state.units = state.units.filter(unit => unit.id !== unitId);
 
       return {
-        ...state,
-        units
+        ...state
       };
     }
 

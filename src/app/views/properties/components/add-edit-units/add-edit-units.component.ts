@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import * as PropertiesActions from '../../../../actions/properties.actions';
 import * as PropertiesReducer from '../../../../reducers/properties.reducer';
-import { Unit } from '../../../../models/unit.model';
+import Unit from '../../../../models/unit.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -67,7 +67,7 @@ export class AddEditComponent implements OnInit {
     this.editingUnit$.subscribe(data => {
       this.editingData = data;
 
-      if (data.hasOwnProperty('id')) {
+      if (data) {
         const {
           id,
           unitId: unit = `00${data.id}`, // Remove this mocked unitId when real endpoints are ready
@@ -104,13 +104,14 @@ export class AddEditComponent implements OnInit {
 
   onSubmitWithFb() {
     const values = Object.assign({}, this.editingData, {
-      name: this.addEditForm.value.residentName,
-      leaseFrom: this.addEditForm.value.leaseDuration[0],
-      leaseTo: this.addEditForm.value.leaseDuration[1],
-      policyEnd: this.addEditForm.value.policyDuration,
-      type: this.addEditForm.value.unitType,
-      email: this.addEditForm.value.email,
-      primaryPolicyHolder: this.addEditForm.value.primaryPolicyHolder.value,
+      name: this.addEditForm.get('residentName').value,
+      leaseFrom: this.addEditForm.get('leaseDuration').value[0],
+      leaseTo: this.addEditForm.get('leaseDuration').value[1],
+      policyEnd: this.addEditForm.get('policyDuration').value,
+      type: this.addEditForm.get('unitType').value,
+      email: this.addEditForm.get('email').value,
+      primaryPolicyHolder: this.addEditForm.get('primaryPolicyHolder').value
+        .value,
       propertyId: this.selectedProperty.id
     });
 

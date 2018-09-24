@@ -1,11 +1,11 @@
-export interface Unit {
-  id: Number;
+export default interface Unit {
+  id: number;
   unitId: '100';
   name: string;
   type: string;
-  squareFootage: Number;
-  bedrooms: Number;
-  bathrooms: Number;
+  squareFootage: number;
+  bedrooms: number;
+  bathrooms: number;
   leaseFrom: Date;
   leaseTo: Date;
   enabled: boolean;

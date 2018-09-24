@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store } from '@ngrx/store';
 
-import { Property } from '../../models/property.model';
-import { Unit } from '../../models/unit.model';
+import Property from '../../models/property.model';
+import Unit from '../../models/unit.model';
 
 import * as PropertiesActions from '../../actions/properties.actions';
 import * as PropertiesReducer from '../../reducers/properties.reducer';
+import * as LayoutActions from '../../actions/layout.actions';
 
 @Component({
   selector: 'app-properties',
@@ -15,10 +16,14 @@ import * as PropertiesReducer from '../../reducers/properties.reducer';
 export class PropertiesComponent implements OnInit {
   public properties$: Observable<Property[]>;
   public units$: Observable<Unit[]>;
+  public unitsModal$: Observable<boolean>;
   public dropdownProperties$: Observable<Property[]>;
   public selectedProperty$: Observable<Property>;
 
-  constructor(private propertiesStore: Store<PropertiesReducer.State>) {
+  constructor(
+    private propertiesStore: Store<PropertiesReducer.State>,
+    private layoutStore: Store<PropertiesReducer.State>
+  ) {
     this.properties$ = propertiesStore.select(
       (state: any) => state.propertiesStore.properties
     );
@@ -49,13 +54,17 @@ export class PropertiesComponent implements OnInit {
         policyEnd: new Date(unit.policyEnd).toLocaleDateString()
       }))
     );
+
+    this.unitsModal$ = layoutStore.select(
+      (state: any) => state.layoutStore.unitsModal
+    );
   }
 
   ngOnInit() {
     this.propertiesStore.dispatch(new PropertiesActions.GetProperties());
 
     this.selectedProperty$.subscribe(property => {
-      if (property.hasOwnProperty('id')) {
+      if (property) {
         this.propertiesStore.dispatch(new PropertiesActions.GetUnits(property));
       }
     });
@@ -68,5 +77,9 @@ export class PropertiesComponent implements OnInit {
         new PropertiesActions.SetProperty(property)
       );
     });
+  }
+
+  onToggleModal() {
+    this.layoutStore.dispatch(new LayoutActions.ToggleUnitsModal());
   }
 }

@@ -15,6 +15,13 @@
       "id": "ieQQaJn"
     },
     {
+      "brand": "test new",
+      "color": "red",
+      "vin": "f2s5fds56e",
+      "year": "2012",
+      "id": "s1N9TnQ"
+    },
+    {
       "brand": "test 4",
       "color": "s",
       "vin": "fds",
@@ -92,6 +99,59 @@
       "id": "PXn9v6D"
     }
   ],
+  "users": [
+    {
+      "username": "boruca updated v2",
+      "email": "john.doe@test.com",
+      "addressLine1": "my current address 1",
+      "phone": "25989-8922",
+      "id": 1
+    },
+    {
+      "username": "fulanito",
+      "email": "optimus.prime@test.com",
+      "addressLine1": "my current address 2",
+      "phone": "25989-8922",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "role": {
+        "id": 1,
+        "name": "role 1"
+      },
+      "username": "sutanito",
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "email": "peter.parker@test.com",
+      "password": "secretpassword",
+      "addressLine1": "my current address 1",
+      "addressLine2": "the address 2",
+      "phone": "23232-4443",
+      "created": "21/02/16"
+    },
+    {
+      "username": "Tito",
+      "email": "test1@test.com",
+      "addressLine1": "address 1 test",
+      "phone": "21254-56562",
+      "id": 5
+    },
+    {
+      "username": "test 1",
+      "email": "test",
+      "addressLine1": "test",
+      "phone": "test",
+      "id": 6
+    },
+    {
+      "username": "test 2",
+      "email": "test",
+      "addressLine1": "test",
+      "phone": "test",
+      "id": 7
+    }
+  ],
   "properties": [
     {
       "id": 2,
@@ -128,6 +188,13 @@
       "city": "Boston",
       "state": "Massachusetts",
       "postalCode": "MA 02111"
+    }
+  ],
+  "property-relations": [
+    {
+      "userId": 3,
+      "propertyId": 2,
+      "id": 5
     }
   ],
   "units": [
@@ -181,7 +248,7 @@
     {
       "id": 2,
       "propertyId": 2,
-      "name": "Ryan Field",
+      "name": "Ryan Fieldz",
       "type": "Residential",
       "squareFootage": 0,
       "bedrooms": 0,
@@ -191,7 +258,7 @@
       "enabled": true,
       "created": "2018-09-19T01:08:11.873Z",
       "updated": "2018-09-19T01:08:11.873Z",
-      "policyEnd": "2018-09-19T06:00:00.000Z",
+      "policyEnd": "2015-12-22T06:00:00.000Z",
       "coverageProvider": "RenterProtect",
       "policyStatus": "Covered",
       "paidInFull": false,
@@ -199,16 +266,16 @@
       "residents": [],
       "policies": [],
       "email": "email@email.com",
-      "primaryPolicyHolder": "Holder 5"
+      "primaryPolicyHolder": "Holder 2"
     },
     {
       "name": "Caracola",
-      "leaseFrom": "2018-09-10T06:00:00.000Z",
-      "leaseTo": "2018-09-20T06:00:00.000Z",
-      "policyEnd": "2018-09-27T06:00:00.000Z",
+      "leaseFrom": "2018-09-11T06:00:00.000Z",
+      "leaseTo": "2018-09-27T06:00:00.000Z",
+      "policyEnd": "2018-09-03T06:00:00.000Z",
       "type": "Residential",
       "email": "email@email.com",
-      "primaryPolicyHolder": "Holder 5",
+      "primaryPolicyHolder": "Holder 3",
       "propertyId": 3,
       "id": 3
     }
