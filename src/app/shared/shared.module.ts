@@ -51,7 +51,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ActionButtonsComponent,
     ToolbarComponent,
     RouterModule,
-    ModalComponent
+    ModalComponent,
+    RouterModule
   ],
   declarations: [
     LayoutComponent,

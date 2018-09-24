@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import * as CarsDemoActions from 'src/app/actions/cars-demo.actions';

@@ -1,0 +1,19 @@
+<app-title-bar title="Data Table">
+    <button
+        actions
+        class="btn btn-theme-primary"
+        (click)="onAddUnit()"
+    >
+        Add Units
+    </button>
+</app-title-bar>
+<app-data-table
+    *ngIf="units"
+    [data]="units"
+    [cols]="cols"
+    [rows]="10"
+    [placeholder]="'Search Units'"
+    dataKey="unitId"
+    (rowSelect)="onRowSelectUnit($event)"
+    (rowDelete)="onRowDeleteUnit($event)"
+></app-data-table>

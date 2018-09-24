@@ -107,7 +107,7 @@ $p-dropdown-width: 360px;
     }
 
     &.separator {
-      border-right: 1px solid $theme-light-gray;
+      border-right: none;
     }
 
     // Options
@@ -166,6 +166,10 @@ $p-dropdown-width: 360px;
       width: $p-dropdown-width;
       min-height: auto;
       border-bottom: none;
+
+      &.separator {
+        border-right: 1px solid $theme-light-gray;
+      }
 
       .ui-dropdown-panel {
         min-width: $p-dropdown-width;

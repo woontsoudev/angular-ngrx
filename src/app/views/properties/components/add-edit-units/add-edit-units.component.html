@@ -1,0 +1,213 @@
+<form
+    [formGroup]="addEditForm"
+    (ngSubmit)="onSubmitWithFb()"
+>
+    <div class="form-row">
+        <div class="form-group-underlined col-sm-12">
+            <h2 class="h2">{{this.selectedProperty.name}}</h2>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="addEditFormUnitInput">Unit</label>
+            <input
+                type="text"
+                formControlName="unit"
+                class="form-control"
+                id="addEditFormUnitInput"
+            >
+            <app-error-field
+                [field]="unit"
+                name="Unit"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="addEditFormUnitTypeInput">Unit Type</label>
+            <input
+                type="text"
+                formControlName="unitType"
+                class="form-control"
+                id="addEditFormUnitTypeInput"
+            >
+            <app-error-field
+                [field]="unitType"
+                name="Unit Type"
+            ></app-error-field>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group-underlined col">
+            <label for="addEditFormResidentNameInput">Resident Name</label>
+            <input
+                type="text"
+                formControlName="residentName"
+                class="form-control"
+                id="addEditFormResidentNameInput"
+            >
+            <app-error-field
+                [field]="residentName"
+                name="Resident Name"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="addEditLeaseDurationInput">Lease Duration</label>
+            <p-calendar
+                class="p-calendar form-control"
+                id="addEditLeaseDurationInput"
+                formControlName="leaseDuration"
+                selectionMode="range"
+                showIcon="true"
+                dateFormat="dd-mm-yy"
+            ></p-calendar>
+            <app-error-field
+                [field]="leaseDuration"
+                name="Lease Duration"
+            ></app-error-field>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group-underlined col">
+            <label for="addEditFormPolicyProviderInput">Policy Provider</label>
+            <input
+                type="text"
+                formControlName="policyProvider"
+                class="form-control"
+                id="addEditFormPolicyProviderInput"
+            >
+            <app-error-field
+                [field]="policyProvider"
+                name="Policy Provider"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="addEditPolicyDurationInput">Policy Duration</label>
+            <p-calendar
+                class="p-calendar form-control"
+                formControlName="policyDuration"
+                showIcon="true"
+                dateFormat="dd-mm-yy"
+                id="addEditPolicyDurationInput"
+            ></p-calendar>
+            <app-error-field
+                [field]="policyDuration"
+                name="Policy Duration"
+            ></app-error-field>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group-underlined col">
+            <label for="addEditFormPrimaryPolicyHolderInput">Primary Policy Holder</label>
+            <p-dropdown
+                class="p-dropdown form-control"
+                [options]="primaryPolicyHolders"
+                [autoWidth]="false"
+                optionLabel="name"
+                formControlName="primaryPolicyHolder"
+                id="addEditFormPrimaryPolicyHolderInput"
+            ></p-dropdown>
+            <app-error-field
+                [field]="primaryPolicyHolder"
+                name="Primary Policy Holder"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="addEditFormEmail">Email</label>
+            <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                id="addEditFormEmail"
+            >
+            <app-error-field
+                [field]="email"
+                name="Email"
+            ></app-error-field>
+        </div>
+    </div>
+
+    <div
+        class="form-row"
+        formGroupName="policyFile"
+    >
+        <div class="form-group-underlined col-sm-12">
+            <p-fileUpload
+                name="file[]"
+                mode="advanced"
+                (uploadHandler)="onUpload($event)"
+                (onUpload)="onUpload($event)"
+                customUpload="true"
+                accept="image/*"
+                auto="true"
+                maxFileSize="1000000"
+                styleClass="p-fileUpload text-center no-buttons"
+            >
+                <ng-template pTemplate="content">
+                    <div>
+                        <fa-icon
+                            [icon]="['fas', 'paperclip']"
+                            size="lg"
+                        ></fa-icon>
+                        Drag and drop to attach policy file
+                    </div>
+                </ng-template>
+                <ng-template
+                    let-file
+                    pTemplate="file"
+                >
+                    {{file | json}}
+                </ng-template>
+            </p-fileUpload>
+        </div>
+        <div class="form-group-underlined col-sm-12 font-italic">Add Resident</div>
+        <div class="form-group-underlined col">
+            <label for="addEditFormResidentNameInput">Resident Name</label>
+            <input
+                type="text"
+                formControlName="residentName"
+                class="form-control"
+                id="addEditFormResidentNameInput"
+            >
+            <!-- <app-error-field
+                [field]="residentName"
+                name="Resident Name"
+            ></app-error-field> -->
+        </div>
+        <div class="form-group-underlined col">
+            <label for="addEditFormResidentEmailInput">Email</label>
+            <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                id="addEditFormResidentEmailInput"
+            >
+            <!-- <app-error-field
+                [field]="email"
+                name="Email"
+            ></app-error-field> -->
+        </div>
+        <div class="form-group-underlined col-sm-12">
+            <label for="addEditFormResidentCoveredInput">
+                Is this resident covered under the insurance policy added above
+            </label>
+            <input
+                type="text"
+                formControlName="residentCovered"
+                class="form-control"
+                id="addEditFormResidentCoveredInput"
+            >
+            <!-- <app-error-field
+                [field]="residentCovered"
+                name="Resident Covered"
+            ></app-error-field> -->
+        </div>
+    </div>
+
+    <button
+        class="btn btn-theme-primary mr-1"
+        type="submit"
+        [disabled]="!addEditForm.valid"
+    >
+        Submit
+    </button>
+</form>

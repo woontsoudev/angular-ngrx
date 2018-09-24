@@ -99,24 +99,6 @@
       "id": "PXn9v6D"
     }
   ],
-  "properties": [
-    {
-      "id": 2,
-      "name": "Tokio"
-    },
-    {
-      "id": 3,
-      "name": "New York"
-    },
-    {
-      "name": "San jose",
-      "id": 4
-    },
-    {
-      "name": "Bahamas",
-      "id": 5
-    }
-  ],
   "users": [
     {
       "username": "boruca updated v2",
@@ -170,11 +152,132 @@
       "id": 7
     }
   ],
+  "properties": [
+    {
+      "id": 2,
+      "name": "Riverwalk Community",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    },
+    {
+      "id": 3,
+      "name": "Hillside Acres Community",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    },
+    {
+      "id": 4,
+      "name": "San jose",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    },
+    {
+      "id": 5,
+      "name": "Bahamas",
+      "address1": "100 Causeway Street",
+      "address2": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "MA 02111"
+    }
+  ],
   "property-relations": [
     {
       "userId": 3,
       "propertyId": 2,
       "id": 5
+    }
+  ],
+  "units": [
+    {
+      "id": 0,
+      "propertyId": 3,
+      "name": "Mario",
+      "type": "Residential",
+      "squareFootage": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "leaseFrom": "2019-01-17T06:00:00.000Z",
+      "leaseTo": "2019-09-19T01:08:11.873Z",
+      "enabled": true,
+      "created": "2018-09-19T01:08:11.873Z",
+      "updated": "2018-09-19T01:08:11.873Z",
+      "policyEnd": "2018-07-16T06:00:00.000Z",
+      "coverageProvider": "RenterProtect",
+      "policyStatus": "Covered",
+      "paidInFull": false,
+      "atRisk": true,
+      "residents": [],
+      "policies": [],
+      "email": "email@email.com",
+      "primaryPolicyHolder": "holder4"
+    },
+    {
+      "id": 1,
+      "propertyId": 3,
+      "name": "Lindsay Bri",
+      "type": "Residential",
+      "squareFootage": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "leaseFrom": "2018-09-26T06:00:00.000Z",
+      "leaseTo": "2018-09-19T01:08:11.873Z",
+      "enabled": true,
+      "created": "2018-09-19T01:08:11.873Z",
+      "updated": "2018-09-19T01:08:11.873Z",
+      "policyEnd": "2018-09-28T06:00:00.000Z",
+      "coverageProvider": "RenterProtect",
+      "policyStatus": "Covered",
+      "paidInFull": false,
+      "atRisk": true,
+      "residents": [],
+      "policies": [],
+      "policyProvider": "",
+      "primaryPolicyHolder": "Holder 4",
+      "email": "email@email.com"
+    },
+    {
+      "id": 2,
+      "propertyId": 2,
+      "name": "Ryan Fieldz",
+      "type": "Residential",
+      "squareFootage": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "leaseFrom": "2018-09-02T06:00:00.000Z",
+      "leaseTo": "2018-09-19T06:00:00.000Z",
+      "enabled": true,
+      "created": "2018-09-19T01:08:11.873Z",
+      "updated": "2018-09-19T01:08:11.873Z",
+      "policyEnd": "2015-12-22T06:00:00.000Z",
+      "coverageProvider": "RenterProtect",
+      "policyStatus": "Covered",
+      "paidInFull": false,
+      "atRisk": true,
+      "residents": [],
+      "policies": [],
+      "email": "email@email.com",
+      "primaryPolicyHolder": "Holder 2"
+    },
+    {
+      "name": "Caracola",
+      "leaseFrom": "2018-09-11T06:00:00.000Z",
+      "leaseTo": "2018-09-27T06:00:00.000Z",
+      "policyEnd": "2018-09-03T06:00:00.000Z",
+      "type": "Residential",
+      "email": "email@email.com",
+      "primaryPolicyHolder": "Holder 3",
+      "propertyId": 3,
+      "id": 3
     }
   ]
 }

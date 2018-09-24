@@ -10,6 +10,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @NgModule({
   exports: [
@@ -23,7 +25,9 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     InputTextModule,
     AutoCompleteModule,
     InputSwitchModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    FileUploadModule,
+    ProgressBarModule
   ]
 })
 export class PrimeNgModule {}

@@ -4,5 +4,41 @@
         class="container-fluid"
     >
         <p>Properties</p>
+
+        <app-toolbar
+            class="row"
+            [dropdownOptions]="dropdownProperties$ | async"
+            (dropdownSelectedItem)="onSelectProperty($event)"
+        ></app-toolbar>
+
+        <div class="row bg-white mt-4">
+            <app-units [units]="units$ | async"></app-units>
+        </div>
     </section>
+
+    <div modals>
+        <app-modal
+            (visibleChange)="onToggleModal()"
+            [visible]="unitsModal$ | async"
+        >
+            <div modal-header>
+                Add Unit
+                <fa-icon
+                    (click)="onToggleModal()"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </div>
+            <div modal-body>
+                <app-add-edit-units *ngIf="unitsModal$ | async"></app-add-edit-units>
+            </div>
+        </app-modal>
+
+        <p-confirmDialog
+            header="Confirmation"
+            icon="pi pi-exclamation-triangle"
+            width="425"
+        ></p-confirmDialog>
+    </div>
 </app-page>
