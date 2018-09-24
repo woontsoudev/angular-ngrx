@@ -23,7 +23,6 @@ import { ActionButtonsComponent } from './components/action-buttons/action-butto
 import { ErrorFieldComponent } from './components/error-field/error-field.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { UnitsComponent } from './components/units/units.component';
 
 @NgModule({
   imports: [
@@ -53,7 +52,6 @@ import { UnitsComponent } from './components/units/units.component';
     ToolbarComponent,
     RouterModule,
     ModalComponent,
-    UnitsComponent,
     RouterModule
   ],
   declarations: [
@@ -70,8 +68,7 @@ import { UnitsComponent } from './components/units/units.component';
     NotificationsComponent,
     ActionButtonsComponent,
     ToolbarComponent,
-    ModalComponent,
-    UnitsComponent
+    ModalComponent
   ],
   providers: []
 })

@@ -16,6 +16,7 @@ export class ToggleCarsDemoModal implements Action {
 
 export class ToggleUsersModal implements Action {
   readonly type = TOGGLE_USERS_MODAL;
+}
 
 export class ToggleUnitsModal implements Action {
   readonly type = TOGGLE_UNITS_MODAL;

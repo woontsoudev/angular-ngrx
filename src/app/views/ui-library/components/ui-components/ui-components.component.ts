@@ -13,11 +13,21 @@ import * as PropertiesReducer from '../../../../reducers/properties.reducer';
   styleUrls: ['../../ui-library.component.scss']
 })
 export class UiComponentsComponent implements OnInit {
-  public properties$: Observable<Property[]>;
+  public dropdownProperties$: Observable<Property[]>;
 
   constructor(private propertiesStore: Store<PropertiesReducer.State>) {
-    this.properties$ = propertiesStore.select(
-      (state: any) => state.propertiesStore.properties
+    this.dropdownProperties$ = propertiesStore.select((state: any) =>
+      state.propertiesStore.properties.map(property => {
+        return {
+          label: property.name,
+          value: {
+            id: property.id,
+            location: `${property.address1}, ${property.state}, ${
+              property.postalCode
+            }`
+          }
+        };
+      })
     );
   }
 
