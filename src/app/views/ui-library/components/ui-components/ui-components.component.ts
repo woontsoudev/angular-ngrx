@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Store } from '@ngrx/store';
 
-import { Property } from '../../../../models/property.model';
+import Property from '../../../../models/property.model';
 
 import * as PropertiesActions from '../../../../actions/properties.actions';
 import * as PropertiesReducer from '../../../../reducers/properties.reducer';
