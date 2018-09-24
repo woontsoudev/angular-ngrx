@@ -207,31 +207,6 @@
       "policies": [],
       "email": "email@email.com",
       "primaryPolicyHolder": "Holder 5"
-    },
-    {
-      "name": "Caracola",
-      "leaseFrom": "2018-09-02T06:00:00.000Z",
-      "leaseTo": "2018-09-04T06:00:00.000Z",
-      "policyEnd": "2018-09-11T06:00:00.000Z",
-      "type": "Ultra Residential",
-      "email": "email@email.com",
-      "primaryPolicyHolder": "Holder 2",
-      "propertyId": 2,
-      "id": 3
-    }
-  ],
-  "units-relations": [
-    {
-      "propertyId": 3,
-      "id": 0
-    },
-    {
-      "propertyId": 3,
-      "id": 1
-    },
-    {
-      "propertyId": 2,
-      "id": 2
     }
   ]
 }
