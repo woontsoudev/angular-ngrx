@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { switchMap, map, catchError } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
 
 import { PropertiesService } from '../services/properties.service';
@@ -27,10 +27,7 @@ export class PropertiesEffects {
             (properties: Property[]): any => {
               return new PropertiesActions.SetProperties(properties);
             }
-          ),
-          catchError(err => {
-            return of([err]);
-          })
+          )
         );
       }
     )
@@ -66,11 +63,7 @@ export class PropertiesEffects {
             (units: any): any => {
               return new PropertiesActions.SetUnits(units.units);
             }
-          ),
-          catchError(err => {
-            console.log('Get units error: ', err);
-            return of([err]);
-          })
+          )
         );
       }
     )
@@ -104,9 +97,6 @@ export class PropertiesEffects {
               detail: `${res.name} was edited`
             });
             return res;
-          }),
-          catchError(err => {
-            return of([err]);
           })
         );
       }
@@ -149,9 +139,6 @@ export class PropertiesEffects {
               detail: `${res.name} was added`
             });
             return res;
-          }),
-          catchError(err => {
-            return of([err]);
           })
         );
       }
@@ -179,9 +166,6 @@ export class PropertiesEffects {
             detail: `${unit.name} was successfully deleted`
           });
           return unit;
-        }),
-        catchError(err => {
-          return of([err]);
         })
       );
     }),

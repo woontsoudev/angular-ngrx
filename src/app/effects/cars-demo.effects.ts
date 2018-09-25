@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
 
 import { CarsDemoService } from '../services/cars-demo.service';
@@ -22,10 +22,7 @@ export class CarsDemoEffects {
             (cars: Car[]): any => {
               return new CarsDemoActions.SetCars(cars);
             }
-          ),
-          catchError(err => {
-            return of([err]);
-          })
+          )
         );
       }
     )
@@ -59,9 +56,6 @@ export class CarsDemoEffects {
               detail: `${res.brand} was edited`
             });
             return res;
-          }),
-          catchError(err => {
-            return of([err]);
           })
         );
       }
@@ -103,9 +97,6 @@ export class CarsDemoEffects {
               detail: `${res.brand} was added`
             });
             return res;
-          }),
-          catchError(err => {
-            return of([err]);
           })
         );
       }
@@ -133,9 +124,6 @@ export class CarsDemoEffects {
             detail: `${car.brand} was successfully deleted`
           });
           return car;
-        }),
-        catchError(err => {
-          return of([err]);
         })
       );
     }),
