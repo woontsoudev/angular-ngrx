@@ -20,6 +20,7 @@ import { UsersEffects } from './effects/users.effects';
 import { CarsDemoService } from './services/cars-demo.service';
 import { PropertiesService } from './services/properties.service';
 import { UsersService } from './services/users.service';
+import { HttpErrorHandler } from './services/http-error-handler.service';
 import { httpInterceptorProviders } from './http-interceptors/index';
 
 // Custom
@@ -42,6 +43,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     httpInterceptorProviders,
+    HttpErrorHandler,
     CarsDemoService,
     ConfirmationService,
     MessageService,
