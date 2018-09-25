@@ -143,13 +143,6 @@
       "addressLine1": "test",
       "phone": "test",
       "id": 6
-    },
-    {
-      "username": "test 2",
-      "email": "test",
-      "addressLine1": "test",
-      "phone": "test",
-      "id": 7
     }
   ],
   "properties": [
@@ -278,6 +271,17 @@
       "primaryPolicyHolder": "Holder 3",
       "propertyId": 3,
       "id": 3
+    },
+    {
+      "name": "test",
+      "leaseFrom": "2018-09-03T06:00:00.000Z",
+      "leaseTo": "2018-09-04T06:00:00.000Z",
+      "policyEnd": "2018-09-23T06:00:00.000Z",
+      "type": "test",
+      "email": "resr",
+      "primaryPolicyHolder": "Holder 2",
+      "propertyId": 2,
+      "id": 4
     }
   ]
 }

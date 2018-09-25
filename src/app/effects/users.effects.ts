@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
 
 import { UsersService } from '../services/users.service';
@@ -22,10 +22,7 @@ export class UsersEffects {
             (users: User[]): any => {
               return new UsersActions.SetUsers(users);
             }
-          ),
-          catchError(err => {
-            return of([err]);
-          })
+          )
         );
       }
     )
@@ -59,9 +56,6 @@ export class UsersEffects {
               detail: `${res.username} was edited`
             });
             return res;
-          }),
-          catchError(err => {
-            return of([err]);
           })
         );
       }
@@ -103,9 +97,6 @@ export class UsersEffects {
               detail: `${res.username} was added`
             });
             return res;
-          }),
-          catchError(err => {
-            return of([err]);
           })
         );
       }
@@ -133,9 +124,6 @@ export class UsersEffects {
             detail: `${user.username} was successfully deleted`
           });
           return user;
-        }),
-        catchError(err => {
-          return of([err]);
         })
       );
     }),

@@ -23,11 +23,6 @@ export class LoaderInterceptor implements HttpInterceptor {
     this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
 
     return next.handle(req).pipe(
-      tap(evt => {
-        if (evt instanceof HttpResponse) {
-          console.log('---> status:', evt.status);
-        }
-      }),
       finalize(() => {
         this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
       })
