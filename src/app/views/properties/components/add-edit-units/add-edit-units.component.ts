@@ -21,8 +21,8 @@ export class AddEditComponent implements OnInit {
     leaseDuration: ['', Validators.required],
     policyProvider: [''],
     policyDuration: ['', Validators.required],
-    primaryPolicyHolder: ['', Validators.required],
-    email: ['', Validators.required],
+    primaryPolicyHolder: [''],
+    email: [''],
 
     policyFile: this.fb.group({
       file: [''],
@@ -67,12 +67,7 @@ export class AddEditComponent implements OnInit {
       this.editingData = data;
 
       if (data) {
-        const {
-          id,
-          unitId: unit = `00${data.id}`, // Remove this mocked unitId when real endpoints are ready
-          name: residentName,
-          type: unitType
-        } = data;
+        const { id, unitId: unit, name: residentName, type: unitType } = data;
         const policyFile = this.addEditForm.get('policyFile');
         policyFile.patchValue({
           file: '',
@@ -108,10 +103,10 @@ export class AddEditComponent implements OnInit {
       leaseFrom: this.addEditForm.get('leaseDuration').value[0],
       leaseTo: this.addEditForm.get('leaseDuration').value[1],
       policyEnd: this.addEditForm.get('policyDuration').value,
-      type: this.addEditForm.get('unitType').value
-      // email: this.addEditForm.get('email').value,
-      // primaryPolicyHolder: this.addEditForm.get('primaryPolicyHolder').value
-      //   .value
+      type: this.addEditForm.get('unitType').value,
+      email: this.addEditForm.get('email').value,
+      primaryPolicyHolder: this.addEditForm.get('primaryPolicyHolder').value
+        .value
     });
     const params = {
       propertyId: this.selectedProperty.id,

@@ -23,8 +23,6 @@ export class PropertiesService {
   }
 
   addUnit(propertyId, unit) {
-    console.log('Meanwhile here in the property service:', propertyId, unit);
-
     return this.http.post(
       `${environment.API}/properties/${propertyId}/units`,
       unit
@@ -32,8 +30,6 @@ export class PropertiesService {
   }
 
   deleteUnit(propertyId, unitId) {
-    console.log('hereeeee');
-    // return true;
     return this.http.delete(
       `${environment.API}/properties/${propertyId}/units/${unitId}`
     );

@@ -37,9 +37,7 @@ export class UnitsComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.selectedProperty$.subscribe(property => {});
-  }
+  ngOnInit() {}
 
   onRowSelectUnit(unit) {
     this.propertiesStore.dispatch(new PropertiesActions.EditUnit(unit.id));
@@ -61,10 +59,6 @@ export class UnitsComponent implements OnInit {
             })
           )
         )
-
-      // {
-      //   this.propertiesStore.dispatch(new PropertiesActions.DeleteUnit(unit));
-      // }
     });
   }
 }

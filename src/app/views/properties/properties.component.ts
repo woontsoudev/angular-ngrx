@@ -53,7 +53,6 @@ export class PropertiesComponent implements OnInit {
     this.units$ = propertiesStore.select((state: any) =>
       state.propertiesStore.units.map(unit => ({
         ...unit,
-        unitId: `00${unit.id}`, // Remove this mocked unitId when real endpoints are ready
         leaseTo: new Date(unit.leaseTo).toLocaleDateString(),
         policyEnd: new Date(unit.policyEnd).toLocaleDateString()
       }))
