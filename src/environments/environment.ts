@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  API: 'http://localhost:3000'
+  API:
+    'http://1fbusa-properties-service-dev.us-east-1.elasticbeanstalk.com:8080'
+  // API: 'http://localhost:3000'
 };
 
 /*

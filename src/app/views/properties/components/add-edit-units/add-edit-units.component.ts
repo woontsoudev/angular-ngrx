@@ -15,7 +15,6 @@ export class AddEditComponent implements OnInit {
   public editingUnit$: Observable<Unit>;
   public selectedProperty$: Observable<Unit>;
   public addEditForm = this.fb.group({
-    id: [''],
     unit: ['', Validators.required],
     unitType: ['', Validators.required],
     residentName: ['', Validators.required],
@@ -103,21 +102,25 @@ export class AddEditComponent implements OnInit {
   }
 
   onSubmitWithFb() {
-    const values = Object.assign({}, this.editingData, {
+    const unit = Object.assign({}, this.editingData, {
+      unitId: this.addEditForm.get('unit').value,
       name: this.addEditForm.get('residentName').value,
       leaseFrom: this.addEditForm.get('leaseDuration').value[0],
       leaseTo: this.addEditForm.get('leaseDuration').value[1],
       policyEnd: this.addEditForm.get('policyDuration').value,
-      type: this.addEditForm.get('unitType').value,
-      email: this.addEditForm.get('email').value,
-      primaryPolicyHolder: this.addEditForm.get('primaryPolicyHolder').value
-        .value,
-      propertyId: this.selectedProperty.id
+      type: this.addEditForm.get('unitType').value
+      // email: this.addEditForm.get('email').value,
+      // primaryPolicyHolder: this.addEditForm.get('primaryPolicyHolder').value
+      //   .value
     });
+    const params = {
+      propertyId: this.selectedProperty.id,
+      unit
+    };
 
     this.editMode
-      ? this.propertiesStore.dispatch(new PropertiesActions.UpdateUnit(values))
-      : this.propertiesStore.dispatch(new PropertiesActions.AddUnit(values));
+      ? this.propertiesStore.dispatch(new PropertiesActions.UpdateUnit(params))
+      : this.propertiesStore.dispatch(new PropertiesActions.AddUnit(params));
   }
 
   onUpload(event) {

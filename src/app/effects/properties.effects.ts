@@ -48,28 +48,6 @@ export class PropertiesEffects {
   );
 
   @Effect()
-  getUnit$: Observable<Action> = this.actions$.pipe(
-    ofType(PropertiesActions.GET_UNITS),
-    map((action: PropertiesActions.GetUnits) => action.payload),
-    switchMap(
-      (property: Property): Observable<PropertiesActions.SetUnits> => {
-        return this.propertiesService.getUnits(property.id).pipe(
-          map(
-            // Replace the below line when endpoint is ready.
-            // Meanwhile it is using - units: any - as a declaration
-            // and - units.units - to get the nested
-            // units data located into the interim DB model.
-            // (units: Unit[]): any => {
-            (units: any): any => {
-              return new PropertiesActions.SetUnits(units.units);
-            }
-          )
-        );
-      }
-    )
-  );
-
-  @Effect()
   editUnit$: Observable<Action> = this.actions$.pipe(
     ofType(PropertiesActions.EDIT_UNIT),
     map((action: PropertiesActions.EditUnit) => action.payload),
@@ -88,17 +66,19 @@ export class PropertiesEffects {
     ofType(PropertiesActions.UPDATE_UNIT),
     map((action: PropertiesActions.UpdateUnit) => action.payload),
     switchMap(
-      (unit): Observable<{}> => {
-        return this.propertiesService.updateUnit(unit).pipe(
-          map((res: Unit) => {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Done',
-              detail: `${res.name} was edited`
-            });
-            return res;
-          })
-        );
+      (params): Observable<{}> => {
+        return this.propertiesService
+          .updateUnit(params.propertyId, params.unit)
+          .pipe(
+            map((res: Unit) => {
+              this.messageService.add({
+                severity: 'success',
+                summary: 'Done',
+                detail: `${res.name} was edited`
+              });
+              return res;
+            })
+          );
       }
     ),
     switchMap(
@@ -130,17 +110,19 @@ export class PropertiesEffects {
     ofType(PropertiesActions.ADD_UNIT),
     map((action: PropertiesActions.AddUnit) => action.payload),
     switchMap(
-      (unit): Observable<{}> => {
-        return this.propertiesService.addUnit(unit).pipe(
-          map((res: Unit) => {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Done',
-              detail: `${res.name} was added`
-            });
-            return res;
-          })
-        );
+      (params): Observable<{}> => {
+        return this.propertiesService
+          .addUnit(params.propertyId, params.unit)
+          .pipe(
+            map((res: Unit) => {
+              this.messageService.add({
+                severity: 'success',
+                summary: 'Done',
+                detail: `${res.name} was added`
+              });
+              return res;
+            })
+          );
       }
     ),
     switchMap(
@@ -157,17 +139,19 @@ export class PropertiesEffects {
   deleteUnit$: Observable<Action> = this.actions$.pipe(
     ofType(PropertiesActions.DELETE_UNIT),
     map((action: PropertiesActions.DeleteUnit) => action.payload),
-    switchMap((unit: Unit) => {
-      return this.propertiesService.deleteUnit(unit.id).pipe(
-        map(() => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Done',
-            detail: `${unit.name} was successfully deleted`
-          });
-          return unit;
-        })
-      );
+    switchMap(params => {
+      return this.propertiesService
+        .deleteUnit(params.propertyId, params.unit.id)
+        .pipe(
+          map(() => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Done',
+              detail: `${params.unit.name} was successfully deleted`
+            });
+            return params.unit;
+          })
+        );
     }),
     switchMap(
       (unit: Unit): Action[] => {

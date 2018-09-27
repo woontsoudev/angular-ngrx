@@ -24,10 +24,12 @@ export class PropertiesComponent implements OnInit {
     private propertiesStore: Store<PropertiesReducer.State>,
     private layoutStore: Store<PropertiesReducer.State>
   ) {
+    // Main properties model
     this.properties$ = propertiesStore.select(
       (state: any) => state.propertiesStore.properties
     );
 
+    // Dropdown properties model
     this.dropdownProperties$ = propertiesStore.select((state: any) =>
       state.propertiesStore.properties.map(property => {
         return {
@@ -42,10 +44,12 @@ export class PropertiesComponent implements OnInit {
       })
     );
 
+    // Current property selected from the dropdown
     this.selectedProperty$ = propertiesStore.select(
       (state: any) => state.propertiesStore.selectedProperty
     );
 
+    // Units model to show in units table
     this.units$ = propertiesStore.select((state: any) =>
       state.propertiesStore.units.map(unit => ({
         ...unit,
@@ -65,7 +69,9 @@ export class PropertiesComponent implements OnInit {
 
     this.selectedProperty$.subscribe(property => {
       if (property) {
-        this.propertiesStore.dispatch(new PropertiesActions.GetUnits(property));
+        this.propertiesStore.dispatch(
+          new PropertiesActions.SetUnits(property.units)
+        );
       }
     });
   }

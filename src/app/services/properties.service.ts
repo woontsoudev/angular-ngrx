@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -7,24 +8,34 @@ export class PropertiesService {
   constructor(private http: HttpClient) {}
 
   getProperties() {
-    return this.http.get(`${environment.API}/properties`);
+    return this.http.get(`${environment.API}/properties/users/1`);
   }
 
   getUnits(propertyId) {
-    return this.http.get(
-      `${environment.API}/api/properties/${propertyId}/units`
+    return this.http.get(`${environment.API}/properties/${propertyId}/units`);
+  }
+
+  updateUnit(propertyId, unit) {
+    return this.http.put(
+      `${environment.API}/properties/${propertyId}/units/${unit.id}`,
+      unit
     );
   }
 
-  updateUnit(unit) {
-    return this.http.put(`${environment.API}/units/${unit.id}`, unit);
+  addUnit(propertyId, unit) {
+    console.log('Meanwhile here in the property service:', propertyId, unit);
+
+    return this.http.post(
+      `${environment.API}/properties/${propertyId}/units`,
+      unit
+    );
   }
 
-  addUnit(unit) {
-    return this.http.post(`${environment.API}/units`, unit);
-  }
-
-  deleteUnit(id) {
-    return this.http.delete(`${environment.API}/api/unit/${id}`);
+  deleteUnit(propertyId, unitId) {
+    console.log('hereeeee');
+    // return true;
+    return this.http.delete(
+      `${environment.API}/properties/${propertyId}/units/${unitId}`
+    );
   }
 }
