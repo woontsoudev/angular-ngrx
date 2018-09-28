@@ -6,6 +6,8 @@ export interface Role {
 export interface User {
   id: number;
   role: Role;
+  roleName?: string;
+  name?: string;
   username: string;
   firstName: string;
   lastName?: string;

@@ -6,10 +6,11 @@ import {
   HttpRequest
 } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs/internal/observable/of';
 
 import { HttpErrorHandler } from '../services/http-error-handler.service';
+import { throwError } from 'rxjs/internal/observable/throwError';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -21,7 +22,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError(error => {
         this.httpError.handleError(error);
-        return of(error);
+        return throwError(error);
       })
     );
   }

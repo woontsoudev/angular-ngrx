@@ -8,7 +8,7 @@ export interface State {
 
 const initialState: State = {
   users: [],
-  editingUser: {}
+  editingUser: null
 };
 
 export function reducer(state = initialState, action: UsersActions.All): State {
