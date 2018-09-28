@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  usersApi: 'http://1fbusa-uaa-service-dev.us-east-1.elasticbeanstalk.com:8080',
-  propertiesApi:
-    'http://1fbusa-properties-service-dev.us-east-1.elasticbeanstalk.com:8080',
+  api: 'http://1fbusa-routing-service-dev.us-east-1.elasticbeanstalk.com:8762',
   carsDemoApi: 'http://localhost:3000'
 };
 

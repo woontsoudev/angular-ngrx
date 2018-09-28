@@ -5,21 +5,27 @@ import { User } from '../models/user.model';
 
 @Injectable()
 export class UsersService {
+  public usersApi = 'users-api';
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.http.get(`${environment.usersApi}/users`);
+    return this.http.get(`${environment.api}/${this.usersApi}/users`);
   }
 
   updateUser(user: User) {
-    return this.http.put(`${environment.usersApi}/user/${user.id}`, user);
+    return this.http.put(
+      `${environment.api}/${this.usersApi}/user/${user.id}`,
+      user
+    );
   }
 
   addUser(user: User) {
-    return this.http.post(`${environment.usersApi}/user`, user);
+    return this.http.post(`${environment.api}/${this.usersApi}/user`, user);
   }
 
   deleteUser(user: User) {
-    return this.http.delete(`${environment.usersApi}/user/${user.id}`);
+    return this.http.delete(
+      `${environment.api}/${this.usersApi}/user/${user.id}`
+    );
   }
 }
