@@ -8,18 +8,18 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.http.get(`${environment.API}/users`);
+    return this.http.get(`${environment.usersApi}/users`);
   }
 
   updateUser(user: User) {
-    return this.http.put(`${environment.API}/users/${user.id}`, user);
+    return this.http.put(`${environment.usersApi}/user/${user.id}`, user);
   }
 
   addUser(user: User) {
-    return this.http.post(`${environment.API}/users`, user);
+    return this.http.post(`${environment.usersApi}/user`, user);
   }
 
   deleteUser(user: User) {
-    return this.http.delete(`${environment.API}/users/${user.id}`);
+    return this.http.delete(`${environment.usersApi}/user/${user.id}`);
   }
 }

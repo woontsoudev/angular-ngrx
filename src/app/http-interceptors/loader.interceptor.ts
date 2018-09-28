@@ -4,7 +4,8 @@ import {
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
-  HttpResponse
+  HttpResponse,
+  HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { finalize, tap, map } from 'rxjs/operators';
@@ -20,9 +21,16 @@ export class LoaderInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    const request = req.clone({
+      headers: new HttpHeaders({
+        Accept: '*/*',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      })
+    });
     this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
 
-    return next.handle(req).pipe(
+    return next.handle(request).pipe(
       finalize(() => {
         this.layoutStore.dispatch(new LayoutActions.ToggleLoader());
       })

@@ -8,18 +8,18 @@ export class CarsDemoService {
   constructor(private http: HttpClient) {}
 
   getCars() {
-    return this.http.get(`${environment.API}/cars`);
+    return this.http.get(`${environment.carsDemoApi}/cars`);
   }
 
   updateCar(car) {
-    return this.http.put(`${environment.API}/cars/${car.id}`, car);
+    return this.http.put(`${environment.carsDemoApi}/cars/${car.id}`, car);
   }
 
   addCar(car) {
-    return this.http.post(`${environment.API}/cars`, car);
+    return this.http.post(`${environment.carsDemoApi}/cars`, car);
   }
 
   deleteCar(id) {
-    return this.http.delete(`${environment.API}/cars/${id}`);
+    return this.http.delete(`${environment.carsDemoApi}/cars/${id}`);
   }
 }

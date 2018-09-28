@@ -5,7 +5,7 @@ import { ConfirmationService } from 'primeng/api';
 
 import * as UsersActions from 'src/app/actions/users.actions';
 import * as UsersReducer from 'src/app/reducers/users.reducer';
-import { User } from 'src/app/models/user.model';
+import { User, Role } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -13,9 +13,9 @@ import { User } from 'src/app/models/user.model';
 })
 export class UsersComponent implements OnInit {
   public cols = [
-    { field: 'username', header: 'Username' },
+    { field: 'name', header: 'Name' },
     { field: 'email', header: 'Email' },
-    { field: 'addressLine1', header: 'Address 1' },
+    { field: 'roleName', header: 'Role' },
     { field: 'phone', header: 'Phone' }
   ];
   public $users: Observable<any[]>;
@@ -24,7 +24,14 @@ export class UsersComponent implements OnInit {
     private usersStore: Store<UsersReducer.State>,
     private confirmationService: ConfirmationService
   ) {
-    this.$users = usersStore.select((state: any) => state.usersStore.users);
+    this.$users = usersStore.select((state: any) => {
+      const users = state.usersStore.users.map((user: User) => {
+        user.name = `${user.firstName} ${user.lastName}`;
+        user.roleName = `${user.role.name}`;
+        return user;
+      });
+      return users;
+    });
   }
 
   ngOnInit() {
