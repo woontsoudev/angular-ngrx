@@ -4,7 +4,8 @@ export interface State {
   modalExample: boolean;
   carsDemoModal: boolean;
   usersModal: boolean;
-  unitsModal: boolean;
+  editUnitModal: boolean;
+  unitDetailModal: boolean;
   loader: boolean;
 }
 
@@ -12,7 +13,8 @@ const initialState: State = {
   modalExample: false,
   carsDemoModal: false,
   usersModal: false,
-  unitsModal: false,
+  editUnitModal: false,
+  unitDetailModal: false,
   loader: false
 };
 
@@ -35,10 +37,17 @@ export function reducer(
       };
     }
 
-    case LayoutActions.TOGGLE_UNITS_MODAL: {
+    case LayoutActions.TOGGLE_EDIT_UNIT_MODAL: {
       return {
         ...state,
-        unitsModal: !state.unitsModal
+        editUnitModal: !state.editUnitModal
+      };
+    }
+
+    case LayoutActions.TOGGLE_UNIT_DETAIL_MODAL: {
+      return {
+        ...state,
+        unitDetailModal: !state.unitDetailModal
       };
     }
 

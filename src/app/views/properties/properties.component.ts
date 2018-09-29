@@ -16,7 +16,8 @@ import * as LayoutActions from '../../actions/layout.actions';
 export class PropertiesComponent implements OnInit {
   public properties$: Observable<Property[]>;
   public units$: Observable<Unit[]>;
-  public unitsModal$: Observable<boolean>;
+  public editUnitModal$: Observable<boolean>;
+  public unitDetailModal$: Observable<boolean>;
   public dropdownProperties$: Observable<Property[]>;
   public selectedProperty$: Observable<Property>;
 
@@ -58,8 +59,12 @@ export class PropertiesComponent implements OnInit {
       }))
     );
 
-    this.unitsModal$ = layoutStore.select(
-      (state: any) => state.layoutStore.unitsModal
+    this.editUnitModal$ = layoutStore.select(
+      (state: any) => state.layoutStore.editUnitModal
+    );
+
+    this.unitDetailModal$ = layoutStore.select(
+      (state: any) => state.layoutStore.unitDetailModal
     );
   }
 
@@ -84,7 +89,16 @@ export class PropertiesComponent implements OnInit {
     });
   }
 
-  onToggleModal() {
-    this.layoutStore.dispatch(new LayoutActions.ToggleUnitsModal());
+  onToggleModal(modal) {
+    switch (modal) {
+      case 'DETAIL':
+        this.layoutStore.dispatch(new LayoutActions.ToggleUnitDetailModal());
+        break;
+      case 'EDIT':
+        this.layoutStore.dispatch(new LayoutActions.ToggleEditUnitModal());
+        break;
+      default:
+        return null;
+    }
   }
 }

@@ -6,14 +6,14 @@ export interface State {
   properties: Property[];
   selectedProperty: {} | Property;
   units: Unit[];
-  editingUnit: {} | Unit;
+  selectedUnit: {} | Unit;
 }
 
 const initialState: State = {
   properties: [],
   selectedProperty: null,
   units: [],
-  editingUnit: null
+  selectedUnit: null
 };
 
 export function reducer(
@@ -45,15 +45,15 @@ export function reducer(
         units
       };
 
-    case PropertyActions.SET_EDITING_UNIT:
-      const editingUnit =
+    case PropertyActions.SET_SELECTED_UNIT:
+      const selectedUnit =
         action.payload !== ''
           ? state.units.find(unit => unit.id === action.payload)
           : {};
 
       return {
         ...state,
-        editingUnit
+        selectedUnit
       };
 
     case PropertyActions.SAVE_UNIT: {

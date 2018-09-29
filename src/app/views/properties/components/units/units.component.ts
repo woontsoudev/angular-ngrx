@@ -40,7 +40,8 @@ export class UnitsComponent implements OnInit {
   ngOnInit() {}
 
   onRowSelectUnit(unit) {
-    this.propertiesStore.dispatch(new PropertiesActions.EditUnit(unit.id));
+    // this.propertiesStore.dispatch(new PropertiesActions.EditUnit(unit.id));
+    this.propertiesStore.dispatch(new PropertiesActions.SelectUnit(unit.id));
   }
 
   onAddUnit() {

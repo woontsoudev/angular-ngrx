@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API:
-    'http://1fbusa-properties-service-dev.us-east-1.elasticbeanstalk.com:8080'
+    ' http://1fbusa-routing-service-dev.us-east-1.elasticbeanstalk.com:8762/properties-api'
   // API: 'http://localhost:3000'
 };
 

@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   templateUrl: 'add-edit-units.component.html'
 })
 export class AddEditComponent implements OnInit {
-  public editingUnit$: Observable<Unit>;
+  public selectedUnit$: Observable<Unit>;
   public selectedProperty$: Observable<Unit>;
   public addEditForm = this.fb.group({
     unit: ['', Validators.required],
@@ -50,8 +50,8 @@ export class AddEditComponent implements OnInit {
       { name: 'Holder 5', value: 'Holder 5' }
     ];
 
-    this.editingUnit$ = propertiesStore.select(
-      (state: any) => state.propertiesStore.editingUnit
+    this.selectedUnit$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedUnit
     );
 
     this.selectedProperty$ = propertiesStore.select(
@@ -63,7 +63,7 @@ export class AddEditComponent implements OnInit {
     this.selectedProperty$.subscribe(property => {
       this.selectedProperty = property;
     });
-    this.editingUnit$.subscribe(data => {
+    this.selectedUnit$.subscribe(data => {
       this.editingData = data;
 
       if (data) {

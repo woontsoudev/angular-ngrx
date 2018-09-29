@@ -17,24 +17,45 @@
     </section>
 
     <div modals>
+        <!-- Unit detail modal -->
         <app-modal
-            (visibleChange)="onToggleModal()"
-            [visible]="unitsModal$ | async"
+            (visibleChange)="onToggleModal('DETAIL')"
+            [visible]="unitDetailModal$ | async"
         >
             <div modal-header>
-                Add Unit
+                UNIT DETAIL
                 <fa-icon
-                    (click)="onToggleModal()"
+                    (click)="onToggleModal('DETAIL')"
                     class="mr-1"
                     [icon]="['fas', 'times']"
                     size="lg"
                 ></fa-icon>
             </div>
             <div modal-body>
-                <app-add-edit-units *ngIf="unitsModal$ | async"></app-add-edit-units>
+                <app-unit-detail *ngIf="unitDetailModal$ | async"></app-unit-detail>
             </div>
         </app-modal>
 
+        <!-- Edit unit modal -->
+        <app-modal
+            (visibleChange)="onToggleModal('EDIT')"
+            [visible]="editUnitModal$ | async"
+        >
+            <div modal-header>
+                Add Unit
+                <fa-icon
+                    (click)="onToggleModal('EDIT')"
+                    class="mr-1"
+                    [icon]="['fas', 'times']"
+                    size="lg"
+                ></fa-icon>
+            </div>
+            <div modal-body>
+                <app-add-edit-units *ngIf="editUnitModal$ | async"></app-add-edit-units>
+            </div>
+        </app-modal>
+
+        <!-- Confirmation modal -->
         <p-confirmDialog
             header="Confirmation"
             icon="pi pi-exclamation-triangle"

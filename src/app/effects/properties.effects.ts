@@ -54,8 +54,22 @@ export class PropertiesEffects {
     switchMap(
       (unit): Action[] => {
         return [
-          new LayoutActions.ToggleUnitsModal(),
-          new PropertiesActions.SetEditingUnit(unit)
+          new LayoutActions.ToggleEditUnitModal()
+          // new PropertiesActions.SetSelectedUnit(unit)
+        ];
+      }
+    )
+  );
+
+  @Effect()
+  selectUnit$: Observable<Action> = this.actions$.pipe(
+    ofType(PropertiesActions.SELECT_UNIT),
+    map((action: PropertiesActions.SelectUnit) => action.payload),
+    switchMap(
+      (unit): Action[] => {
+        return [
+          new LayoutActions.ToggleUnitDetailModal(),
+          new PropertiesActions.SetSelectedUnit(unit)
         ];
       }
     )
@@ -85,8 +99,8 @@ export class PropertiesEffects {
       (unit): Action[] => {
         return [
           new PropertiesActions.SaveUnit(unit),
-          new LayoutActions.ToggleUnitsModal(),
-          new PropertiesActions.SetEditingUnit(null)
+          new LayoutActions.ToggleEditUnitModal()
+          // new PropertiesActions.SetSelectedUnit(null)
         ];
       }
     )
@@ -98,8 +112,8 @@ export class PropertiesEffects {
     switchMap(
       (): Action[] => {
         return [
-          new LayoutActions.ToggleUnitsModal(),
-          new PropertiesActions.SetEditingUnit(null)
+          new LayoutActions.ToggleEditUnitModal(),
+          new PropertiesActions.SetSelectedUnit(null)
         ];
       }
     )
@@ -129,7 +143,7 @@ export class PropertiesEffects {
       (data): Action[] => {
         return [
           new PropertiesActions.SaveUnit(data),
-          new LayoutActions.ToggleUnitsModal()
+          new LayoutActions.ToggleEditUnitModal()
         ];
       }
     )
