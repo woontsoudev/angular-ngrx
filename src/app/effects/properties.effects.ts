@@ -6,6 +6,7 @@ import { switchMap, map } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
 
 import { PropertiesService } from '../services/properties.service';
+import { UnitsService } from '../services/units.service';
 
 // Actions
 import * as PropertiesActions from '../actions/properties.actions';
@@ -20,6 +21,7 @@ export class PropertiesEffects {
   @Effect()
   getProperties$: Observable<Action> = this.actions$.pipe(
     ofType(PropertiesActions.GET_PROPERTIES),
+    map((action: PropertiesActions.SetProperties) => action.payload),
     switchMap(
       (): Observable<PropertiesActions.SetProperties> => {
         return this.propertiesService.getProperties().pipe(
@@ -39,10 +41,24 @@ export class PropertiesEffects {
   @Effect()
   setDefaultProperty$: Observable<Action> = this.actions$.pipe(
     ofType(PropertiesActions.SET_PROPERTIES),
-    map((action: PropertiesActions.SetProperties) => action.payload),
+    map((action: PropertiesActions.SelectProperty) => action.payload),
     switchMap(
       (properties): Action[] => {
-        return [new PropertiesActions.SetProperty(properties[0])];
+        return [new PropertiesActions.SelectProperty(properties[0])];
+      }
+    )
+  );
+
+  @Effect()
+  selectProperty: Observable<Action> = this.actions$.pipe(
+    ofType(PropertiesActions.SELECT_PROPERTY),
+    map((action: PropertiesActions.SelectProperty) => action.payload),
+    switchMap(
+      (property: Property): Action[] => {
+        return [
+          new PropertiesActions.SetProperty(property),
+          new PropertiesActions.SetUnits(property.units)
+        ];
       }
     )
   );
@@ -81,7 +97,7 @@ export class PropertiesEffects {
     map((action: PropertiesActions.UpdateUnit) => action.payload),
     switchMap(
       (params): Observable<{}> => {
-        return this.propertiesService
+        return this.unitsService
           .updateUnit(params.propertyId, params.unit)
           .pipe(
             map((res: Unit) => {
@@ -125,18 +141,16 @@ export class PropertiesEffects {
     map((action: PropertiesActions.AddUnit) => action.payload),
     switchMap(
       (params): Observable<{}> => {
-        return this.propertiesService
-          .addUnit(params.propertyId, params.unit)
-          .pipe(
-            map((res: Unit) => {
-              this.messageService.add({
-                severity: 'success',
-                summary: 'Done',
-                detail: `${res.name} was added`
-              });
-              return res;
-            })
-          );
+        return this.unitsService.addUnit(params.propertyId, params.unit).pipe(
+          map((res: Unit) => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Done',
+              detail: `${res.name} was added`
+            });
+            return res;
+          })
+        );
       }
     ),
     switchMap(
@@ -154,7 +168,7 @@ export class PropertiesEffects {
     ofType(PropertiesActions.DELETE_UNIT),
     map((action: PropertiesActions.DeleteUnit) => action.payload),
     switchMap(params => {
-      return this.propertiesService
+      return this.unitsService
         .deleteUnit(params.propertyId, params.unit.id)
         .pipe(
           map(() => {
@@ -177,6 +191,7 @@ export class PropertiesEffects {
   constructor(
     private actions$: Actions,
     private propertiesService: PropertiesService,
+    private unitsService: UnitsService,
     private messageService: MessageService
   ) {}
 }

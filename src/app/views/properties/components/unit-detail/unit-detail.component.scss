@@ -1,0 +1,17 @@
+@import '~src/styles/variables-core';
+
+.unit-detail {
+  font-family: $font-family-base;
+
+  .unit-info {
+    background-color: $theme-light-gray;
+    height: 120px;
+  }
+
+  .policies-list {
+    .title {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+}

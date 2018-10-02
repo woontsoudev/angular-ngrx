@@ -19,7 +19,6 @@ export class PropertiesComponent implements OnInit {
   public editUnitModal$: Observable<boolean>;
   public unitDetailModal$: Observable<boolean>;
   public dropdownProperties$: Observable<Property[]>;
-  public selectedProperty$: Observable<Property>;
 
   constructor(
     private propertiesStore: Store<PropertiesReducer.State>,
@@ -45,11 +44,6 @@ export class PropertiesComponent implements OnInit {
       })
     );
 
-    // Current property selected from the dropdown
-    this.selectedProperty$ = propertiesStore.select(
-      (state: any) => state.propertiesStore.selectedProperty
-    );
-
     // Units model to show in units table
     this.units$ = propertiesStore.select((state: any) =>
       state.propertiesStore.units.map(unit => ({
@@ -70,21 +64,13 @@ export class PropertiesComponent implements OnInit {
 
   ngOnInit() {
     this.propertiesStore.dispatch(new PropertiesActions.GetProperties());
-
-    this.selectedProperty$.subscribe(property => {
-      if (property) {
-        this.propertiesStore.dispatch(
-          new PropertiesActions.SetUnits(property.units)
-        );
-      }
-    });
   }
 
   onSelectProperty(item) {
     this.properties$.subscribe(properties => {
       const property = properties.find(p => p.id === item.id);
       this.propertiesStore.dispatch(
-        new PropertiesActions.SetProperty(property)
+        new PropertiesActions.SelectProperty(property)
       );
     });
   }

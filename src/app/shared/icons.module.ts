@@ -15,7 +15,10 @@ import {
   faTimes,
   faExclamationCircle,
   faPlus,
-  faPaperclip
+  faPaperclip,
+  faPencilAlt,
+  faArchway,
+  faUniversity
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -31,7 +34,10 @@ library.add(
   faTimes,
   faExclamationCircle,
   faPlus,
-  faPaperclip
+  faPaperclip,
+  faPencilAlt,
+  faArchway,
+  faUniversity
 );
 
 @NgModule({

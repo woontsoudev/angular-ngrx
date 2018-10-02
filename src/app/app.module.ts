@@ -19,6 +19,7 @@ import { UsersEffects } from './effects/users.effects';
 // Services
 import { CarsDemoService } from './services/cars-demo.service';
 import { PropertiesService } from './services/properties.service';
+import { UnitsService } from './services/units.service';
 import { UsersService } from './services/users.service';
 import { HttpErrorHandler } from './services/http-error-handler.service';
 import { httpInterceptorProviders } from './http-interceptors/index';
@@ -48,6 +49,7 @@ import { AppComponent } from './app.component';
     ConfirmationService,
     MessageService,
     PropertiesService,
+    UnitsService,
     UsersService
   ],
   bootstrap: [AppComponent]

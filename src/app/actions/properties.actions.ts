@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 
 export const GET_PROPERTIES = '[Properties] get';
 export const SET_PROPERTIES = '[Properties] set';
+export const SELECT_PROPERTY = '[Properties] select property';
 export const SET_PROPERTY = '[Properties] set property';
 export const SET_UNITS = '[Properties/Units] set units';
 export const EDIT_UNIT = '[Properties/Units] edit unit';
@@ -21,6 +22,11 @@ export class GetProperties implements Action {
 export class SetProperties implements Action {
   readonly type = SET_PROPERTIES;
   constructor(public payload: any) {}
+}
+
+export class SelectProperty implements Action {
+  readonly type = SELECT_PROPERTY;
+  constructor(public payload: object) {}
 }
 
 export class SetProperty implements Action {
@@ -81,6 +87,7 @@ export class RemoveUnit implements Action {
 
 export type All =
   | GetProperties
+  | SelectProperty
   | SetProperties
   | SetProperty
   | SetUnits

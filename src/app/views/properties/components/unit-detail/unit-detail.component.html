@@ -1,9 +1,82 @@
-<div>
-    Unit detail...
-    <button
-        type="button"
-        (click)="editUnit()"
-    >
-        EDIT
-    </button>
+<div class="unit-detail">
+    <div class="row p-3 unit-info d-flex align-items-center justify-content-between">
+        <div>
+            <h2>205A</h2>
+            <p>HILLSIDE ACRES COMMUNITY</p>
+            <label>Last Notified: 5/30/2018</label>
+        </div>
+        <div>
+            <div class="d-flex align-items-center h-100">
+                <button
+                    type="button"
+                    (click)="editUnit()"
+                    class="btn btn-icon-round-primary sm mx-1 light-gray"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'pencil-alt']"
+                        size="xs"
+                    ></fa-icon>
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-icon-round-primary sm mx-1 light-gray"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'envelope']"
+                        size="xs"
+                    ></fa-icon>
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-icon-round-primary sm mx-1 light-gray"
+                >
+                    <fa-icon
+                        [icon]="['fas', 'trash-alt']"
+                        size="xs"
+                    ></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="policies-list mt-3">
+        <div
+            class="d-flex mt-3"
+            *ngFor="let policy of policies"
+        >
+            <fa-icon
+                class="mr-3 color-danger"
+                [icon]="['fas', 'university']"
+                size="lg"
+            ></fa-icon>
+            <div>
+                <label class="title color-danger">COVERAGE STATUS</label>
+                <div class="d-flex row">
+                    <div class="col-sm-6">
+                        <div class="font-weight-bold">Resident(s)</div>
+                        <div>Resident 1</div>
+                        <div>Resident 2</div>
+                        <div>Resident 3</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="font-weight-bold">Policy Provider</div>
+                        <div>{{policy.carrier}}</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="font-weight-bold">Policy Start</div>
+                        <div>{{policy.startDate}}</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="font-weight-bold">Policy End</div>
+                        <div>{{policy.endDate}}</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 </div>
