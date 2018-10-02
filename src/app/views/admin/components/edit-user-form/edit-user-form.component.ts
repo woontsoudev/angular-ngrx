@@ -12,10 +12,14 @@ import * as UsersReducer from 'src/app/reducers/users.reducer';
 })
 export class EditUserFormComponent implements OnInit {
   public editUserForm = this.fb.group({
-    username: ['', Validators.required],
     email: ['', Validators.required],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     addressLine1: ['', Validators.required],
+    addressLine2: ['', Validators.required],
+    password: ['', Validators.required],
     phone: ['', Validators.required],
+    role: ['', Validators.required],
     id: ['']
   });
   public editingUser$: Observable<any>;
@@ -33,14 +37,28 @@ export class EditUserFormComponent implements OnInit {
   ngOnInit() {
     this.editingUser$.subscribe(data => {
       if (data.id) {
-        const { username, email, addressLine1, phone, id } = data;
-
-        this.editUserForm.patchValue({
-          username,
+        const {
+          addressLine2,
           email,
           addressLine1,
           phone,
-          id
+          id,
+          role,
+          password,
+          firstName,
+          lastName
+        } = data;
+
+        this.editUserForm.patchValue({
+          email,
+          addressLine1,
+          addressLine2,
+          phone,
+          id,
+          password,
+          firstName,
+          lastName,
+          role: role.name
         });
 
         this.editMode = true;
@@ -49,13 +67,20 @@ export class EditUserFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.editMode
-      ? this.usersStore.dispatch(
-          new UsersActions.UpdateUser(this.editUserForm.value)
-        )
-      : this.usersStore.dispatch(
-          new UsersActions.AddUser(this.editUserForm.value)
-        );
+    const user = this.editUserForm.value;
+    user.role = {
+      id: 1,
+      name: this.editUserForm.value.role
+    };
+    if (this.editMode) {
+      this.usersStore.dispatch(new UsersActions.UpdateUser(user));
+    } else {
+      delete user.id;
+      this.usersStore.dispatch(new UsersActions.AddUser(user));
+    }
+    // this.editMode
+    //   ? this.usersStore.dispatch(new UsersActions.UpdateUser(user))
+    //   : this.usersStore.dispatch(new UsersActions.AddUser(user));
   }
 
   get username() {
@@ -70,7 +95,23 @@ export class EditUserFormComponent implements OnInit {
     return this.editUserForm.get('addressLine1');
   }
 
+  get addressLine2() {
+    return this.editUserForm.get('addressLine2');
+  }
+
   get phone() {
     return this.editUserForm.get('phone');
+  }
+
+  get firstName() {
+    return this.editUserForm.get('firstName');
+  }
+
+  get lastName() {
+    return this.editUserForm.get('lastName');
+  }
+
+  get password() {
+    return this.editUserForm.get('password');
   }
 }

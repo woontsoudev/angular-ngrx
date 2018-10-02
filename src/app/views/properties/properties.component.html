@@ -3,15 +3,65 @@
         main-content
         class="container-fluid"
     >
-        <p>Properties</p>
-
         <app-toolbar
             class="row"
             [dropdownOptions]="dropdownProperties$ | async"
             (dropdownSelectedItem)="onSelectProperty($event)"
         ></app-toolbar>
 
-        <div class="row bg-white mt-4">
+        <app-status-bar class="row mt-3">
+            <div
+                status-bar-groups
+                class="status-bar-groups"
+            >
+                <div class="group col-sm-12 col-md-auto">
+                    <h5 class="group-title">Coverage</h5>
+                    <ul class="group-items">
+                        <li class="item color-danger">
+                            <div class="item-title">100</div>
+                            <label class="item-label">Not covered</label>
+                        </li>
+                        <li class="item">
+                            <div class="item-title">200</div>
+                            <label class="item-label">Other</label>
+                        </li>
+                        <li class="item">
+                            <div class="item-title">200</div>
+                            <label class="item-label">RenterProtect</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group col-sm-12 col-md-auto">
+                    <h5 class="group-title">Portfolio Exposure</h5>
+                    <ul class="group-items">
+                        <li class="item">
+                            <div class="item-title color-danger">$1,500,000</div>
+                            <label class="item-label">Units X minimum liability coverage</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group col-sm-12 col-md-auto">
+                    <h5 class="group-title">Participation</h5>
+                    <ul class="group-items">
+                        <li class="item">
+                            <div class="item-title">
+                                80%
+                                <fa-icon
+                                    [icon]="['fas', 'long-arrow-alt-up']"
+                                    size="xs"
+                                    class="color-primary"
+                                ></fa-icon>
+                            </div>
+                            <label class="item-label">Average</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </app-status-bar>
+
+        <div class="row bg-white mt-3">
             <app-units [units]="units$ | async"></app-units>
         </div>
     </section>

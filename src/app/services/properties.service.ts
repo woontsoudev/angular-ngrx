@@ -8,6 +8,6 @@ export class PropertiesService {
   constructor(private http: HttpClient) {}
 
   getProperties() {
-    return this.http.get(`${environment.API}/properties/users/1`);
+    return this.http.get(`${environment.api}/properties/users/1`);
   }
 }

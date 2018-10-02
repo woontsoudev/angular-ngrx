@@ -4,29 +4,29 @@
 >
     <div class="form-row">
         <div class="form-group-underlined col">
-            <label for="editUserFormUsername">Username</label>
+            <label for="editUserFormFirstName">First name</label>
             <input
                 type="text"
-                formControlName="username"
+                formControlName="firstName"
                 class="form-control"
-                id="editUserFormUsername"
+                id="editUserFormFirstName"
             >
             <app-error-field
-                [field]="username"
-                name="Username"
+                [field]="firstName"
+                name="First name"
             ></app-error-field>
         </div>
         <div class="form-group-underlined col">
-            <label for="editUserFormEmail">Email</label>
+            <label for="editUserFormLastName">Last name</label>
             <input
                 type="text"
-                formControlName="email"
+                formControlName="lastName"
                 class="form-control"
-                id="editUserFormEmail"
+                id="editUserFormLastName"
             >
             <app-error-field
-                [field]="email"
-                name="Email"
+                [field]="lastName"
+                name="Address 2"
             ></app-error-field>
         </div>
     </div>
@@ -45,6 +45,22 @@
             ></app-error-field>
         </div>
         <div class="form-group-underlined col">
+            <label for="editUserFormAddressLine2">Address 2</label>
+            <input
+                type="text"
+                formControlName="addressLine2"
+                class="form-control"
+                id="editUserFormAddressLine2"
+            >
+            <app-error-field
+                [field]="addressLine2"
+                name="Address 2"
+            ></app-error-field>
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group-underlined col">
             <label for="editUserFormPhone">Phone</label>
             <input
                 type="text"
@@ -55,6 +71,47 @@
             <app-error-field
                 [field]="phone"
                 name="Phone"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="editUserFormEmail">Email</label>
+            <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                id="editUserFormEmail"
+            >
+            <app-error-field
+                [field]="email"
+                name="Email"
+            ></app-error-field>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group-underlined col">
+            <label for="editUserFormPassword">Password</label>
+            <input
+                type="text"
+                formControlName="password"
+                class="form-control"
+                id="editUserFormPassword"
+            >
+            <app-error-field
+                [field]="password"
+                name="password"
+            ></app-error-field>
+        </div>
+        <div class="form-group-underlined col">
+            <label for="editUserFormRole">Role</label>
+            <input
+                type="text"
+                formControlName="role"
+                class="form-control"
+                id="editUserFormRole"
+            >
+            <app-error-field
+                [field]="email"
+                name="Email"
             ></app-error-field>
         </div>
     </div>

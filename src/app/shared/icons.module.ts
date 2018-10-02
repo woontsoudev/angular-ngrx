@@ -18,7 +18,8 @@ import {
   faPaperclip,
   faPencilAlt,
   faArchway,
-  faUniversity
+  faUniversity,
+  faLongArrowAltUp
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -37,7 +38,8 @@ library.add(
   faPaperclip,
   faPencilAlt,
   faArchway,
-  faUniversity
+  faUniversity,
+  faLongArrowAltUp
 );
 
 @NgModule({

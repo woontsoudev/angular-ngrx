@@ -1,6 +1,6 @@
 export const environment = {
-  production: true,
+  production: false,
   // Example
-  api: 'http://production.example.com:8080',
+  api: 'http://qa.example.com:8080',
   carsDemoApi: 'http://localhost:3000'
 };
