@@ -1,12 +1,18 @@
-<div class="unit-detail">
-    <div class="row p-3 unit-info d-flex align-items-center justify-content-between">
-        <div>
-            <h2>205A</h2>
-            <p>HILLSIDE ACRES COMMUNITY</p>
-            <label>Last Notified: 5/30/2018</label>
+<div
+    class="unit-detail mt-2"
+    *ngIf="(selectedUnit$ | async) as unit"
+>
+    <div
+        *ngIf="(selectedProperty$ | async) as property"
+        class="row px-5 py-2 unit-info d-flex align-items-center justify-content-between"
+    >
+        <div class="info">
+            <h2 class="m-0 font-weight-bold">{{unit.unitId}}</h2>
+            <p class="m-0 text-uppercase">{{property.name}}</p>
+            <label class="m-0 date color-secondary">Last Notified: 5/30/2018</label>
         </div>
         <div>
-            <div class="d-flex align-items-center h-100">
+            <div class="d-flex align-items-center">
                 <button
                     type="button"
                     (click)="editUnit()"
@@ -39,40 +45,48 @@
         </div>
     </div>
 
-    <div class="policies-list mt-3">
+    <div class="policy mt-4">
         <div
-            class="d-flex mt-3"
-            *ngFor="let policy of policies"
+            class="d-flex mt-3 policy-list"
+            *ngFor="let policy of unit.policies"
         >
             <fa-icon
                 class="mr-3 color-danger"
                 [icon]="['fas', 'university']"
                 size="lg"
             ></fa-icon>
-            <div>
+            <div class="policy-details">
                 <label class="title color-danger">COVERAGE STATUS</label>
                 <div class="d-flex row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 mb-3">
                         <div class="font-weight-bold">Resident(s)</div>
                         <div>Resident 1</div>
                         <div>Resident 2</div>
                         <div>Resident 3</div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 mb-3">
                         <div class="font-weight-bold">Policy Provider</div>
                         <div>{{policy.carrier}}</div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 mb-3">
                         <div class="font-weight-bold">Policy Start</div>
                         <div>{{policy.startDate}}</div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 mb-3">
                         <div class="font-weight-bold">Policy End</div>
                         <div>{{policy.endDate}}</div>
                     </div>
+                </div>
+
+                <div>
+                    <fa-icon
+                        [icon]="['fas', 'paperclip']"
+                        size="lg"
+                    ></fa-icon>
+                    <a class="link-secondary underline ml-2 mt-2 pb-3 d-inline-block">Laura Reed Insurance Policy</a>
                 </div>
 
             </div>

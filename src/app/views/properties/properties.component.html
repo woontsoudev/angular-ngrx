@@ -92,7 +92,7 @@
             [visible]="editUnitModal$ | async"
         >
             <div modal-header>
-                Add Unit
+                {{ (this.selectedUnit$ | async) ? 'EDIT ' : 'ADD ' }} UNIT
                 <fa-icon
                     (click)="onToggleModal('EDIT')"
                     class="mr-1"

@@ -16,9 +16,11 @@ import * as LayoutActions from '../../actions/layout.actions';
 export class PropertiesComponent implements OnInit {
   public properties$: Observable<Property[]>;
   public units$: Observable<Unit[]>;
+  public selectedUnit$: Observable<Unit>;
   public editUnitModal$: Observable<boolean>;
   public unitDetailModal$: Observable<boolean>;
   public dropdownProperties$: Observable<Property[]>;
+  public addEditModalTitle = 'ADD UNIT';
 
   constructor(
     private propertiesStore: Store<PropertiesReducer.State>,
@@ -59,6 +61,10 @@ export class PropertiesComponent implements OnInit {
 
     this.unitDetailModal$ = layoutStore.select(
       (state: any) => state.layoutStore.unitDetailModal
+    );
+
+    this.selectedUnit$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedUnit
     );
   }
 
