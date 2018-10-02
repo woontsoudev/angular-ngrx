@@ -5,29 +5,36 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class UnitsService {
+  public propertiesApi = 'properties-api';
   constructor(private http: HttpClient) {}
 
   getUnits(propertyId) {
-    return this.http.get(`${environment.API}/properties/${propertyId}/units`);
+    return this.http.get(
+      `${environment.api}/${this.propertiesApi}/properties/${propertyId}/units`
+    );
   }
 
   updateUnit(propertyId, unit) {
     return this.http.put(
-      `${environment.API}/properties/${propertyId}/units/${unit.id}`,
+      `${environment.api}/${
+        this.propertiesApi
+      }/properties/${propertyId}/units/${unit.id}`,
       unit
     );
   }
 
   addUnit(propertyId, unit) {
     return this.http.post(
-      `${environment.API}/properties/${propertyId}/units`,
+      `${environment.api}/${this.propertiesApi}/properties/${propertyId}/units`,
       unit
     );
   }
 
   deleteUnit(propertyId, unitId) {
     return this.http.delete(
-      `${environment.API}/properties/${propertyId}/units/${unitId}`
+      `${environment.api}/${
+        this.propertiesApi
+      }/properties/${propertyId}/units/${unitId}`
     );
   }
 }
