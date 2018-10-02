@@ -16,6 +16,9 @@ import {
   faExclamationCircle,
   faPlus,
   faPaperclip,
+  faPencilAlt,
+  faArchway,
+  faUniversity,
   faLongArrowAltUp
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,6 +36,9 @@ library.add(
   faExclamationCircle,
   faPlus,
   faPaperclip,
+  faPencilAlt,
+  faArchway,
+  faUniversity,
   faLongArrowAltUp
 );
 

@@ -12,18 +12,17 @@ import { Observable } from 'rxjs';
   templateUrl: 'add-edit-units.component.html'
 })
 export class AddEditComponent implements OnInit {
-  public editingUnit$: Observable<Unit>;
+  public selectedUnit$: Observable<Unit>;
   public selectedProperty$: Observable<Unit>;
   public addEditForm = this.fb.group({
-    id: [''],
     unit: ['', Validators.required],
     unitType: ['', Validators.required],
     residentName: ['', Validators.required],
     leaseDuration: ['', Validators.required],
     policyProvider: [''],
     policyDuration: ['', Validators.required],
-    primaryPolicyHolder: ['', Validators.required],
-    email: ['', Validators.required],
+    primaryPolicyHolder: [''],
+    email: [''],
 
     policyFile: this.fb.group({
       file: [''],
@@ -51,8 +50,8 @@ export class AddEditComponent implements OnInit {
       { name: 'Holder 5', value: 'Holder 5' }
     ];
 
-    this.editingUnit$ = propertiesStore.select(
-      (state: any) => state.propertiesStore.editingUnit
+    this.selectedUnit$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedUnit
     );
 
     this.selectedProperty$ = propertiesStore.select(
@@ -64,16 +63,11 @@ export class AddEditComponent implements OnInit {
     this.selectedProperty$.subscribe(property => {
       this.selectedProperty = property;
     });
-    this.editingUnit$.subscribe(data => {
+    this.selectedUnit$.subscribe(data => {
       this.editingData = data;
 
       if (data) {
-        const {
-          id,
-          unitId: unit = `00${data.id}`, // Remove this mocked unitId when real endpoints are ready
-          name: residentName,
-          type: unitType
-        } = data;
+        const { id, unitId: unit, name: residentName, type: unitType } = data;
         const policyFile = this.addEditForm.get('policyFile');
         policyFile.patchValue({
           file: '',
@@ -103,7 +97,8 @@ export class AddEditComponent implements OnInit {
   }
 
   onSubmitWithFb() {
-    const values = Object.assign({}, this.editingData, {
+    const unit = Object.assign({}, this.editingData, {
+      unitId: this.addEditForm.get('unit').value,
       name: this.addEditForm.get('residentName').value,
       leaseFrom: this.addEditForm.get('leaseDuration').value[0],
       leaseTo: this.addEditForm.get('leaseDuration').value[1],
@@ -111,13 +106,16 @@ export class AddEditComponent implements OnInit {
       type: this.addEditForm.get('unitType').value,
       email: this.addEditForm.get('email').value,
       primaryPolicyHolder: this.addEditForm.get('primaryPolicyHolder').value
-        .value,
-      propertyId: this.selectedProperty.id
+        .value
     });
+    const params = {
+      propertyId: this.selectedProperty.id,
+      unit
+    };
 
     this.editMode
-      ? this.propertiesStore.dispatch(new PropertiesActions.UpdateUnit(values))
-      : this.propertiesStore.dispatch(new PropertiesActions.AddUnit(values));
+      ? this.propertiesStore.dispatch(new PropertiesActions.UpdateUnit(params))
+      : this.propertiesStore.dispatch(new PropertiesActions.AddUnit(params));
   }
 
   onUpload(event) {

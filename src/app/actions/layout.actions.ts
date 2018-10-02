@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 
 export const TOGGLE_MODAL_EXAMPLE = '[Modal] toggle example';
 export const TOGGLE_CARSDEMO_MODAL = '[Modal] toggle carsdemo';
-export const TOGGLE_UNITS_MODAL = '[Modal] toggle units';
+export const TOGGLE_EDIT_UNIT_MODAL = '[Modal] toggle edit unit';
+export const TOGGLE_UNIT_DETAIL_MODAL = '[Modal] toggle unit detail';
 export const TOGGLE_LOADER = '[Loader] toggle';
 export const TOGGLE_USERS_MODAL = '[Modal] toggle users';
 
@@ -18,8 +19,12 @@ export class ToggleUsersModal implements Action {
   readonly type = TOGGLE_USERS_MODAL;
 }
 
-export class ToggleUnitsModal implements Action {
-  readonly type = TOGGLE_UNITS_MODAL;
+export class ToggleEditUnitModal implements Action {
+  readonly type = TOGGLE_EDIT_UNIT_MODAL;
+}
+
+export class ToggleUnitDetailModal implements Action {
+  readonly type = TOGGLE_UNIT_DETAIL_MODAL;
 }
 
 export class ToggleLoader implements Action {
@@ -31,5 +36,6 @@ export type All =
   | ToggleCarsDemoModal
   | ToggleLoader
   | ToggleUsersModal
-  | ToggleUnitsModal
+  | ToggleEditUnitModal
+  | ToggleUnitDetailModal
   | ToggleLoader;
