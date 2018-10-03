@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as PropertiesActions from '../../../../actions/properties.actions';
@@ -12,12 +12,10 @@ import { Observable } from 'rxjs';
   templateUrl: 'unit-detail.component.html',
   styleUrls: ['./unit-detail.component.scss']
 })
-export class UnitDetailComponent implements OnInit {
+export class UnitDetailComponent implements OnInit, OnDestroy {
   public selectedUnit$: Observable<Unit>;
   public selectedProperty$: Observable<Unit>;
   public selectedProperty: any;
-
-  policies: Policy[];
 
   constructor(private propertiesStore: Store<PropertiesReducer.State>) {
     this.selectedUnit$ = propertiesStore.select(
@@ -29,10 +27,10 @@ export class UnitDetailComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.selectedUnit$.subscribe((unit: any) => {
-      this.policies = unit.policies;
-    });
+  ngOnInit() {}
+
+  ngOnDestroy() {
+    this.propertiesStore.dispatch(new PropertiesActions.SetSelectedUnit(null));
   }
 
   editUnit() {

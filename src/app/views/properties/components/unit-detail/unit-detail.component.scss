@@ -5,13 +5,32 @@
 
   .unit-info {
     background-color: $theme-light-gray;
-    height: 120px;
   }
 
-  .policies-list {
-    .title {
+  .info {
+    .date {
+      font-size: 0.6rem;
+      font-style: italic;
+    }
+  }
+
+  .policy {
+    &-details {
+      border-bottom: 1px solid $theme-light-gray;
+    }
+
+    &-list {
       font-size: 0.8rem;
-      font-weight: bold;
+
+      .title {
+        font-weight: bold;
+      }
+
+      &:last-child {
+        .policy-details {
+          border-bottom: none;
+        }
+      }
     }
   }
 }
