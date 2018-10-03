@@ -6,6 +6,7 @@
 
 // Font
 $font-family-base: 'Roboto';
+$font-size-px-base: 16px;
 $font-size-base: 1rem;
 
 $h1-font-size: $font-size-base * 2;
@@ -43,3 +44,20 @@ $input-placeholder-color: lighten(
   $color: $theme-dark-gray,
   $amount: 45
 );
+
+// Font sizes traduced from pixels to rem
+$font-size-5: #{5px / $font-size-px-base}rem;
+$font-size-6: #{6px / $font-size-px-base}rem;
+$font-size-7: #{7px / $font-size-px-base}rem;
+$font-size-8: #{8px / $font-size-px-base}rem;
+$font-size-9: #{9px / $font-size-px-base}rem;
+$font-size-10: #{10px / $font-size-px-base}rem;
+$font-size-11: #{11px / $font-size-px-base}rem;
+$font-size-12: #{12px / $font-size-px-base}rem;
+$font-size-13: #{13px / $font-size-px-base}rem;
+$font-size-14: #{14px / $font-size-px-base}rem;
+$font-size-15: #{15px / $font-size-px-base}rem;
+$font-size-16: #{16px / $font-size-px-base}rem;
+$font-size-18: #{18px / $font-size-px-base}rem;
+$font-size-21: #{21px / $font-size-px-base}rem;
+$font-size-32: #{32px / $font-size-px-base}rem;

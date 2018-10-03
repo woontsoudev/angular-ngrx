@@ -33,7 +33,7 @@
   .caption {
     flex: 1;
     padding-left: 10px;
-    font-size: 0.72rem;
+    font-size: $font-size-12;
     line-height: 1.4;
 
     p {
@@ -41,7 +41,7 @@
     }
 
     .smaller {
-      font-size: 0.66rem;
+      font-size: $font-size-11;
     }
   }
 
@@ -104,7 +104,7 @@
 
   .popover-header {
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: $font-size-14;
     letter-spacing: 1.2px;
     background-color: $white;
     border-bottom: 1px solid $theme-light-gray;

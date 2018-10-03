@@ -16,7 +16,7 @@ $p-dropdown-width: 360px;
   label {
     margin: 0;
     font-weight: 100;
-    font-size: 0.9rem;
+    font-size: $font-size-14;
   }
 
   // DROPDOWN STYLES
@@ -94,7 +94,7 @@ $p-dropdown-width: 360px;
     }
 
     .ui-dropdown-label {
-      font-size: 1.4rem;
+      font-size: $font-size-21;
       text-transform: uppercase;
       font-weight: bold;
       font-family: $font-family-base;
@@ -116,12 +116,12 @@ $p-dropdown-width: 360px;
       min-height: 36px;
 
       &-title {
-        font-size: 0.95rem;
+        font-size: $font-size-15;
         font-weight: 200;
       }
 
       &-subtitle {
-        font-size: 0.6rem;
+        font-size: $font-size-10;
         font-weight: 100;
       }
     }
