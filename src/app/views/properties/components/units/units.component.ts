@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfirmationService } from 'primeng/api';
+import { Observable } from 'rxjs';
 
 import * as PropertiesActions from '../../../../actions/properties.actions';
 import * as PropertiesReducer from '../../../../reducers/properties.reducer';
+import Property from '../../../../models/property.model';
 
 @Component({
   selector: 'app-units',
@@ -24,15 +26,22 @@ export class UnitsComponent implements OnInit {
     { field: 'atRisk', header: 'At Risk' }
   ];
 
+  public selectedProperty$: Observable<Property>;
+
   constructor(
     private propertiesStore: Store<PropertiesReducer.State>,
     private confirmationService: ConfirmationService
-  ) {}
+  ) {
+    this.selectedProperty$ = propertiesStore.select(
+      (state: any) => state.propertiesStore.selectedProperty
+    );
+  }
 
   ngOnInit() {}
 
   onRowSelectUnit(unit) {
-    this.propertiesStore.dispatch(new PropertiesActions.EditUnit(unit.id));
+    // this.propertiesStore.dispatch(new PropertiesActions.EditUnit(unit.id));
+    this.propertiesStore.dispatch(new PropertiesActions.SelectUnit(unit.id));
   }
 
   onAddUnit() {
@@ -42,9 +51,15 @@ export class UnitsComponent implements OnInit {
   onRowDeleteUnit(unit) {
     this.confirmationService.confirm({
       message: `Do you want to delete ${unit.name}?`,
-      accept: () => {
-        this.propertiesStore.dispatch(new PropertiesActions.DeleteUnit(unit));
-      }
+      accept: () =>
+        this.selectedProperty$.subscribe(property =>
+          this.propertiesStore.dispatch(
+            new PropertiesActions.DeleteUnit({
+              propertyId: property.id,
+              unit
+            })
+          )
+        )
     });
   }
 }
