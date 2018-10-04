@@ -9,7 +9,7 @@
 
   .policy {
     &-details {
-      border-bottom: 1px solid $theme-light-gray;
+      border-bottom: $border-1px-tertiary;
     }
 
     &-list {

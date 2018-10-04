@@ -136,7 +136,7 @@
   .datatable-checkbox-filter {
     padding: 0 $spacer / 2;
     margin: 0 $spacer / 2;
-    border-left: 1px solid $theme-light-gray;
+    border-left: $border-1px-tertiary;
 
     label {
       color: $theme-dark-gray;
@@ -152,7 +152,7 @@
   @media (max-width: 640px) {
     .datatable-row {
       position: relative;
-      border-bottom: 1px solid $theme-light-gray;
+      border-bottom: $border-1px-tertiary;
     }
 
     .datatable-row .datatable-row-actions-btn-group {

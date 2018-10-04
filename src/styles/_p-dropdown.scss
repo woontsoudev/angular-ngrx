@@ -5,9 +5,8 @@
   }
   .ui-dropdown {
     width: 100%;
-    border-bottom: 2px solid;
+    border-bottom: $border-form-input;
     border-radius: 0;
-    border-color: $gray-500;
 
     &:not(.ui-state-disabled):hover,
     &:not(.ui-state-disabled):focus,
@@ -21,7 +20,7 @@
     }
 
     .ui-shadow {
-      box-shadow: 1px 1px 3px 1px #bdbdbd;
+      box-shadow: $box-shadow-light;
     }
 
     .ui-dropdown-items {
@@ -42,6 +41,10 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+  }
+
+  .ui-dropdown-panel {
+    border-color: $theme-light-gray;
   }
 
   .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight,

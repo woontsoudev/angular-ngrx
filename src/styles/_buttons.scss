@@ -1,10 +1,14 @@
 @import 'node_modules/bootstrap/scss/buttons';
 
+.btn {
+  border-radius: $border-radius-button;
+}
+
 // .btn-theme-theme_color
 @each $color, $value in $theme-colors {
   .btn-theme-#{$color} {
     background-color: transparent;
-    border: 1px solid $value;
+    border: $border-button-width solid $value;
     box-shadow: $box-shadow-sm;
     font-size: $font-size-14;
     font-weight: bold;
@@ -34,7 +38,7 @@
 
   .btn-sm-theme-#{$color} {
     background-color: transparent;
-    border: 1px solid $value;
+    border: $border-button-width solid $value;
     box-shadow: $box-shadow-sm;
     font-size: $font-size-12;
     font-weight: bold;
@@ -64,7 +68,7 @@
 
   .btn-theme-icon-#{$color} {
     background-color: transparent;
-    border: 1px solid $value;
+    border: $border-button-width solid $value;
     box-shadow: $box-shadow-sm;
     font-size: $font-size-14;
     font-weight: bold;
@@ -188,7 +192,7 @@
     }
 
     &.light-gray {
-      color: darken($theme-light-gray, 20%);
+      color: $gray-200;
       background-color: $white;
       @include hover-focus-active {
         color: $white;

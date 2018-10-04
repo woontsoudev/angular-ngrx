@@ -44,9 +44,8 @@
 
   .ui-inputtext {
     width: 100%;
-    border-bottom: 2px solid;
+    border-bottom: $border-form-input;
     border-radius: 0;
-    border-color: $gray-500;
 
     @include hover-focus-active {
       border-color: $theme-light-blue;
@@ -64,7 +63,7 @@
   }
 
   .ui-shadow {
-    box-shadow: 1px 1px 3px 1px #bdbdbd;
+    box-shadow: $box-shadow-light;
   }
 
   .ui-state-highlight {

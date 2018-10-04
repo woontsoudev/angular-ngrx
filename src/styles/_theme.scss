@@ -2,8 +2,9 @@
 
 // Modify the default bootstrap theme
 $theme-colors: (
-  "primary": $theme-light-blue,
-  "secondary": $theme-dark-gray,
-  "danger": $theme-red,
-  "warning": $theme-yellow
+  'primary': $theme-light-blue,
+  'secondary': $theme-dark-gray,
+  'tertiary': $theme-light-gray,
+  'danger': $theme-red,
+  'warning': $theme-yellow
 );
