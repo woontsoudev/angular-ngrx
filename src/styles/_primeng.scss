@@ -3,3 +3,14 @@
 @import './p-dropdown';
 @import './p-calendar';
 @import './p-fileUpload';
+@import './p-checkbox';
+
+// Primeng global reset
+body {
+  // ui-widget is a common class all the Primeng component use to set
+  // font-family and sizes of all components.
+  .ui-widget {
+    font-family: $font-family-base;
+    font-size: inherit;
+  }
+}

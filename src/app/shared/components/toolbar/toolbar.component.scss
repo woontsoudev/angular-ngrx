@@ -97,7 +97,6 @@ $p-dropdown-width: 360px;
       font-size: $font-size-21;
       text-transform: uppercase;
       font-weight: bold;
-      font-family: $font-family-base;
       color: $theme-dark-gray;
       padding-right: 23px !important;
 
@@ -112,7 +111,6 @@ $p-dropdown-width: 360px;
 
     // Options
     .option {
-      font-family: $font-family-base;
       min-height: 36px;
 
       &-title {
@@ -129,7 +127,6 @@ $p-dropdown-width: 360px;
     // Search
     .ui-dropdown-panel .ui-dropdown-filter-container {
       .ui-dropdown-filter {
-        font-family: $font-family-base;
         font-weight: 200;
         padding-right: 0;
         padding-left: 2em;
@@ -140,12 +137,6 @@ $p-dropdown-width: 360px;
         left: 13px;
         right: auto;
         color: lighten($color: $theme-dark-gray, $amount: 30);
-      }
-
-      ::placeholder {
-        /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: $input-placeholder-color;
-        opacity: 1; /* Firefox */
       }
     }
   }

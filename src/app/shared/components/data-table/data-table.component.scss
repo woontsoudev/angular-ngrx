@@ -10,6 +10,25 @@
   }
 
   .ui-table {
+    &.ui-widget,
+    table {
+      font-size: $font-size-13 !important;
+    }
+
+    .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+      background-color: $theme-light-blue;
+      color: $white;
+    }
+
+    .ui-sortable-column-icon {
+      color: $gray-100;
+      font-size: $font-size-12;
+
+      .pi {
+        font-size: 0.8em;
+      }
+    }
+
     .ui-table-caption {
       border-right: 0;
       border-left: 0;
@@ -18,10 +37,12 @@
       background-color: $white;
       padding-top: 0;
       padding-bottom: 0;
+      padding-left: $grid-gutter-width;
       height: $heading-bar-md-height;
 
       input {
         border: 0;
+        font-size: $font-size-14;
       }
     }
 
@@ -31,7 +52,7 @@
           color: $theme-dark-gray;
         }
         tr th:first-child {
-          padding-left: ($grid-gutter-width / 2);
+          padding-left: $grid-gutter-width;
         }
       }
     }
@@ -45,6 +66,10 @@
       background-color: $white;
     }
 
+    .ui-table-thead {
+      border-bottom: $border-1px-tertiary;
+    }
+
     .ui-table-thead > tr > th {
       background-color: $white;
     }
@@ -52,6 +77,16 @@
     .ui-table-tbody > tr > td,
     .ui-table-thead > tr > th {
       border: none;
+    }
+
+    .ui-table-thead > tr > th {
+      font-weight: bold;
+      padding: 12px $grid-gutter-width - 19;
+      color: $theme-dark-gray;
+    }
+
+    .ui-table-tbody > tr > td {
+      padding-left: $grid-gutter-width;
     }
 
     .ui-table-tbody > tr:nth-child(even) {
@@ -80,6 +115,10 @@
       .ui-table-sort-icon {
         color: $white;
       }
+
+      .ui-sortable-column-icon {
+        color: $white;
+      }
     }
   }
 
@@ -101,6 +140,15 @@
         .datatable-row-actions-btn-group {
           display: flex;
         }
+      }
+    }
+
+    .ui-column-text {
+      position: relative;
+
+      .icon {
+        position: absolute;
+        left: -($grid-gutter-width - 7);
       }
     }
   }
@@ -134,14 +182,14 @@
   }
 
   .datatable-checkbox-filter {
-    padding: 0 $spacer / 2;
+    padding: 0 $spacer / 2 0 $spacer;
     margin: 0 $spacer / 2;
     border-left: $border-1px-tertiary;
 
     label {
-      color: $theme-dark-gray;
+      color: $gray-200;
       font-weight: normal;
-      font-size: $font-size-sm;
+      font-size: $font-size-12;
     }
   }
 
@@ -155,11 +203,33 @@
       border-bottom: $border-1px-tertiary;
     }
 
+    .ui-table {
+      .ui-table-caption {
+        padding-left: $grid-gutter-width / 2;
+        padding-right: 0;
+        border-bottom: none;
+      }
+
+      .ui-table-thead > tr > th {
+        padding: 12px $grid-gutter-width / 2;
+      }
+
+      .ui-table-tbody > tr > td {
+        padding-left: $grid-gutter-width / 2;
+      }
+    }
+
     .datatable-row .datatable-row-actions-btn-group {
       display: flex;
       position: unset;
       justify-content: flex-end;
       margin-bottom: $spacer / 2;
+    }
+
+    .datatable-checkbox-filter {
+      padding: 0 $spacer 0 $spacer;
+      margin: 0;
+      border-left: $border-1px-tertiary;
     }
   }
 }

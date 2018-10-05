@@ -22,7 +22,7 @@ $font-size-xs: $font-size-base * 0.75;
 // Theme colors
 $theme-light-blue: #48beff;
 $theme-dark-gray: #4d4d4d;
-$theme-light-gray: #e6e6e6;
+$theme-light-gray: #dfdfdf;
 $theme-red: #e52e1e;
 $theme-yellow: #ffc222;
 
@@ -47,12 +47,6 @@ $heading-bar-md-height: 46px;
 // UI components
 // // Data-table
 $datatable-checkbox-width: 3.5rem;
-
-// Input's placeholder
-$input-placeholder-color: lighten(
-  $color: $theme-dark-gray,
-  $amount: 45
-);
 
 // Font sizes traduced from pixels to rem
 $font-size-5: #{5px / $font-size-px-base}rem;

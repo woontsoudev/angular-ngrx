@@ -30,7 +30,7 @@
     <ng-template pTemplate="caption">
         <div class="d-flex h-100">
             <fa-icon
-                class="mr-2 datatable-input-filter d-flex align-items-center"
+                class="mr-2 datatable-input-filter color-tertiary d-flex align-items-center"
                 [icon]="['fas', 'search']"
                 size="lg"
             ></fa-icon>
@@ -69,9 +69,19 @@
             <td>
                 <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
             </td>
-            <td *ngFor="let col of columns">
+            <td *ngFor="let col of columns; let first = first">
                 <span class="ui-column-title">{{col.header}}</span>
-                {{rowData[col.field]}}
+                <span
+                    class="ui-column-text"
+                    [class.color-danger]="first"
+                >
+                    <fa-icon
+                        *ngIf="first"
+                        class="icon"
+                        [icon]="['fas', 'exclamation-circle']"
+                    ></fa-icon>
+                    {{rowData[col.field]}}
+                </span>
             </td>
             <td class="datatable-row-actions">
                 <div class="datatable-row-actions-btn-group align-items-center h-100">

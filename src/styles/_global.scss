@@ -1,6 +1,6 @@
 body {
   font-size: $font-size-px-base;
-  background: $theme-light-gray;
+  background: lighten($color: $theme-light-gray, $amount: 6);
   color: $theme-dark-gray;
 }
 
