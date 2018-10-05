@@ -135,8 +135,13 @@
       color: $value;
     }
     @include hover-focus-active {
-      box-shadow: $box-shadow-sm;
-      background-color: $gray-100;
+      box-shadow: none;
+      background-color: transparent;
+      @if $color == light {
+        color: darken($dark, 10%);
+      } @else {
+        color: darken($value, 10%);
+      }
     }
   }
 

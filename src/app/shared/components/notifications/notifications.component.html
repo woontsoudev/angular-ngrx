@@ -8,7 +8,7 @@
                 <fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
                 <div class="caption">
                     <p>
-                        <strong>{{noti.name}}</strong>
+                        <span class="font-weight-bold">{{noti.name}}</span>
                         {{noti.desc}} - {{noti.unit}}
                     </p>
                     <p class="smaller">{{noti.agent}} - {{noti.date}}</p>
@@ -33,7 +33,10 @@
         [class.open]="popover.isOpen()"
     >
         <span class="badge badge-light">4</span>
-        <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+        <fa-icon
+            size="lg"
+            [icon]="['fas', 'bell']"
+        ></fa-icon>
         <div class="arrow"></div>
     </button>
 </div>
