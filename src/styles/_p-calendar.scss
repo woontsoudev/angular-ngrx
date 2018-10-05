@@ -1,7 +1,7 @@
 .p-calendar {
   .ui-calendar {
     width: 100%;
-    border-bottom: 2px solid $gray-500;
+    border-bottom: $border-form-input;
 
     @include hover-focus-active {
       border-color: $theme-light-blue;
@@ -49,6 +49,10 @@
   .ui-datepicker table td.ui-datepicker-today a {
     background-color: $theme-light-gray;
     color: $white;
+  }
+
+  .ui-datepicker:not(.ui-datepicker-inline) {
+    border-color: $theme-light-gray;
   }
 
   .ui-datepicker:not(.ui-state-disabled)

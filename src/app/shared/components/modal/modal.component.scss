@@ -1,7 +1,7 @@
 @import '~src/styles/variables-core';
 .modal {
   .ui-dialog {
-    box-shadow: 1px 1px 3px 1px #bdbdbd;
+    box-shadow: $box-shadow-light;
     border-radius: 2px;
 
     .ui-dialog-footer,
@@ -16,7 +16,7 @@
       border-top-right-radius: 2px;
       color: $white;
       padding: $spacer / 2;
-      font-family: 'Roboto';
+      font-family: $font-family-base;
       font-size: $font-size-sm;
     }
 

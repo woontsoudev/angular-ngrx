@@ -1,38 +1,43 @@
 @import '~src/styles/variables-core';
 
 nav {
-  border-bottom: 1px solid $gray-500;
   background-color: $white;
   min-height: $heading-bar-height;
+  box-shadow: $box-shadow-light;
 
   .nav-link {
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     color: $theme-dark-gray;
-
-    &.active {
-      &:hover {
-        font-weight: $font-weight-bold;
-      }
-    }
+    font-size: $font-size-18;
+    font-weight: 300;
   }
 
   .navbar-brand {
     color: $theme-dark-gray;
-    font-size: $font-size-base * 1.75;
+    font-size: $font-size-32;
     margin-right: $spacer * 2;
   }
 
   .nav-item {
-    border-bottom: 3px solid transparent;
-    margin: 0 ($spacer * 0.5);
-  }
+    &::after {
+      display: block;
+      content: ' ';
+      border-bottom: 3px solid transparent;
+      margin: 3px 6px 0 6px;
+    }
 
-  .navbar-nav {
-    .active {
-      border-bottom: 3px solid $dark;
-      font-weight: 900;
+    margin: 0 ($spacer * 0.5);
+
+    &.active {
+      .nav-link {
+        font-weight: $font-weight-bold;
+      }
+
+      &::after {
+        border-bottom: 3px solid $dark;
+      }
     }
   }
 

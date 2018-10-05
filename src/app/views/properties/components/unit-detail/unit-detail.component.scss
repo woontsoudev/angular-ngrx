@@ -7,21 +7,12 @@
     background-color: $theme-light-gray;
   }
 
-  .info {
-    .date {
-      font-size: 0.6rem;
-      font-style: italic;
-    }
-  }
-
   .policy {
     &-details {
-      border-bottom: 1px solid $theme-light-gray;
+      border-bottom: $border-1px-tertiary;
     }
 
     &-list {
-      font-size: 0.8rem;
-
       .title {
         font-weight: bold;
       }

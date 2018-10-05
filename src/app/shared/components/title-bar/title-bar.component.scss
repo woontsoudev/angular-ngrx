@@ -1,7 +1,7 @@
 @import '~src/styles/variables-core';
 
 .title-bar {
-  border-top: 1px solid $theme-light-gray;
+  border-top: $border-1px-tertiary;
   text-transform: uppercase;
   height: $heading-bar-height;
 
